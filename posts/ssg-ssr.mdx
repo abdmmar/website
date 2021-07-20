@@ -9,6 +9,27 @@ import Callout from '@components/Blog/Callout'
   We recommend using **Static Generation** (with and without data) whenever
 </Callout>
 
+![Blue](/Blue.jpg)
+
+```js[data-line=5]
+import Callout from '@components/Blog/Callout'
+
+// Object
+let home = {
+  name: string,
+  'test': 'json'
+}
+
+const = Home = () => {
+  return (
+    <Callout icon="lamp">
+      We recommend using **Static Generation** (with and without data)
+      whenever
+    </Callout>
+  )
+}
+```
+
 You can use Static Generation for many types of pages, including:
 
 - Marketing pages

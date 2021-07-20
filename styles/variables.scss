@@ -6,7 +6,8 @@ $accent-color-2: hsla(225, 72%, 37%, 1);
 $accent-color-3: hsla(52, 100%, 63%, 1);
 
 $typefaces: 'IBM Plex Sans', 'Roboto', sans-serif;
-$typefaces-mono: 'IBM Plex Mono', monospace, serif;
+$typefaces-mono: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
+  monospace, serif;
 
 $text-color-primary: hsla(225, 15%, 17%, 1);
 $text-color-secondary: hsla(225, 15%, 47%, 1);
@@ -35,3 +36,21 @@ $spacing-xl: 32px;
 $spacing-xxl: 40px;
 $spacing-xxxl: 48px;
 $spacing-xxxxl: 56px;
+
+/*
+  Nord Theme by Arctic Ice Studio
+  https://nordtheme.com
+*/
+
+$syntax-background-dark: hsla(225, 15%, 17%, 1);
+$syntax-text-dark: #f8f8f2;
+$syntax-comment-dark: #636f88;
+$syntax-punctuation-dark: #81a1c1;
+$syntax-property-dark: #81a1c1;
+$syntax-number-dark: #b48ead;
+$syntax-boolean-dark: #81a1c1;
+$syntax-selector-dark: #a3be8c;
+$syntax-operator-dark: #81a1c1;
+$syntax-function-dark: #88c0d0;
+$syntax-keyword-dark: #81a1c1;
+$syntax-regex-dark: #ebcb8b;

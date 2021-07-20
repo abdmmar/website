@@ -1,7 +1,16 @@
 import * as React from 'react'
 import {getMDXComponent} from 'mdx-bundler/client'
 import {getAllPosts, getSinglePost} from '@lib/mdx'
-import {Callout} from '@components/Blog'
+import {Callout, Image} from '@components/Blog'
+
+function Paragraph({children}) {
+  if (children?.type?.name === 'Image') {
+    const {src, alt} = children.props
+    return <Image src={src} alt={alt} />
+  }
+
+  return <p>{children}</p>
+}
 
 export default function Post({code, frontmatter: meta}) {
   const Component = React.useMemo(
@@ -12,7 +21,12 @@ export default function Post({code, frontmatter: meta}) {
   return (
     <div className="container">
       <h2>{meta.title}</h2>
-      <Component components={{blockquote: 'h4'}} />
+      <Component
+        components={{
+          img: Image,
+          p: Paragraph,
+        }}
+      />
     </div>
   )
 }
