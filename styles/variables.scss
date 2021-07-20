@@ -1,0 +1,37 @@
+$neutral-dark-color: hsla(225, 15%, 17%, 1);
+$neutral-light-color: hsla(0, 0%, 100%, 1);
+
+$accent-color-1: hsla(225, 73%, 57%, 1);
+$accent-color-2: hsla(225, 72%, 37%, 1);
+$accent-color-3: hsla(52, 100%, 63%, 1);
+
+$typefaces: 'IBM Plex Sans', 'Roboto', sans-serif;
+$typefaces-mono: 'IBM Plex Mono', monospace, serif;
+
+$text-color-primary: hsla(225, 15%, 17%, 1);
+$text-color-secondary: hsla(225, 15%, 47%, 1);
+
+$font-size: 16px;
+$line-height: calc(#{$font-size} * 1.6);
+
+$bg-color-primary: hsla(0, 0%, 100%, 1);
+$bg-color-secondary: hsla(240, 8%, 98%, 1);
+$bg-color-hover: hsla(240, 8%, 88%, 1);
+$bg-color-dark: hsla(225, 31%, 20%, 1);
+
+$border-color: hsla(240, 8%, 88%, 1);
+$box-shadow: 0px 5px 10px 0px hsla(225, 15%, 17%, 0.1);
+$outline-color: $accent-color-1;
+$icon-color-primary: $accent-color-1;
+$icon-color: hsla(225, 15%, 17%, 1);
+
+$spacing-xxs: 4px;
+$spacing-xs: 8px;
+$spacing-s: 12px;
+$spacing-m: 16px;
+$spacing-ml: 20px;
+$spacing-l: 24px;
+$spacing-xl: 32px;
+$spacing-xxl: 40px;
+$spacing-xxxl: 48px;
+$spacing-xxxxl: 56px;
