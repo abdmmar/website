@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import {getAllPosts} from '@lib/mdx'
 import styles from './Index.module.scss'
-// import {Callout} from '@components/Blog'
+import {NavBar} from '@components/Layout'
 
 export default function Home({posts}) {
   return (
@@ -16,11 +16,12 @@ export default function Home({posts}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <header className={styles.header}>
+        <NavBar />
+      </header>
+
       <main className={styles.main}>
         <h1>Test</h1>
-        {/* <Callout>
-          <p>Test</p>
-        </Callout> */}
         <ul>
           {posts.map(({slug, frontmatter: meta}) => {
             return (
