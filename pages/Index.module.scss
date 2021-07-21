@@ -1,7 +1,6 @@
 @import '/styles/variables.scss';
 
 .container {
-  height: 100vh;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -13,4 +12,89 @@
   display: grid;
   place-items: center;
   background-color: $bg-color-primary;
+}
+
+.main {
+  width: 100%;
+}
+
+.hero {
+  height: 100%;
+  min-height: calc(100vh - 90px);
+  display: grid;
+  grid-template-rows: 1fr min-content;
+}
+
+.hero_grid_one {
+  display: grid;
+  grid-template-columns: 1fr 900px 1fr;
+
+  & > div:nth-child(1) {
+    background-color: $hero-grid-1;
+  }
+
+  & > div:nth-child(3) {
+    background-color: $hero-grid-5;
+  }
+}
+
+.hero_content {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: $spacing-m;
+  background-color: $bg-color-secondary;
+
+  & p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.hero_desc {
+  width: 45%;
+  font-size: 1.2rem;
+  line-height: calc(1.2rem * 1.5);
+}
+
+.hero_desc_title {
+  color: $accent-color-1;
+}
+
+.hero_grid_two {
+  min-height: 150px;
+  display: grid;
+  grid-template-columns: 1fr 900px 1fr;
+
+  & > div:nth-child(1) {
+    background-color: $hero-grid-2;
+  }
+
+  & > div:nth-child(3) {
+    background-color: $hero-grid-6;
+  }
+}
+
+.hero_social {
+  color: $neutral-light-color;
+  padding: $spacing-m;
+  background-color: $accent-color-1;
+}
+
+.hero_social_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: min-content min-content min-content;
+  gap: $spacing-xxxl;
+  font-size: 1.2rem;
+
+  & a {
+    color: $neutral-light-color;
+  }
+
+  & a::before {
+    z-index: 0;
+    background: $neutral-light-color;
+  }
 }
