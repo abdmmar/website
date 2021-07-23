@@ -40,8 +40,14 @@
   list-style: none;
   margin: 0 $spacing-m;
   font-weight: 500;
+  font-size: 1.25rem;
 
   & a {
+    color: #818890;
+    transition: color 100ms ease-out;
+  }
+
+  & a:hover {
     color: $text-color-primary;
   }
 
