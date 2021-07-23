@@ -17,6 +17,13 @@ function MyApp({Component, pageProps}) {
             d="M19 9l-7 7-7-7"
           />
         </symbol>
+        <symbol id="icon-arrow">
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M0.713627 18.8786L14.047 32.2119H15.9323L29.2656 18.8786L27.3803 16.9932L16.3216 28.0492L16.3216 0.211914L13.655 0.211914L13.655 28.0519L2.59896 16.9906L0.713627 18.8759V18.8786Z"
+          />
+        </symbol>
       </svg>
     </>
   )

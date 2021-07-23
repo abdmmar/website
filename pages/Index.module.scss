@@ -51,13 +51,19 @@
 }
 
 .hero_desc {
-  width: 45%;
+  // width: 45%;
   font-size: 1.2rem;
   line-height: calc(1.2rem * 1.5);
 }
 
 .hero_desc_title {
-  color: $accent-color-1;
+  font-weight: 400;
+  color: #818890;
+  margin: 0;
+
+  & .hero_desc_title_name {
+    color: $accent-color-1;
+  }
 }
 
 .hero_grid_two {
@@ -74,10 +80,36 @@
   }
 }
 
-.hero_social {
+.hero_cta {
+  display: grid;
+  place-content: stretch;
   color: $neutral-light-color;
   padding: $spacing-m;
   background-color: $accent-color-1;
+}
+
+.hero_cta_link {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  font-size: 32px;
+  align-items: center;
+
+  & span:nth-child(2) {
+    transform: translateY(0);
+    transition: transform 200ms ease-in;
+  }
+
+  &:hover {
+    & span:nth-child(2) {
+      transform: translateY(10px);
+      transition: transform 100ms ease-out;
+    }
+  }
+
+  &::before {
+    content: none;
+  }
 }
 
 .hero_social_list {

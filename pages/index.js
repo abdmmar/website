@@ -27,40 +27,40 @@ export default function Home({posts}) {
             <div className={styles.hero_content}>
               <div className={styles.hero_desc}>
                 <h2 className={styles.hero_desc_title}>
-                  Hi! I&apos;m Ammar,
+                  <span className={styles.hero_desc_title_name}>
+                    Hi! I&apos;m Ammar,
+                  </span>
+                  <br />
+                  a student and developer
+                  <br /> who passionate to build <br />
+                  something fun and useful.
                 </h2>
-                <p>
-                  A computer science student and graphic design enthusiast who
-                  passionate to build something fun and useful.
-                </p>
-                <p>
-                  Currently remote working as Developer Intern at Telkom DDB,
-                  learning software development in general and trying to
-                  contribute to open source.
-                </p>
               </div>
             </div>
             <div></div>
           </div>
           <div className={styles.hero_grid_two}>
             <div></div>
-            <div className={styles.hero_social}>
-              <ul className={styles.hero_social_list}>
-                <li>
-                  <a href="#">Github</a>
-                </li>
-                <li>
-                  <a href="#">Figma</a>
-                </li>
-                <li>
-                  <a href="#">Email</a>
-                </li>
-              </ul>
+            <div className={styles.hero_cta}>
+              <a href="#projects" className={styles.hero_cta_link}>
+                <span>Learn more</span>
+                <span>
+                  <svg
+                    width="30"
+                    height="33"
+                    viewBox="0 0 30 33"
+                    fill="white"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <use href="#icon-arrow"></use>
+                  </svg>
+                </span>
+              </a>
             </div>
             <div></div>
           </div>
         </div>
-        <div className={styles.projects}></div>
+        <div className={styles.projects} id="projects"></div>
         <div className={styles.blog}>
           <h1>Test</h1>
           <ul>
