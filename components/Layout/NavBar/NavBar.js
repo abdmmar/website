@@ -19,7 +19,7 @@ export default function NavBar() {
             </Link>
           </li>
           <li className={styles.menu_item}>
-            <Link href="blog">
+            <Link href="/blog">
               <a>Blog</a>
             </Link>
           </li>

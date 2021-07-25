@@ -1,0 +1,40 @@
+@import '/styles/variables.scss';
+
+.card {
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: $spacing-m;
+  padding-bottom: 24px;
+  border-bottom: 1px solid $border-color;
+}
+
+.card:last-child {
+  padding: 0;
+  border-bottom: 0;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: $text-color-secondary;
+}
+
+.tag,
+.date {
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  color: $text-color-primary;
+  font-size: 1.777rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.desc {
+  margin: 0;
+  font-size: 1.15rem;
+}

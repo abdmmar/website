@@ -181,34 +181,18 @@
   height: fit-content;
 }
 
-.projects_main_content {
-  display: grid;
-  grid-auto-rows: min-content;
-  gap: $spacing-m;
-}
-
-.projects_content_info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  color: $text-color-secondary;
-}
-
-.projects_content_tag,
-.projects_content_date {
-  text-transform: uppercase;
-}
-
-.projects_content_title {
-  margin: 0;
-}
-
-.projects_content_desc {
-  margin: 0;
-  font-size: 1.15rem;
-}
-
 .projects_aside_content {
   display: grid;
   gap: $spacing-l;
+  height: fit-content;
+
+  & a {
+    font-size: 1.333rem;
+  }
+}
+
+.blog_container {
+  display: grid;
+  justify-content: center;
+  min-height: 100vh;
 }

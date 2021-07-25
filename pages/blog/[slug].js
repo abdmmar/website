@@ -5,6 +5,8 @@ import {getAllPosts, getSinglePost} from '@lib/mdx'
 import isURL from '@lib/is-url'
 import {Callout, Image} from '@components/Blog'
 
+const FOLDER = 'blog'
+
 function Paragraph({children}) {
   if (children?.type?.name === 'Image') {
     const {src, alt} = children.props
@@ -30,7 +32,7 @@ function NextLink({href, children}) {
   )
 }
 
-export default function Post({code, frontmatter: meta, readTime}) {
+export default function Blog({code, frontmatter: meta, readTime}) {
   const Component = React.useMemo(
     () => getMDXComponent(code, {Callout}),
     [code],
@@ -52,7 +54,9 @@ export default function Post({code, frontmatter: meta, readTime}) {
 }
 
 export async function getStaticPaths() {
-  const paths = getAllPosts().map(({slug}) => ({params: {slug}}))
+  const paths = getAllPosts(FOLDER).map(({slug}) => ({
+    params: {slug},
+  }))
 
   return {
     paths,
@@ -61,7 +65,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({params}) {
-  const post = await getSinglePost(params.slug)
+  const post = await getSinglePost(`${FOLDER}/${params.slug}`)
   return {
     props: {...post},
   }
