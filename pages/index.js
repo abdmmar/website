@@ -85,7 +85,7 @@ export default function Home({posts}) {
             <div className={styles.projects_content}>
               <div className={styles.projects_main_content}>
                 <div className={styles.projects_content_info}>
-                  <span className={styles.projects_content_tag}>Small</span>
+                  <span className={styles.projects_content_tag}>Web</span>
                   <span className={styles.projects_content_date}>
                     23 Feb 2021
                   </span>
@@ -97,11 +97,59 @@ export default function Home({posts}) {
                   height="300px"
                   objectFit="cover"
                 />
-                <h4 className={styles.projects_content_title}>Title</h4>
-                <p className={styles.projects_content_desc}>Description</p>
+                <h4 className={styles.projects_content_title}>
+                  Koleksi Sinema Indonesia
+                </h4>
+                <p className={styles.projects_content_desc}>
+                  Website sederhana yang berfungsi untuk mencari sinema-sinema
+                  Indonesia terkini, dibangun menggunakan Web Component dan
+                  TailwindCSS.
+                </p>
               </div>
               <div className={styles.projects_aside_content}>
-                <div className={styles.projects_item}></div>
+                <div className={styles.projects_main_content}>
+                  <div className={styles.projects_content_info}>
+                    <span className={styles.projects_content_tag}>Web</span>
+                    <span className={styles.projects_content_date}>
+                      23 Feb 2021
+                    </span>
+                  </div>
+                  <h5 className={styles.projects_content_title}>
+                    Cari Karya Seni
+                  </h5>
+                  <p className={styles.projects_content_desc}>
+                    Simple web app to find any art from Harvard Art Museum.
+                  </p>
+                </div>
+                <div className={styles.projects_main_content}>
+                  <div className={styles.projects_content_info}>
+                    <span className={styles.projects_content_tag}>
+                      Design
+                    </span>
+                    <span className={styles.projects_content_date}>
+                      23 Feb 2021
+                    </span>
+                  </div>
+                  <h5 className={styles.projects_content_title}>
+                    Biweekly Poster
+                  </h5>
+                  <p className={styles.projects_content_desc}>
+                    Bi-weekly poster that aims to train sensibility in graphic
+                    design
+                  </p>
+                </div>
+                <div className={styles.projects_main_content}>
+                  <div className={styles.projects_content_info}>
+                    <span className={styles.projects_content_tag}>Web</span>
+                    <span className={styles.projects_content_date}>
+                      23 Feb 2021
+                    </span>
+                  </div>
+                  <h5 className={styles.projects_content_title}>Tudu</h5>
+                  <p className={styles.projects_content_desc}>
+                    Penanda laman sederhana
+                  </p>
+                </div>
               </div>
             </div>
           </div>

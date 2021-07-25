@@ -59,6 +59,7 @@
   font-weight: 400;
   color: #818890;
   margin: 0;
+  letter-spacing: -0.05rem;
 
   & .hero_desc_title_name {
     color: $accent-color-1;
@@ -114,6 +115,7 @@
 .hero_cta_link_text {
   font-weight: 400;
   margin: 0;
+  letter-spacing: -0.02rem;
 }
 
 .projects_container {
@@ -174,8 +176,9 @@
 
 .projects_content {
   display: grid;
-  grid-template-columns: max-content 1fr;
-  gap: $spacing-l;
+  grid-template-columns: 500px 1fr;
+  gap: $spacing-xxxl;
+  height: fit-content;
 }
 
 .projects_main_content {
@@ -188,6 +191,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  color: $text-color-secondary;
 }
 
 .projects_content_tag,
@@ -197,9 +201,14 @@
 
 .projects_content_title {
   margin: 0;
-  margin-top: $spacing-s;
 }
 
 .projects_content_desc {
   margin: 0;
+  font-size: 1.15rem;
+}
+
+.projects_aside_content {
+  display: grid;
+  gap: $spacing-l;
 }
