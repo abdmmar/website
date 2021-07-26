@@ -75,6 +75,10 @@ export default function Blog({code, frontmatter: meta, readTime, slug}) {
                   <dd>{readTime.text}</dd>
                 </div>
                 <div>
+                  <dt>Category</dt>
+                  <dd>{meta.category}</dd>
+                </div>
+                <div>
                   <dt>Tags</dt>
                   <dd>{meta.tag}</dd>
                 </div>
@@ -86,13 +90,15 @@ export default function Blog({code, frontmatter: meta, readTime, slug}) {
 
         <div className={styles.content_container}>
           <div className={styles.content}>
-            <Component
-              components={{
-                img: Image,
-                p: Paragraph,
-                a: Link,
-              }}
-            />
+            <article className={styles.content_article}>
+              <Component
+                components={{
+                  img: Image,
+                  p: Paragraph,
+                  a: Link,
+                }}
+              />
+            </article>
           </div>
         </div>
       </main>

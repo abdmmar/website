@@ -102,9 +102,12 @@
 }
 
 .content {
-  width: 100%;
-  max-width: 750px;
+  width: 900px;
   font-size: 1.15rem;
   margin: $spacing-xxxl 0;
   padding: 0 $spacing-m;
+}
+
+.content_article > :is(p, blockquote, ul, ol, div[class*='Callout_']) {
+  width: 650px;
 }
