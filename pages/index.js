@@ -151,35 +151,34 @@ export default function Home({posts}) {
                 </a>
               </Link>
             </div>
-            <div className={styles.projects_content}>
-              <div className={styles.projects_main_content}>
-                <Card
-                  title="Koleksi Sinema Indonesia"
-                  description="Website sederhana yang berfungsi untuk mencari sinema-sinema
-                  Indonesia terkini, dibangun menggunakan Web Component dan
-                  TailwindCSS."
-                  tag="Web"
-                  date="23 Feb 2021"
-                  image={ImgBlue}
-                  imageWidth="500px"
-                  imageHeight="300px"
-                  link="/blog/koleksi-sinema-indonesia"
-                />
-              </div>
-              <div className={styles.projects_aside_content}>
-                {posts.map(({slug, frontmatter: meta}) => {
-                  return (
-                    <Card
-                      key={slug}
-                      title={meta.title}
-                      description={meta.description}
-                      tag={meta.category}
-                      date={meta.date}
-                      link={meta.link == null ? `/blog/${slug}` : meta.link}
-                    />
-                  )
-                })}
-              </div>
+            <div className={styles.blog_content}>
+              {posts.map(({slug, frontmatter: meta}) => {
+                return (
+                  <Card
+                    key={slug}
+                    title={meta.title}
+                    description={''}
+                    tag={meta.category}
+                    date={meta.date}
+                    image={ImgBlue}
+                    link={meta.link == null ? `/blog/${slug}` : meta.link}
+                  />
+                )
+              })}
+              <Card
+                title="Sedikit yang saya tau tentang teknologi"
+                tag="API"
+                date="2020"
+                image={ImgBlue}
+                link="/blog/koleksi-sinema-indonesia"
+              />
+              <Card
+                title="Ulasan: A Common Sense Guide to Algorithm and Data Structure"
+                tag="API"
+                date="2020"
+                image={ImgBlue}
+                link="/blog/koleksi-sinema-indonesia"
+              />
             </div>
           </div>
         </div>

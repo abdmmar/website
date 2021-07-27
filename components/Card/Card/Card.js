@@ -7,7 +7,7 @@ import styles from './Card.module.scss'
 
 const Card = ({
   title,
-  description,
+  description = null,
   tag,
   date,
   image = null,
@@ -38,11 +38,17 @@ const Card = ({
         </a>
       ) : (
         <Link href={link}>
-          <a className={styles.title}>{title}</a>
+          <a className={styles.title}>
+            <span>{title}</span>
+          </a>
         </Link>
       )}
 
-      <p className={styles.desc}>{description}</p>
+      {description != null && description.length !== 0 ? (
+        <p className={styles.desc}>{description}</p>
+      ) : (
+        ''
+      )}
     </div>
   )
 }
