@@ -20,7 +20,7 @@ code {
 blockquote {
   margin: 0;
   padding: $spacing-m $spacing-xxl;
-  border-left: 3px solid $accent-color-1;
+  border-left: 4px solid $accent-color-1;
 
   & :is(p, h1, h2, h3, h4, h5) {
     margin: 0;

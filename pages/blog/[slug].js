@@ -91,6 +91,9 @@ export default function Blog({code, frontmatter: meta, readTime, slug}) {
         <div className={styles.content_container}>
           <div className={styles.content}>
             <article className={styles.content_article}>
+              <p className={styles.content_article_deck}>
+                {meta.description}
+              </p>
               <Component
                 components={{
                   img: Image,
