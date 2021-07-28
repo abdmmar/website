@@ -75,12 +75,8 @@ export default function Blog({code, frontmatter: meta, readTime, slug}) {
                   <dd>{readTime.text}</dd>
                 </div>
                 <div>
-                  <dt>Category</dt>
-                  <dd>{meta.category}</dd>
-                </div>
-                <div>
                   <dt>Tags</dt>
-                  <dd>{meta.tag}</dd>
+                  <dd>{meta.tags.join(', ')}</dd>
                 </div>
               </dl>
             </div>

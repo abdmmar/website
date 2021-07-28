@@ -158,7 +158,7 @@ export default function Home({posts}) {
                     key={slug}
                     title={meta.title}
                     description={''}
-                    tag={meta.category}
+                    tag={meta.tags[0]}
                     date={meta.date}
                     image={ImgBlue}
                     link={meta.link == null ? `/blog/${slug}` : meta.link}
