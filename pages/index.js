@@ -2,14 +2,14 @@ import Head from 'next/head'
 import Link from 'next/link'
 import {getAllPosts} from '@lib/mdx'
 import styles from './Index.module.scss'
-import {NavBar} from '@components/Layout'
+import {NavBar, Footer} from '@components/Layout'
 import {Card} from '@components/Card'
 
 import ImgBlue from '@public/Blue.jpg'
 
 export default function Home({posts}) {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="top">
       <Head>
         <title>Abdullah Ammar • Developer</title>
         <meta
@@ -183,7 +183,7 @@ export default function Home({posts}) {
           </div>
         </div>
       </main>
-      <footer></footer>
+      <Footer />
     </div>
   )
 }
