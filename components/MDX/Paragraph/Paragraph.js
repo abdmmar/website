@@ -1,4 +1,4 @@
-import {Image} from '@components/Blog'
+import {Image} from '@components/MDX'
 
 export default function Paragraph({children}) {
   if (children?.type?.name === 'Image') {
