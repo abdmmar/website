@@ -7,11 +7,16 @@ import {NavBar} from '@components/Layout'
 import {getAllPosts, getSinglePost} from '@lib/mdx'
 import {Callout, Paragraph, Link} from '@components/Blog'
 
-import styles from './Blog.module.scss'
+import styles from './[slug].module.scss'
 
 const FOLDER = 'blog'
 
-export default function Blog({code, frontmatter: meta, readTime, slug}) {
+export default function DetailBlog({
+  code,
+  frontmatter: meta,
+  readTime,
+  slug,
+}) {
   const Component = React.useMemo(
     () => getMDXComponent(code, {Callout}),
     [code],
