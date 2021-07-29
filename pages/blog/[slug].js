@@ -1,11 +1,11 @@
 import * as React from 'react'
-import Head from 'next/head'
 import Image from 'next/image'
 import {getMDXComponent} from 'mdx-bundler/client'
 
+import Head from '@components/Head'
 import {NavBar} from '@components/Layout'
+import {Callout, Paragraph, Link} from '@components/MDX'
 import {getAllPosts, getSinglePost} from '@lib/mdx'
-import {Callout, Paragraph, Link} from '@components/Blog'
 
 import styles from './[slug].module.scss'
 
@@ -24,24 +24,12 @@ export default function DetailBlog({
 
   return (
     <div className={styles.container}>
-      <Head>
-        <title>{meta.title} • Abdullah Ammar • Developer</title>
-        <link rel="icon" href="/favicon.ico" />
-        {/* https://ahrefs.com/blog/open-graph-meta-tags/ */}
-        <meta name="description" content={meta.description} />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:description" content={meta.description} />
-        <meta
-          property="og:image"
-          content="https://ahrefs.com/blog/wp-content/uploads/2020/01/fb-open-graph-1.jpg"
-        />
-        <meta
-          property="og:url"
-          content={`https://abdmmar.tech/blog/${slug}`}
-        />
-        <meta property="og:locale" content="id_ID" />
-        <meta property="og:type" content="article" />
-      </Head>
+      <Head
+        title={`${meta.title} • Abdullah Ammar • Developer`}
+        path={`/blog/${slug}`}
+        description={meta.description}
+        type="article"
+      />
 
       <header className={styles.header}>
         <NavBar />

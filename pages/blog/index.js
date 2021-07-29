@@ -1,8 +1,8 @@
 import * as React from 'react'
-import Head from 'next/head'
 
-import {NavBar, Footer} from '@components/Layout'
+import Head from '@components/Head'
 import {Card} from '@components/Card'
+import {NavBar, Footer} from '@components/Layout'
 import {getAllPosts} from '@lib/mdx'
 
 import styles from './Blog.module.scss'
@@ -10,11 +10,7 @@ import styles from './Blog.module.scss'
 export default function Blog({posts}) {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Blog • Abdullah Ammar • Developer</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="Description" />
-      </Head>
+      <Head title="Blog • Abdullah Ammar • Developer" path="/blog" />
 
       <header className={styles.header}>
         <NavBar />
