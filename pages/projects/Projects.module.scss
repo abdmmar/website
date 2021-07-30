@@ -57,13 +57,34 @@
 
 .projects_posts {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: $spacing-l;
+  grid-template-rows: max-content 1fr;
+  gap: $spacing-xxxxl;
 }
 
 .projects_empty {
   display: grid;
   place-items: center;
+}
+
+.projects_posts_main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: $spacing-xxl;
+}
+
+.projects_posts_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-xxl;
+
+  & a {
+    font-size: 1.333rem;
+    line-height: calc(1.333rem * 1.5);
+  }
+
+  & p {
+    -webkit-line-clamp: 2;
+  }
 }
 
 @media screen and (max-width: 900px) {
