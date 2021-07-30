@@ -62,4 +62,8 @@
 .desc {
   margin: 0;
   font-size: 1.15rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
