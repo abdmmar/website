@@ -1,0 +1,130 @@
+---
+title: 'Cari Karya Seni'
+description: 'Find popular art from the Harvard Art Museum'
+tags:
+  - Web
+  - React
+date: '2020'
+hero_image: '/static/posts/projects/cari-karya-seni/Hero.png'
+hero_alt: 'Front page of Cari Karya Seni website'
+repository: https://github.com/abdmmar/cari-karya-seni
+website: http://cari-karya-seni.surge.sh/
+---
+
+After completed a course from Dicoding, Belajar Fundamental Front-End Web
+Development, that teach you about concept that used in front-end field, how to
+use Webpack to bundle the code, and create a component using Web Component so
+the code can be used as a component and used it accross the page, etc. I think
+it's interesting to try some popular framework/library in JavaScript, so I
+choose React and took
+[Complete Intro to React, v5](https://frontendmasters.com/courses/complete-react-v5/)
+by Bryan Holt from FrontendMasters. So this is it, Cari Karya Seni, my first
+ever React project. Cari Karya Seni is web application to dind popular art
+from the Harvard Art Museum.
+
+### Lesson Learned
+
+Here's my lesson learned while developing this project:
+
+- **Learn how to fetch the data in React**
+
+  I learned how to get data and populate the page with Fetch API from Harvard
+  Art Museum API. Here's example to get and print the data to console when
+  page render for the first time
+
+  ```jsx
+  ...
+  useEffect(() => {
+    const getArts = () => {
+      fetch(
+        'https://api.harvardartmuseums.org/object?apikey=randomnumberhere&page=1',
+      )
+        .then(({info, records}) => {
+          console.log(info)
+          console.log(records)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    }
+
+    getArts()
+  }, [])
+  ...
+  ```
+
+- **Learn to use React Hooks to manage data and state**
+
+  I learned how to manage the data and state using useState and useEffect.
+  Here's the example using useState and useEffect to get and save the data:
+
+  ```jsx
+  import React, {useState, useEffect} from 'react'
+
+  const Home = () => {
+    // 1
+    const [list, setList] = useState([{}])
+
+    // 2
+    useEffect(() => {
+      const getArts = () => {
+        fetch(
+          'https://api.harvardartmuseums.org/object?apikey=randomnumberhere&page=1',
+        )
+          .then(({info, records}) => {
+            // 3
+            setList((arts) => [...arts, ...records])
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+      }
+
+      getArts()
+    }, [])
+
+    return (
+      <div>
+        {list.length !== 0
+          ? list.map((art) => {
+              return <div>{art.title}</div>
+            })
+          : 'List is empty or not found'}
+      </div>
+    )
+  }
+
+  export default Home
+  ```
+
+  Explanation:
+
+  1.  Initialize `list` as empty array of object using useState
+  2.  Then run `getArts()` inside `useEffect(()=>, [])` to fetch data when
+      page render for the first time, the second parameter `[]` in useEffect
+      is to define how useEffect should run
+  3.  After request is resolved, save the data using `setLists` so it can be
+      render on the page
+
+- **Use Reach Router to move to another page**
+
+  I learned how to move to another page and to create dynamic page like
+  `/details/:id` page
+
+- **How to deploy Single Page Application in Surge.**
+
+  How deploy to Surge:
+
+  1.  `npm run build` to build application for production.
+  2.  Copy your index.html to `build` folder and rename it to 200.html.
+  3.  Execute `surge` command to deploy your application to Surge.sh.
+
+So that's a couple of lesson that I learned when build this projects, it's a
+simple project but I learned a quiet a lot about fundamental of React.
+
+### Built with
+
+- React
+- reach-router
+
+### Conclusion

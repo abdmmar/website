@@ -11,6 +11,9 @@ a {
 
 code {
   font-family: $typefaces-mono;
+  background: $bg-color-secondary;
+  padding: 2px;
+  font-size: 1rem;
 }
 
 [hidden] {
@@ -73,6 +76,7 @@ body {
 
 p {
   margin-bottom: 1rem;
+  line-height: calc(1.125rem * 1.6);
 }
 
 h1,

@@ -93,6 +93,15 @@
 
   & dd {
     margin: 0;
+
+    & a {
+      color: $neutral-light-color;
+    }
+
+    & a::before {
+      z-index: 0;
+      background: $neutral-light-color;
+    }
   }
 }
 
@@ -111,6 +120,12 @@
 
 .content_article {
   width: 650px;
+
+  & h3,
+  h4,
+  h5 {
+    margin-top: 1rem;
+  }
 }
 
 .content_article_deck {
