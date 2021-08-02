@@ -43,7 +43,10 @@ export default function NavBar() {
       </div>
       <div className={styles.navbar_theme}>
         <Menu>
-          <MenuButton className={styles.menu_btn} ariaLabel="Open theme menu">
+          <MenuButton
+            className={styles.menu_btn}
+            aria-label="Open theme menu"
+          >
             <svg
               width="20px"
               height="20px"

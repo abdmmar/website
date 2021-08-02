@@ -19,6 +19,20 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
             rel="stylesheet"
           />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+             try {
+              const preference = localStorage.getItem('theme');
+              if (preference) {
+                document.documentElement.setAttribute('data-theme', preference)
+              }
+            } catch (err) {
+              // do nothing
+            }
+          `,
+            }}
+          />
         </Head>
         <body>
           <Main />

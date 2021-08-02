@@ -68,7 +68,7 @@
 .hero_info {
   display: grid;
   place-content: stretch;
-  color: $neutral-light-color;
+  color: $white;
   padding: $spacing-m;
   background-color: $hero-grid-5;
   gap: $spacing-xl;
@@ -87,7 +87,7 @@
   font-size: 1.125rem;
 
   & dt {
-    color: $neutral-gray-color-2;
+    color: $color-gray-400;
     margin-bottom: $spacing-xs;
   }
 
@@ -95,12 +95,12 @@
     margin: 0;
 
     & a {
-      color: $neutral-light-color;
+      color: $white;
     }
 
     & a::before {
       z-index: 0;
-      background: $neutral-light-color;
+      background: $white;
     }
   }
 }

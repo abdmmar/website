@@ -53,7 +53,7 @@
   }
 
   & a::before {
-    background: $neutral-dark-color;
+    background: $text-color-primary;
   }
 }
 
@@ -69,7 +69,7 @@
     place-items: center;
     padding: $spacing-xs;
     background-color: $bg-color-primary;
-    border: 1px solid $neutral-light-color;
+    border: 1px solid $white;
     cursor: pointer;
     transition: all 150ms ease;
 
@@ -98,8 +98,6 @@
   }
 
   & [data-reach-menu-item][data-selected] {
-    // color: $text-color-primary;
-    // background: $bg-color-hover;
     background: $accent-color-1;
   }
 }

@@ -1,5 +1,10 @@
 @import './variables.scss';
 
+:root {
+  --bg-color-primary: hsla(0, 0%, 100%, 1);
+  $bg-color-primary: var(--bg-color-primary);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -30,16 +35,49 @@ blockquote {
   }
 }
 
-// symbol[id^='icon-'] {
-//   fill: $accent-color-1;
-// }
 .icon {
   min-width: 20px;
   fill: $accent-color-1;
 }
 
+/* 
+  Dark Mode
+  See: https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/
+  Also see: https://fatihkalifa.com/dark-mode-web
+*/
+
+[data-theme='dark'] {
+  --bg-color-primary: hsla(240, 9%, 8%, 1);
+  $text-color-primary: $white;
+  $text-color-secondary: $color-gray-100;
+  $text-color-ternary: $color-gray-200;
+
+  $bg-color-primary: $black;
+  $bg-color-secondary: $color-gray-900;
+  $bg-color-hover: $color-gray-800;
+
+  $border-color: hsla(240, 8%, 88%, 1);
+  $box-shadow: 0px 5px 10px 0px hsla(225, 15%, 17%, 0.1);
+  $outline-color: $accent-color-1;
+  $icon-color-primary: $accent-color-1;
+  $icon-color: hsla(225, 15%, 17%, 1);
+
+  $hero-grid-1: hsla(240, 9%, 88%, 1);
+  $hero-grid-2: hsla(240, 9%, 68%, 1);
+  $hero-grid-5: hsla(225, 31%, 20%, 1);
+  $hero-grid-6: hsla(225, 72%, 37%, 1);
+}
+
+/* 
+  Dark Mode User's preferences
+  How to simulate it: https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/accessibility/preferred-color-scheme-simulation
+*/
+
+@media (prefers-color-scheme: dark) {
+}
+
 /*
-* Outline focus
+  Outline focus by Adam Argyle (@argyleink)
 */
 
 @media (prefers-reduced-motion: no-preference) {
@@ -51,8 +89,8 @@ blockquote {
 }
 
 /* 
-* Font scale configuration
-* See: https://type-scale.com/
+  Font scale configuration
+  See: https://type-scale.com/
 */
 
 html {
@@ -117,8 +155,8 @@ small,
 }
 
 /* 
-* Mouse in-out transition
-* See: https://codepen.io/argyleink/pen/poEjvpd
+  Mouse in-out transition
+  See: https://codepen.io/argyleink/pen/poEjvpd
 */
 a {
   position: relative;
