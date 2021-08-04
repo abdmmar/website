@@ -122,6 +122,10 @@ blockquote {
   --hero-grid-5: var(--color-gray-800);
   --hero-grid-6: var(--accent-color-2);
   --hero-text-accent: var(--white);
+
+  img {
+    filter: brightness(0.8) contrast(1.2);
+  }
 }
 
 /* 
@@ -150,6 +154,10 @@ blockquote {
     --hero-grid-5: var(--color-gray-800);
     --hero-grid-6: var(--accent-color-2);
     --hero-text-accent: var(--white);
+  }
+
+  :root:not([data-theme]) img {
+    filter: brightness(0.8) contrast(1.2);
   }
 }
 
