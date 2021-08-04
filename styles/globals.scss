@@ -1,17 +1,89 @@
-@import './variables.scss';
+:root {
+  --white: hsla(0, 0%, 100%, 1);
+  --color-gray-100: hsla(240, 9%, 98%, 1);
+  --color-gray-200: hsla(240, 9%, 88%, 1);
+  --color-gray-300: hsla(240, 9%, 78%, 1);
+  --color-gray-400: hsla(240, 9%, 68%, 1);
+  --color-gray-500: hsla(240, 9%, 58%, 1);
+  --color-gray-600: hsla(240, 9%, 48%, 1);
+  --color-gray-700: hsla(240, 9%, 38%, 1);
+  --color-gray-800: hsla(240, 9%, 28%, 1);
+  --color-gray-900: hsla(240, 9%, 18%, 1);
+  --black: hsla(240, 9%, 11%, 1);
+
+  --accent-color-1: hsla(225, 73%, 57%, 1);
+  --accent-color-2: hsla(225, 72%, 37%, 1);
+  --accent-color-3: hsla(52, 100%, 63%, 1);
+
+  --typefaces: 'IBM Plex Sans', 'Roboto', sans-serif;
+  --typefaces-mono: 'Fira Code', Consolas, Monaco, 'Andale Mono',
+    'Ubuntu Mono', monospace, serif;
+
+  --text-color-primary: hsla(225, 15%, 17%, 1);
+  --text-color-secondary: hsla(225, 15%, 47%, 1);
+  --text-color-ternary: rgb(218, 218, 218);
+
+  --font-size: 16px;
+  --line-height: calc(var(--font-size) * 1.6);
+
+  --bg-color-primary: hsla(0, 0%, 100%, 1);
+  --bg-color-secondary: hsla(240, 8%, 98%, 1);
+  --bg-color-hover: hsla(240, 8%, 95%, 1);
+
+  --border-color: hsla(240, 8%, 88%, 1);
+  --box-shadow: 0px 5px 10px 0px hsla(225, 15%, 17%, 0.1);
+  --outline-color: var(--accent-color-1);
+  --fill-color-accent: var(--accent-color-1);
+  --fill-color-default: hsla(225, 15%, 17%, 1);
+
+  --hero-grid-1: hsla(240, 9%, 88%, 1);
+  --hero-grid-2: hsla(240, 9%, 68%, 1);
+  --hero-grid-5: hsla(225, 31%, 20%, 1);
+  --hero-grid-6: hsla(225, 72%, 37%, 1);
+  --hero-text-accent: var(--accent-color-1);
+
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-s: 12px;
+  --spacing-m: 16px;
+  --spacing-ml: 20px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 40px;
+  --spacing-xxxl: 48px;
+  --spacing-xxxxl: 56px;
+
+  /*
+  Nord Theme by Arctic Ice Studio
+  https://nordtheme.com
+  */
+
+  --syntax-background-dark: hsla(225, 15%, 17%, 1);
+  --syntax-text-dark: #f8f8f2;
+  --syntax-comment-dark: #636f88;
+  --syntax-punctuation-dark: #81a1c1;
+  --syntax-property-dark: #81a1c1;
+  --syntax-number-dark: #b48ead;
+  --syntax-boolean-dark: #81a1c1;
+  --syntax-selector-dark: #a3be8c;
+  --syntax-operator-dark: #81a1c1;
+  --syntax-function-dark: #88c0d0;
+  --syntax-keyword-dark: #81a1c1;
+  --syntax-regex-dark: #ebcb8b;
+}
 
 * {
   box-sizing: border-box;
 }
 
 a {
-  color: $accent-color-1;
+  color: var(--accent-color-1);
   text-decoration: none;
 }
 
 code {
-  font-family: $typefaces-mono;
-  background: $bg-color-secondary;
+  font-family: var(--typefaces-mono);
+  background: var(--bg-color-secondary);
   padding: 2px;
   font-size: 1rem;
 }
@@ -22,54 +94,94 @@ code {
 
 blockquote {
   margin: 0;
-  padding: $spacing-m $spacing-xxl;
-  border-left: 4px solid $accent-color-1;
+  padding: var(--spacing-m) var(--spacing-xxl);
+  border-left: 4px solid var(--accent-color-1);
 
   & :is(p, h1, h2, h3, h4, h5) {
     margin: 0;
   }
 }
 
-// symbol[id^='icon-'] {
-//   fill: $accent-color-1;
-// }
 .icon {
   min-width: 20px;
-  fill: $accent-color-1;
+  fill: var(--fill-color-accent);
+}
+
+.icon_default {
+  min-width: 20px;
+  fill: var(--fill-color-default);
+  color: var(--fill-color-default);
+  stroke: var(--fill-color-default);
+}
+
+/* 
+  Dark Mode
+  See: https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/
+  Also see: https://fatihkalifa.com/dark-mode-web
+*/
+
+[data-theme='dark'] {
+  --text-color-primary: var(--color-gray-200);
+  --text-color-secondary: var(--color-gray-400);
+  --text-color-ternary: var(--color-gray-800);
+
+  --bg-color-primary: var(--black);
+  --bg-color-secondary: var(--color-gray-900);
+  --bg-color-hover: var(--color-gray-800);
+
+  --border-color: var(--color-gray-800);
+  --box-shadow: 0px 5px 10px 0px hsla(225, 15%, 17%, 0.1);
+  --outline-color: var(--accent-color-1);
+  --fill-color-accent: var(--accent-color-3);
+  --fill-color-default: var(--color-gray-100);
+
+  --hero-grid-1: var(--color-gray-800);
+  --hero-grid-2: var(--accent-color-2);
+  --hero-grid-5: var(--color-gray-800);
+  --hero-grid-6: var(--accent-color-2);
+  --hero-text-accent: var(--white);
+}
+
+/* 
+  Dark Mode User's preferences
+  How to simulate it: https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/accessibility/preferred-color-scheme-simulation
+*/
+
+@media (prefers-color-scheme: dark) {
 }
 
 /*
-* Outline focus
+  Outline focus by Adam Argyle (@argyleink)
 */
 
 @media (prefers-reduced-motion: no-preference) {
   :focus {
     transition: outline-offset 0.25s ease;
     outline-offset: 3px;
-    outline-color: $accent-color-1;
+    outline-color: var(--accent-color-1);
   }
 }
 
 /* 
-* Font scale configuration
-* See: https://type-scale.com/
+  Font scale configuration
+  See: https://type-scale.com/
 */
 
 html {
   font-size: 100%; /*16px*/
   padding: 0;
   margin: 0;
-  font-family: $typefaces;
+  font-family: var(--typefaces);
 }
 
 body {
   padding: 0;
   margin: 0;
-  background: $bg-color-primary;
-  font-family: $typefaces;
+  background: var(--bg-color-primary);
+  font-family: var(--typefaces);
   font-weight: 400;
-  line-height: $line-height;
-  color: $text-color-primary;
+  line-height: var(--line-height);
+  color: var(--text-color-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -85,7 +197,7 @@ h3,
 h4,
 h5 {
   margin: 3rem 0 1.38rem;
-  font-family: $typefaces;
+  font-family: var(--typefaces);
   font-weight: 600;
   line-height: 1.3;
 }
@@ -117,8 +229,8 @@ small,
 }
 
 /* 
-* Mouse in-out transition
-* See: https://codepen.io/argyleink/pen/poEjvpd
+  Mouse in-out transition
+  See: https://codepen.io/argyleink/pen/poEjvpd
 */
 a {
   position: relative;
@@ -141,7 +253,7 @@ a::before {
   right: 0;
   bottom: -3px;
   left: 0;
-  background: $accent-color-1;
+  background: var(--accent-color-1);
   height: 1.5px;
   z-index: -1;
   transition: transform 0.3s ease;

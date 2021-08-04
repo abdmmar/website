@@ -1,9 +1,20 @@
 import * as React from 'react'
 import Link from 'next/link'
+import {
+  Menu,
+  // MenuList,
+  MenuButton,
+  MenuItem,
+  MenuPopover,
+  MenuItems,
+} from '@reach/menu-button'
+import {positionRight} from '@reach/popover'
+import '@reach/menu-button/styles.css'
 
 import styles from './NavBar.module.scss'
 
 export default function NavBar() {
+  // const [theme, setTheme] = React.useState('auto')
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbar_menu}>
@@ -30,67 +41,36 @@ export default function NavBar() {
           </li>
         </ul>
       </div>
+      <div className={styles.navbar_theme}>
+        <Menu>
+          <MenuButton
+            className={styles.menu_btn}
+            aria-label="Open theme menu"
+          >
+            <svg
+              width="20px"
+              height="20px"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              focusable="false"
+            >
+              <use href="#icon-sun" className="icon_default"></use>
+            </svg>
+          </MenuButton>
+          <MenuPopover
+            className={styles.menu_popover}
+            position={positionRight}
+          >
+            <MenuItems className={styles.menu_items}>
+              <MenuItem onSelect={() => console.log('System')}>
+                System
+              </MenuItem>
+              <MenuItem onSelect={() => console.log('Light')}>Light</MenuItem>
+              <MenuItem onSelect={() => console.log('Dark')}>Dark</MenuItem>
+            </MenuItems>
+          </MenuPopover>
+        </Menu>
+      </div>
     </nav>
-  )
-}
-
-// eslint-disable-next-line no-unused-vars
-const MenuItem = ({title, children}) => {
-  const [toggle, setToggle] = React.useState(false)
-
-  const toggleMenu = () => {
-    setToggle(!toggle)
-  }
-
-  if (process.browser) {
-    document.addEventListener('click', (e) => {
-      if (!document.getElementById(`menu-${title}`).contains(e.target)) {
-        if (toggle === true) {
-          setToggle(!toggle)
-        }
-      }
-    })
-  }
-
-  const closeOnEscKey = (e) => {
-    if (e.keyCode === 27) {
-      if (toggle === true) {
-        setToggle(!toggle)
-      }
-    }
-  }
-
-  return (
-    <li
-      id={`menu-${title}`}
-      className={styles.menu_item}
-      onKeyUp={closeOnEscKey}
-    >
-      <button
-        className={styles.menu_item_btn}
-        onClick={toggleMenu}
-        aria-expanded={toggle}
-        aria-controls={`menu-item-${title}-dropdown`}
-        id={`menu-item-${title}-btn`}
-      >
-        <span className={styles.menu_item_text}>{title}</span>
-        <svg
-          width="18px"
-          height="18px"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          className={styles.icon_chevron_down}
-        >
-          <use href="icon-chevron-down" />
-        </svg>
-      </button>
-      <ul
-        id={`menu-item-${title}-dropdown`}
-        className={styles.dropdown_menu}
-        aria-hidden={!toggle}
-      >
-        {children}
-      </ul>
-    </li>
   )
 }

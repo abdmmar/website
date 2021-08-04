@@ -1,13 +1,11 @@
-@import '/styles/variables';
-
 .container {
   display: grid;
   grid-template-columns: min-content 1fr;
   align-items: self-start;
-  gap: $spacing-m;
-  padding: $spacing-s;
-  margin: $spacing-m 0;
-  background-color: $bg-color-secondary;
+  gap: var(--spacing-m);
+  padding: var(--spacing-s);
+  margin: var(--spacing-m) 0;
+  background-color: var(--bg-color-secondary);
 
   & p {
     margin: 0;

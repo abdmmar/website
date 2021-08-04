@@ -24,6 +24,22 @@ function MyApp({Component, pageProps}) {
             d="M0.713627 18.8786L14.047 32.2119H15.9323L29.2656 18.8786L27.3803 16.9932L16.3216 28.0492L16.3216 0.211914L13.655 0.211914L13.655 28.0519L2.59896 16.9906L0.713627 18.8759V18.8786Z"
           />
         </symbol>
+        <symbol id="icon-sun">
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+          ></path>
+        </symbol>
+        <symbol id="icon-moon">
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+          ></path>
+        </symbol>
       </svg>
     </>
   )
