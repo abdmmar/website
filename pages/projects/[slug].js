@@ -3,7 +3,7 @@ import Image from 'next/image'
 import {getMDXComponent} from 'mdx-bundler/client'
 
 import Head from '@components/Head'
-import {NavBar} from '@components/Layout'
+import {NavBar, Footer} from '@components/Layout'
 import {Callout, Paragraph, Link} from '@components/MDX'
 import {getAllPosts, getSinglePost} from '@lib/mdx'
 
@@ -16,6 +16,8 @@ export default function DetailProjects({code, frontmatter: meta, slug}) {
     () => getMDXComponent(code, {Callout}),
     [code],
   )
+
+  const [category, ...tags] = meta.tags
 
   return (
     <div className={styles.container}>
@@ -32,51 +34,31 @@ export default function DetailProjects({code, frontmatter: meta, slug}) {
 
       <main className={styles.main}>
         <div className={styles.hero_container}>
-          <div className={`${styles.hero_row} ${styles.row_one}`}>
-            <div></div>
-            <div className={styles.hero_content}>
-              <Image
-                src={meta.hero_image}
-                alt={meta.hero_alt}
-                objectFit="cover"
-                height="450px"
-                width="900px"
-              />
+          <div className={styles.hero}>
+            <div className={styles.hero_header}>
+              <span>{category}</span>
+              <span>{meta.date}</span>
             </div>
-            <div></div>
-          </div>
-          <div className={`${styles.hero_row} ${styles.row_two}`}>
-            <div></div>
+            <h2 className={styles.hero_title}>{meta.title}</h2>
+            <Image
+              src={meta.hero_image}
+              alt={meta.hero_alt}
+              objectFit="cover"
+              height="450px"
+              width="900px"
+            />
             <div className={styles.hero_info}>
-              <h2 className={styles.info_title}>{meta.title}</h2>
-              <dl className={styles.info_detail}>
-                <div>
-                  <dt>Repository</dt>
-                  <dd>
-                    <a
-                      href={meta.repository}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Github
-                    </a>
-                  </dd>
-                </div>
-                <div>
-                  <dt>Website</dt>
-                  <dd>
-                    <a href={meta.website} target="_blank" rel="noreferrer">
-                      {meta.title}
-                    </a>
-                  </dd>
-                </div>
-                <div>
-                  <dt>Tags</dt>
-                  <dd>{meta.tags.join(', ')}</dd>
-                </div>
-              </dl>
+              <span>
+                <a href={meta.repository} target="_blank" rel="noreferrer">
+                  Github
+                </a>{' '}
+                •{' '}
+                <a href={meta.website} target="_blank" rel="noreferrer">
+                  {meta.title}
+                </a>
+              </span>
+              <span>{tags.join(', ')}</span>
             </div>
-            <div></div>
           </div>
         </div>
 
@@ -96,7 +78,28 @@ export default function DetailProjects({code, frontmatter: meta, slug}) {
             </article>
           </div>
         </div>
+
+        <div className={styles.footer_content_container}>
+          <div className={styles.footer_sharing}>
+            <span>Thanks for reading!</span>
+            <hr />
+            <button>
+              Share this article
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 30 33"
+                fill="white"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <use href="#icon-arrow" className="icon_default"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
       </main>
+
+      <Footer />
     </div>
   )
 }
