@@ -51,13 +51,10 @@ export default function NavBar() {
               width="20px"
               height="20px"
               xmlns="http://www.w3.org/2000/svg"
-              fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
-              color="#000000"
               focusable="false"
             >
-              <use href="#icon-sun"></use>
+              <use href="#icon-sun" className="icon_default"></use>
             </svg>
           </MenuButton>
           <MenuPopover

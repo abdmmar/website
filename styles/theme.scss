@@ -5,13 +5,11 @@
  * Ported for PrismJS by Zane Hitchcoxc (@zwhitchcox) and Gabriel Ramos (@gabrieluizramos)
  */
 
-@import './variables.scss';
-
 code[class*='language-'],
 pre[class*='language-'] {
   color: #f8f8f2;
   background: none;
-  font-family: $typefaces-mono;
+  font-family: var(--typefaces-mono);
   font-size: 0.875rem;
   text-align: left;
   white-space: pre;
@@ -31,13 +29,13 @@ pre[class*='language-'] {
 /* Code blocks */
 pre[class*='language-'] {
   padding: 1em;
-  margin: $spacing-m 0;
+  margin: var(--spacing-m) 0;
   overflow: auto;
 }
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  background: $syntax-background-dark;
+  background: var(--syntax-background-dark);
 }
 
 /* Inline code */

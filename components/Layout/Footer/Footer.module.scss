@@ -1,5 +1,3 @@
-@import '/styles/variables.scss';
-
 .footer {
   width: 100%;
   display: grid;
@@ -13,15 +11,15 @@
   grid-auto-flow: column;
   justify-content: space-between;
   align-items: center;
-  padding: $spacing-xl $spacing-m;
-  border-top: 1px solid $border-color;
+  padding: var(--spacing-xl) var(--spacing-m);
+  border-top: 1px solid var(--border-color);
 }
 
 .social {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: min-content;
-  gap: $spacing-l;
+  gap: var(--spacing-l);
 }
 
 .logo {
@@ -32,7 +30,7 @@
   & .square {
     width: 25px;
     height: 25px;
-    background-color: $accent-color-1;
+    background-color: var(--accent-color-1);
   }
 }
 
@@ -43,39 +41,39 @@
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: min-content;
-  gap: $spacing-l;
+  gap: var(--spacing-l);
   font-size: 1.125rem;
 
   & a {
-    color: #818890;
+    color: var(--text-color-secondary);
     transition: color 100ms ease-out;
   }
 
   & a:hover {
-    color: $text-color-primary;
+    color: var(--text-color-primary);
   }
 
   & a::before {
-    background: $text-color-primary;
+    background: var(--text-color-primary);
   }
 }
 
 .back_to_top {
   display: grid;
   grid-template-columns: max-content max-content;
-  gap: $spacing-s;
+  gap: var(--spacing-s);
   align-items: center;
   font-size: 1rem;
-  padding: $spacing-xs $spacing-s;
-  border: 1px solid $border-color;
-  color: $text-color-primary;
+  padding: var(--spacing-xs) var(--spacing-s);
+  border: 1px solid var(--border-color);
+  color: var(--text-color-primary);
 
   & svg {
     transform: rotate(180deg);
   }
 
   &::before {
-    background: $border-color;
+    background: var(--border-color);
     height: calc(100% + 1px);
     bottom: -1px;
   }
