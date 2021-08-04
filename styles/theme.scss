@@ -226,7 +226,7 @@ pre > code.highlight {
 
   :not(pre) > code[class*='language-'],
   pre[class*='language-'] {
-    background: var(--syntax-background-dark);
+    background: var(--bg-color-secondary);
   }
 
   /* Inline code */
@@ -352,7 +352,7 @@ pre > code.highlight {
 
   :not(pre) > code[class*='language-'],
   pre[class*='language-'] {
-    background: var(--syntax-background-dark);
+    background: var(--bg-color-secondary);
   }
 
   /* Inline code */
