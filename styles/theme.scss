@@ -1,22 +1,19 @@
-/**
- * Nord Theme Originally by Arctic Ice Studio
- * https://nordtheme.com
- *
- * Ported for PrismJS by Zane Hitchcoxc (@zwhitchcox) and Gabriel Ramos (@gabrieluizramos)
- */
-
+/*
+Name:       Base16 Atelier Sulphurpool Light
+Author:     Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/sulphurpool)
+Prism template by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/prism/)
+Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
+*/
 code[class*='language-'],
 pre[class*='language-'] {
-  color: #f8f8f2;
-  background: none;
   font-family: var(--typefaces-mono);
-  font-size: 0.875rem;
+  font-size: 14px;
+  line-height: 1.375;
+  direction: ltr;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
-  word-wrap: normal;
-  line-height: 1.5;
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
@@ -24,89 +21,125 @@ pre[class*='language-'] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+  background: var(--color-gray-100);
+  color: #5e6687;
+}
+
+pre[class*='language-'] {
+  border: 1px solid var(--border-color);
+}
+
+pre > code[class*='language-'] {
+  font-size: 1em;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+  text-shadow: none;
+  background: #dfe2f1;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+  text-shadow: none;
+  background: #dfe2f1;
 }
 
 /* Code blocks */
 pre[class*='language-'] {
   padding: 1em;
-  margin: var(--spacing-m) 0;
+  margin: 0.5em 0;
   overflow: auto;
-}
-
-:not(pre) > code[class*='language-'],
-pre[class*='language-'] {
-  background: var(--syntax-background-dark);
 }
 
 /* Inline code */
 :not(pre) > code[class*='language-'] {
   padding: 0.1em;
-  white-space: normal;
+  border-radius: 0.3em;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #636f88;
+  color: #898ea4;
 }
 
 .token.punctuation {
-  color: #81a1c1;
+  color: #5e6687;
 }
 
-.namespace {
+.token.namespace {
   opacity: 0.7;
 }
 
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-  color: #81a1c1;
-}
-
-.token.number {
-  color: #b48ead;
-}
-
-.token.boolean {
-  color: #81a1c1;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-  color: #a3be8c;
-}
-
 .token.operator,
+.token.boolean,
+.token.number {
+  color: #c76b29;
+}
+
+.token.property {
+  color: #c08b30;
+}
+
+.token.tag {
+  color: #3d8fd1;
+}
+
+.token.string {
+  color: #22a2c9;
+}
+
+.token.selector {
+  color: #6679cc;
+}
+
+.token.attr-name {
+  color: #c76b29;
+}
+
 .token.entity,
 .token.url,
 .language-css .token.string,
-.style .token.string,
-.token.variable {
-  color: #81a1c1;
+.style .token.string {
+  color: #22a2c9;
 }
 
-.token.atrule,
 .token.attr-value,
-.token.function,
-.token.class-name {
-  color: #88c0d0;
+.token.keyword,
+.token.control,
+.token.directive,
+.token.unit {
+  color: #ac9739;
 }
 
-.token.keyword {
-  color: #81a1c1;
-}
-
+.token.statement,
 .token.regex,
-.token.important {
-  color: #ebcb8b;
+.token.atrule {
+  color: #22a2c9;
+}
+
+.token.placeholder,
+.token.variable {
+  color: #3d8fd1;
+}
+
+.token.deleted {
+  text-decoration: line-through;
+}
+
+.token.inserted {
+  border-bottom: 1px dotted #202746;
+  text-decoration: none;
+}
+
+.token.italic {
+  font-style: italic;
 }
 
 .token.important,
@@ -114,10 +147,295 @@ pre[class*='language-'] {
   font-weight: bold;
 }
 
-.token.italic {
-  font-style: italic;
+.token.important {
+  color: #c94922;
 }
 
 .token.entity {
   cursor: help;
+}
+
+pre > code.highlight {
+  outline: 0.4em solid #c94922;
+  outline-offset: 0.4em;
+}
+
+/* overrides color-values for the Line Numbers plugin
+ * http://prismjs.com/plugins/line-numbers/
+ */
+.line-numbers .line-numbers-rows {
+  border-right-color: #dfe2f1;
+}
+
+.line-numbers-rows > span:before {
+  color: #979db4;
+}
+
+/* overrides color-values for the Line Highlight plugin
+ * http://prismjs.com/plugins/line-highlight/
+ */
+.line-highlight {
+  background: rgba(107, 115, 148, 0.2);
+  background: -webkit-linear-gradient(
+    left,
+    rgba(107, 115, 148, 0.2) 70%,
+    rgba(107, 115, 148, 0)
+  );
+  background: linear-gradient(
+    to right,
+    rgba(107, 115, 148, 0.2) 70%,
+    rgba(107, 115, 148, 0)
+  );
+}
+
+[data-theme='dark'] {
+  /**
+   * Nord Theme Originally by Arctic Ice Studio
+   * https://nordtheme.com
+   *
+   * Ported for PrismJS by Zane Hitchcoxc (@zwhitchcox) and Gabriel Ramos (@gabrieluizramos)
+   */
+
+  code[class*='language-'],
+  pre[class*='language-'] {
+    color: #f8f8f2;
+    background: none;
+    font-family: var(--typefaces-mono);
+    font-size: 0.875rem;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  /* Code blocks */
+  pre[class*='language-'] {
+    padding: 1em;
+    margin: var(--spacing-m) 0;
+    overflow: auto;
+  }
+
+  :not(pre) > code[class*='language-'],
+  pre[class*='language-'] {
+    background: var(--syntax-background-dark);
+  }
+
+  /* Inline code */
+  :not(pre) > code[class*='language-'] {
+    padding: 0.1em;
+    white-space: normal;
+  }
+
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: #636f88;
+  }
+
+  .token.punctuation {
+    color: #81a1c1;
+  }
+
+  .namespace {
+    opacity: 0.7;
+  }
+
+  .token.property,
+  .token.tag,
+  .token.constant,
+  .token.symbol,
+  .token.deleted {
+    color: #81a1c1;
+  }
+
+  .token.number {
+    color: #b48ead;
+  }
+
+  .token.boolean {
+    color: #81a1c1;
+  }
+
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.inserted {
+    color: #a3be8c;
+  }
+
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string,
+  .token.variable {
+    color: #81a1c1;
+  }
+
+  .token.atrule,
+  .token.attr-value,
+  .token.function,
+  .token.class-name {
+    color: #88c0d0;
+  }
+
+  .token.keyword {
+    color: #81a1c1;
+  }
+
+  .token.regex,
+  .token.important {
+    color: #ebcb8b;
+  }
+
+  .token.important,
+  .token.bold {
+    font-weight: bold;
+  }
+
+  .token.italic {
+    font-style: italic;
+  }
+
+  .token.entity {
+    cursor: help;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  /**
+   * Nord Theme Originally by Arctic Ice Studio
+   * https://nordtheme.com
+   *
+   * Ported for PrismJS by Zane Hitchcoxc (@zwhitchcox) and Gabriel Ramos (@gabrieluizramos)
+   */
+
+  code[class*='language-'],
+  pre[class*='language-'] {
+    color: #f8f8f2;
+    background: none;
+    font-family: var(--typefaces-mono);
+    font-size: 0.875rem;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  /* Code blocks */
+  pre[class*='language-'] {
+    padding: 1em;
+    margin: var(--spacing-m) 0;
+    overflow: auto;
+  }
+
+  :not(pre) > code[class*='language-'],
+  pre[class*='language-'] {
+    background: var(--syntax-background-dark);
+  }
+
+  /* Inline code */
+  :not(pre) > code[class*='language-'] {
+    padding: 0.1em;
+    white-space: normal;
+  }
+
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: #636f88;
+  }
+
+  .token.punctuation {
+    color: #81a1c1;
+  }
+
+  .namespace {
+    opacity: 0.7;
+  }
+
+  .token.property,
+  .token.tag,
+  .token.constant,
+  .token.symbol,
+  .token.deleted {
+    color: #81a1c1;
+  }
+
+  .token.number {
+    color: #b48ead;
+  }
+
+  .token.boolean {
+    color: #81a1c1;
+  }
+
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.inserted {
+    color: #a3be8c;
+  }
+
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string,
+  .token.variable {
+    color: #81a1c1;
+  }
+
+  .token.atrule,
+  .token.attr-value,
+  .token.function,
+  .token.class-name {
+    color: #88c0d0;
+  }
+
+  .token.keyword {
+    color: #81a1c1;
+  }
+
+  .token.regex,
+  .token.important {
+    color: #ebcb8b;
+  }
+
+  .token.important,
+  .token.bold {
+    font-weight: bold;
+  }
+
+  .token.italic {
+    font-style: italic;
+  }
+
+  .token.entity {
+    cursor: help;
+  }
 }

@@ -19,6 +19,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
             rel="stylesheet"
           />
+          <meta name="color-scheme" content="light dark"></meta>
           <script
             dangerouslySetInnerHTML={{
               __html: `
