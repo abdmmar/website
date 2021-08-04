@@ -2,7 +2,6 @@ import * as React from 'react'
 import Link from 'next/link'
 import {
   Menu,
-  // MenuList,
   MenuButton,
   MenuItem,
   MenuPopover,
@@ -14,7 +13,31 @@ import '@reach/menu-button/styles.css'
 import styles from './NavBar.module.scss'
 
 export default function NavBar() {
-  // const [theme, setTheme] = React.useState('auto')
+  const [theme, setTheme] = React.useState(
+    process.browser && localStorage.getItem('theme') != null
+      ? localStorage.getItem('theme')
+      : 'system',
+  )
+
+  React.useEffect(() => {
+    if (process.browser) {
+      const css = disableTransition()
+
+      if (theme === 'dark') {
+        enableTheme(theme)
+        redraw(css)
+        return
+      }
+
+      disableTheme()
+      redraw(css)
+    }
+  }, [theme])
+
+  const selectTheme = (preference) => {
+    setTheme(preference)
+  }
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbar_menu}>
@@ -62,15 +85,52 @@ export default function NavBar() {
             position={positionRight}
           >
             <MenuItems className={styles.menu_items}>
-              <MenuItem onSelect={() => console.log('System')}>
+              <MenuItem onSelect={() => selectTheme('system')}>
                 System
               </MenuItem>
-              <MenuItem onSelect={() => console.log('Light')}>Light</MenuItem>
-              <MenuItem onSelect={() => console.log('Dark')}>Dark</MenuItem>
+              <MenuItem onSelect={() => selectTheme('light')}>Light</MenuItem>
+              <MenuItem onSelect={() => selectTheme('dark')}>Dark</MenuItem>
             </MenuItems>
           </MenuPopover>
         </Menu>
       </div>
     </nav>
   )
+}
+
+const enableTheme = (theme) => {
+  document.documentElement.setAttribute('data-theme', theme)
+  localStorage.setItem('theme', theme)
+}
+
+const disableTheme = () => {
+  document.documentElement.removeAttribute('data-theme')
+  localStorage.removeItem('theme')
+}
+
+/* 
+  Disable theme transitions
+  See: https://paco.sh/blog/disable-theme-transitions
+*/
+const disableTransition = () => {
+  const css = document.createElement('style')
+  css.appendChild(
+    document.createTextNode(
+      `* {
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -o-transition: none !important;
+        -ms-transition: none !important;
+        transition: none !important;
+      }`,
+    ),
+  )
+  document.head.appendChild(css)
+  return css
+}
+
+// Calling getComputedStyle forces the browser to redraw
+const redraw = (cssElem) => {
+  window.getComputedStyle(cssElem).opacity
+  document.head.removeChild(cssElem)
 }

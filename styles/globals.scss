@@ -52,24 +52,6 @@
   --spacing-xxl: 40px;
   --spacing-xxxl: 48px;
   --spacing-xxxxl: 56px;
-
-  /*
-  Nord Theme by Arctic Ice Studio
-  https://nordtheme.com
-  */
-
-  --syntax-background-dark: hsla(225, 15%, 17%, 1);
-  --syntax-text-dark: #f8f8f2;
-  --syntax-comment-dark: #636f88;
-  --syntax-punctuation-dark: #81a1c1;
-  --syntax-property-dark: #81a1c1;
-  --syntax-number-dark: #b48ead;
-  --syntax-boolean-dark: #81a1c1;
-  --syntax-selector-dark: #a3be8c;
-  --syntax-operator-dark: #81a1c1;
-  --syntax-function-dark: #88c0d0;
-  --syntax-keyword-dark: #81a1c1;
-  --syntax-regex-dark: #ebcb8b;
 }
 
 * {
@@ -95,7 +77,7 @@ code {
 blockquote {
   margin: 0;
   padding: var(--spacing-m) var(--spacing-xxl);
-  border-left: 4px solid var(--accent-color-1);
+  border-left: 4px solid var(--fill-color-accent);
 
   & :is(p, h1, h2, h3, h4, h5) {
     margin: 0;
@@ -140,6 +122,10 @@ blockquote {
   --hero-grid-5: var(--color-gray-800);
   --hero-grid-6: var(--accent-color-2);
   --hero-text-accent: var(--white);
+
+  img {
+    filter: brightness(0.8) contrast(1.2);
+  }
 }
 
 /* 
@@ -148,6 +134,31 @@ blockquote {
 */
 
 @media (prefers-color-scheme: dark) {
+  body {
+    --text-color-primary: var(--color-gray-200);
+    --text-color-secondary: var(--color-gray-400);
+    --text-color-ternary: var(--color-gray-800);
+
+    --bg-color-primary: var(--black);
+    --bg-color-secondary: var(--color-gray-900);
+    --bg-color-hover: var(--color-gray-800);
+
+    --border-color: var(--color-gray-800);
+    --box-shadow: 0px 5px 10px 0px hsla(225, 15%, 17%, 0.1);
+    --outline-color: var(--accent-color-1);
+    --fill-color-accent: var(--accent-color-3);
+    --fill-color-default: var(--color-gray-100);
+
+    --hero-grid-1: var(--color-gray-800);
+    --hero-grid-2: var(--accent-color-2);
+    --hero-grid-5: var(--color-gray-800);
+    --hero-grid-6: var(--accent-color-2);
+    --hero-text-accent: var(--white);
+  }
+
+  :root:not([data-theme]) img {
+    filter: brightness(0.8) contrast(1.2);
+  }
 }
 
 /*
@@ -253,7 +264,7 @@ a::before {
   right: 0;
   bottom: -3px;
   left: 0;
-  background: var(--accent-color-1);
+  background: var(--fill-color-accent);
   height: 1.5px;
   z-index: -1;
   transition: transform 0.3s ease;
