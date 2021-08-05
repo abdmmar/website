@@ -118,27 +118,4 @@
     border: none;
     background: var(--border-color);
   }
-
-  & button {
-    border: none;
-    color: var(--text-color-primary);
-    background-color: var(--bg-color-primary);
-    border: 2px solid var(--border-color);
-    padding: var(--spacing-s) var(--spacing-m);
-    display: grid;
-    grid-auto-flow: column;
-    gap: var(--spacing-s);
-    place-items: center;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 150ms ease-out;
-
-    & svg {
-      transform: rotate(225deg);
-    }
-
-    &:hover {
-      background-color: var(--bg-color-secondary);
-    }
-  }
 }

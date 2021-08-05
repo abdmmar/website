@@ -1,0 +1,96 @@
+.button {
+  border: none;
+  color: var(--text-color-primary);
+  background-color: var(--bg-color-primary);
+  border: 2px solid var(--border-color);
+  padding: var(--spacing-s) var(--spacing-m);
+  display: grid;
+  grid-auto-flow: column;
+  gap: var(--spacing-s);
+  place-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 150ms ease-out;
+
+  & svg {
+    transform: rotate(225deg);
+  }
+
+  &:hover {
+    background-color: var(--bg-color-secondary);
+  }
+}
+
+.dialog_header {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-m);
+}
+
+.dialog_title {
+  margin: 0;
+}
+
+.dialog_close_btn {
+  border: 0;
+  color: var(--text-color-primary);
+  background-color: var(--bg-color-primary);
+  padding: var(--spacing-xs) var(--spacing-s);
+  border: 1px solid var(--border-color);
+  font-family: var(--typefaces);
+  font-size: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--bg-color-secondary);
+  }
+}
+
+.dialog_link {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-m);
+  padding: 0;
+  margin: 0;
+  margin-block: var(--spacing-m);
+
+  & li button {
+    border: 0;
+    width: 100%;
+    cursor: pointer;
+    color: var(--text-color-primary);
+    background-color: var(--bg-color-primary);
+    padding: var(--spacing-s) var(--spacing-m);
+    border: 1px solid var(--border-color);
+    font-family: var(--typefaces);
+    font-size: 1rem;
+
+    &:hover {
+      background-color: var(--bg-color-secondary);
+    }
+  }
+}
+
+.dialog_copy_btn {
+  border: 0;
+  width: 100%;
+  cursor: pointer;
+  color: var(--text-color-primary);
+  background-color: var(--bg-color-primary);
+  padding: var(--spacing-s) var(--spacing-m);
+  border: 1px solid var(--border-color);
+  font-family: var(--typefaces);
+  font-size: 1rem;
+
+  &:hover {
+    background-color: var(--bg-color-secondary);
+  }
+}
+
+.dialog_message {
+  text-align: center;
+  margin-bottom: 0;
+}

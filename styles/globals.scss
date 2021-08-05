@@ -96,6 +96,18 @@ blockquote {
   stroke: var(--fill-color-default);
 }
 
+[data-reach-dialog-overlay] {
+  display: grid;
+  place-items: center;
+}
+
+[data-reach-dialog-content] {
+  margin: 0;
+  width: 100%;
+  max-width: 500px;
+  background: var(--bg-color-primary) !important;
+}
+
 /* 
   Dark Mode
   See: https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/
