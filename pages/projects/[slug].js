@@ -3,6 +3,7 @@ import Image from 'next/image'
 import {getMDXComponent} from 'mdx-bundler/client'
 
 import Head from '@components/Head'
+import {Share} from '@components/Button'
 import {NavBar, Footer} from '@components/Layout'
 import {Callout, Paragraph, Link} from '@components/MDX'
 import {getAllPosts, getSinglePost} from '@lib/mdx'
@@ -83,18 +84,15 @@ export default function DetailProjects({code, frontmatter: meta, slug}) {
           <div className={styles.footer_sharing}>
             <span>Thanks for reading!</span>
             <hr />
-            <button>
-              Share this article
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 30 33"
-                fill="white"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <use href="#icon-arrow" className="icon_default"></use>
-              </svg>
-            </button>
+            <Share
+              title={process.browser ? document.title : meta.title}
+              description={meta.description}
+              url={
+                process.browser
+                  ? document.location.href
+                  : 'https://abdmmar.tech/projects/' + slug
+              }
+            />
           </div>
         </div>
       </main>
