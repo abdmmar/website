@@ -14,23 +14,25 @@ export default function Share({
   const [isCopied, setCopied] = React.useState(false)
   const [showDialog, setShowDialog] = React.useState(false)
 
-  const handleShare = () => {
+  const handleShare = async () => {
     /* 
       Web Share API
       See: https://css-tricks.com/how-to-use-the-web-share-api/
       Also see: https://css-tricks.com/simple-social-sharing-links/
     */
     if (navigator.share) {
-      navigator
-        .share({
+      try {
+        await navigator.share({
           title: title,
           text: description,
           url: url,
         })
-        .then(() => {
-          setCopied(true)
-          console.log('Thanks for sharing!')
-        })
+        setCopied(true)
+        console.log('Thanks for sharing!')
+      } catch (err) {
+        console.error(err)
+        open()
+      }
     } else {
       open()
     }
