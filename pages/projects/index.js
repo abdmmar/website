@@ -58,8 +58,8 @@ export default function Projects({posts}) {
                         <Card
                           key={posts[1].slug}
                           title={posts[1].frontmatter.title}
-                          description={''}
-                          tag={posts[1].frontmatter.tags[1]}
+                          description={posts[0].frontmatter.description}
+                          tag={posts[1].frontmatter.tags[0]}
                           date={posts[1].frontmatter.date}
                           image={posts[1].frontmatter.hero_image}
                           imageWidth="320px"
