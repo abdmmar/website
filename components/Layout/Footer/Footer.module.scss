@@ -13,6 +13,7 @@
   align-items: center;
   padding: var(--spacing-xl) var(--spacing-m);
   border-top: 1px solid var(--border-color);
+  gap: var(--spacing-m);
 }
 
 .social {
@@ -76,5 +77,23 @@
     background: var(--border-color);
     height: calc(100% + 1px);
     bottom: -1px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .container {
+    grid-auto-flow: row;
+    justify-content: initial;
+    gap: var(--spacing-xl);
+  }
+
+  .back_to_top {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .social {
+    grid-auto-flow: row;
   }
 }
