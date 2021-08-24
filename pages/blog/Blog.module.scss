@@ -38,11 +38,13 @@
   grid-auto-flow: column;
   align-items: center;
   justify-content: space-between;
+  gap: var(--spacing-m);
 }
 
 .blog_header_title {
   margin: 0;
 }
+
 .blog_header_desc {
   max-width: 350px;
   margin: 0;
@@ -53,6 +55,16 @@
 
 .blog_posts {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   gap: var(--spacing-l);
+}
+
+@media screen and (max-width: 480px) {
+  .blog_header {
+    grid-auto-flow: row;
+  }
+
+  .blog_header_desc {
+    max-width: 100%;
+  }
 }
