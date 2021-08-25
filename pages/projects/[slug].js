@@ -42,8 +42,8 @@ export default function DetailProjects({code, frontmatter: meta, slug}) {
             </div>
             <h2 className={styles.hero_title}>{meta.title}</h2>
             <Image
-              src={meta.hero_image}
-              alt={meta.hero_alt}
+              src={meta.image}
+              alt={meta.image_alt}
               objectFit="cover"
               height="450px"
               width="900px"

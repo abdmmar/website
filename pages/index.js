@@ -6,7 +6,6 @@ import {NavBar, Footer} from '@components/Layout'
 import {getAllPosts} from '@lib/mdx'
 import useWindowSize from '@hooks/useWindowSize'
 
-import ImgBlue from '@public/Blue.jpg'
 import styles from './Index.module.scss'
 
 export default function Home({posts}) {
@@ -82,41 +81,36 @@ export default function Home({posts}) {
             <div className={styles.projects_content}>
               <div className={styles.projects_main_content}>
                 <Card
-                  title="Koleksi Sinema Indonesia"
-                  description="Website sederhana yang berfungsi untuk mencari sinema-sinema
-                  Indonesia terkini, dibangun menggunakan Web Component dan
-                  TailwindCSS."
-                  tag="Web"
-                  date="23 Feb 2021"
-                  image="/Blue.jpg"
-                  imageWidth="500px"
-                  imageHeight="300px"
-                  link="/blog/koleksi-sinema-indonesia"
+                  title={posts?.projects[0].frontmatter.title}
+                  description={posts?.projects[0].frontmatter.description}
+                  tag={posts?.projects[0].frontmatter.tags[0]}
+                  date={posts?.projects[0].frontmatter.date}
+                  image={posts?.projects[0].frontmatter.image}
+                  imageAlt={posts?.projects[0].frontmatter.image_alt}
+                  link={
+                    posts?.projects[0].frontmatter.link == null
+                      ? `/projects/${posts?.projects[0].slug}`
+                      : posts?.projects[0].frontmatter.link
+                  }
                 />
               </div>
               <div className={styles.projects_aside_content}>
-                <Card
-                  title="Cari Karya Seni"
-                  description="Simple web app to find any art from Harvard Art Museum."
-                  tag="Web"
-                  date="2020"
-                  link="/blog/koleksi-sinema-indonesia"
-                />
-                <Card
-                  title="Bi-weekly Poster"
-                  description="Bi-weekly poster that aims to train sensibility in graphic
-                  design"
-                  tag="Design"
-                  date="2020"
-                  link="/blog/koleksi-sinema-indonesia"
-                />
-                <Card
-                  title="Tudu"
-                  description="Penanda laman sederhana"
-                  tag="API"
-                  date="2020"
-                  link="/blog/koleksi-sinema-indonesia"
-                />
+                {posts?.projects
+                  ?.slice(1, 3)
+                  .map(({slug, frontmatter: meta}) => {
+                    return (
+                      <Card
+                        key={slug}
+                        title={meta.title}
+                        description={''}
+                        tag={meta.tags[0]}
+                        date={meta.date}
+                        link={
+                          meta.link == null ? `/projects/${slug}` : meta.link
+                        }
+                      />
+                    )
+                  })}
               </div>
             </div>
             {windowWidth <= 768 ? (
@@ -163,7 +157,7 @@ export default function Home({posts}) {
               </Link>
             </div>
             <div className={styles.blog_content}>
-              {posts.map(({slug, frontmatter: meta}) => {
+              {posts?.blog?.slice(0, 3)?.map(({slug, frontmatter: meta}) => {
                 return (
                   <Card
                     key={slug}
@@ -171,25 +165,12 @@ export default function Home({posts}) {
                     description={''}
                     tag={meta.tags[0]}
                     date={meta.date}
-                    image={ImgBlue}
+                    image={meta.image}
+                    imageAlt={meta.image_alt}
                     link={meta.link == null ? `/blog/${slug}` : meta.link}
                   />
                 )
               })}
-              <Card
-                title="Sedikit yang saya tau tentang teknologi"
-                tag="API"
-                date="2020"
-                image={ImgBlue}
-                link="/blog/koleksi-sinema-indonesia"
-              />
-              <Card
-                title="Ulasan: A Common Sense Guide to Algorithm and Data Structure"
-                tag="API"
-                date="2020"
-                image={ImgBlue}
-                link="/blog/koleksi-sinema-indonesia"
-              />
             </div>
             {windowWidth <= 768 ? (
               <Link href="/projects">
@@ -218,8 +199,10 @@ export default function Home({posts}) {
 }
 
 export async function getStaticProps() {
-  const posts = getAllPosts('blog')
+  const blog = getAllPosts('blog')
+  const projects = getAllPosts('projects')
+
   return {
-    props: {posts},
+    props: {posts: {blog, projects}},
   }
 }
