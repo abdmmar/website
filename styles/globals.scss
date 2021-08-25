@@ -36,10 +36,6 @@
   --fill-color-accent: var(--accent-color-1);
   --fill-color-default: hsla(225, 15%, 17%, 1);
 
-  --hero-grid-1: hsla(240, 9%, 88%, 1);
-  --hero-grid-2: hsla(240, 9%, 68%, 1);
-  --hero-grid-5: hsla(225, 31%, 20%, 1);
-  --hero-grid-6: hsla(225, 72%, 37%, 1);
   --hero-text-accent: var(--accent-color-1);
 
   --spacing-xxs: 4px;
@@ -129,10 +125,6 @@ blockquote {
   --fill-color-accent: var(--accent-color-3);
   --fill-color-default: var(--color-gray-100);
 
-  --hero-grid-1: var(--color-gray-800);
-  --hero-grid-2: var(--accent-color-2);
-  --hero-grid-5: var(--color-gray-800);
-  --hero-grid-6: var(--accent-color-2);
   --hero-text-accent: var(--white);
 
   img {
@@ -161,10 +153,6 @@ blockquote {
     --fill-color-accent: var(--accent-color-3);
     --fill-color-default: var(--color-gray-100);
 
-    --hero-grid-1: var(--color-gray-800);
-    --hero-grid-2: var(--accent-color-2);
-    --hero-grid-5: var(--color-gray-800);
-    --hero-grid-6: var(--accent-color-2);
     --hero-text-accent: var(--white);
   }
 
@@ -182,6 +170,10 @@ blockquote {
     transition: outline-offset 0.25s ease;
     outline-offset: 3px;
     outline-color: var(--accent-color-1);
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 }
 

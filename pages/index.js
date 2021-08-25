@@ -22,8 +22,7 @@ export default function Home({posts}) {
 
       <main className={styles.main}>
         <div className={styles.hero_container}>
-          <div className={styles.hero_grid_one}>
-            <div className={styles.col}></div>
+          <div className={styles.hero}>
             <div className={styles.hero_content}>
               <div className={styles.hero_desc}>
                 <h2 className={styles.hero_desc_title}>
@@ -37,16 +36,14 @@ export default function Home({posts}) {
                 </h2>
               </div>
             </div>
-            <div className={styles.col}></div>
           </div>
-          <div className={styles.hero_grid_two}>
-            <div className={styles.col}></div>
+          <div className={styles.hero_info}>
             <div className={styles.hero_cta}>
               <a href="#projects" className={styles.hero_cta_link}>
-                <h3 className={styles.hero_cta_link_text}>Learn more</h3>
+                <p className={styles.hero_cta_link_text}>Learn more</p>
                 <span>
                   <svg
-                    width="30"
+                    width="25"
                     height="33"
                     viewBox="0 0 30 33"
                     fill="white"
@@ -57,7 +54,6 @@ export default function Home({posts}) {
                 </span>
               </a>
             </div>
-            <div className={styles.col}></div>
           </div>
         </div>
         <div className={styles.projects_container} id="projects">
@@ -143,7 +139,7 @@ export default function Home({posts}) {
             )}
           </div>
         </div>
-        <div className={styles.blog_container}>
+        <div className={styles.blog_container} id="blog">
           <div className={styles.projects}>
             <div className={styles.projects_header}>
               <h3 className={styles.projects_header_title}>Blog</h3>
