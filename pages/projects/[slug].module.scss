@@ -81,6 +81,7 @@
 .content_article {
   width: 100%;
   max-width: 650px;
+  overflow-x: auto;
 
   & h3,
   h4,
