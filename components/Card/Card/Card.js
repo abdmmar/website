@@ -1,6 +1,7 @@
 import * as React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
+
+import {Image} from '@components/MDX'
 import isURL from '@lib/is-url'
 
 import styles from './Card.module.scss'
@@ -11,20 +12,13 @@ const Card = ({
   tag,
   date,
   image = null,
-  imageWidth = null,
-  imageHeight = null,
+  imageAlt = title,
   link,
 }) => {
   return (
     <div className={styles.card}>
       {image != null ? (
-        <Image
-          src={image}
-          alt={title}
-          width={imageWidth}
-          height={imageHeight}
-          objectFit="cover"
-        />
+        <Image src={image} alt={imageAlt} objectFit="cover" />
       ) : (
         ''
       )}

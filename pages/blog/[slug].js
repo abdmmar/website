@@ -47,8 +47,8 @@ export default function DetailBlog({
             </div>
             <h2 className={styles.hero_title}>{meta.title}</h2>
             <Image
-              src="/Blue.jpg"
-              alt="Header"
+              src={meta.image}
+              alt={meta.image_alt}
               objectFit="cover"
               height="450px"
               width="900px"

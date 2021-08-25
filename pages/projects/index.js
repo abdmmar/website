@@ -43,9 +43,7 @@ export default function Projects({posts}) {
                         description={posts[0].frontmatter.description}
                         tag={posts[0].frontmatter.tags[0]}
                         date={posts[0].frontmatter.date}
-                        image={posts[0].frontmatter.hero_image}
-                        imageWidth="320px"
-                        imageHeight="320px"
+                        image={posts[0].frontmatter.image}
                         link={
                           posts[0].frontmatter.link == null
                             ? `/projects/${posts[0].slug}`
@@ -61,9 +59,7 @@ export default function Projects({posts}) {
                           description={posts[0].frontmatter.description}
                           tag={posts[1].frontmatter.tags[0]}
                           date={posts[1].frontmatter.date}
-                          image={posts[1].frontmatter.hero_image}
-                          imageWidth="320px"
-                          imageHeight="320px"
+                          image={posts[1].frontmatter.image}
                           link={
                             posts[1].frontmatter.link == null
                               ? `/projects/${posts[1].slug}`

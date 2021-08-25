@@ -35,7 +35,7 @@ export default function Blog({posts}) {
                     description={''}
                     tag={meta.tags[0]}
                     date={meta.date}
-                    image={meta.thumbnail}
+                    image={meta.image}
                     imageWidth="320px"
                     imageHeight="320px"
                     link={meta.link == null ? `/blog/${slug}` : meta.link}
