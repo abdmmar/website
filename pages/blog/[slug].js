@@ -9,6 +9,7 @@ import {Callout, Paragraph, Link} from '@components/MDX'
 import {getAllPosts, getSinglePost} from '@lib/mdx'
 
 import styles from './[slug].module.scss'
+import formatDate from '@lib/format-date'
 
 const FOLDER = 'blog'
 
@@ -43,7 +44,7 @@ export default function DetailBlog({
           <div className={styles.hero}>
             <div className={styles.hero_header}>
               <span>{category}</span>
-              <span>{meta.date}</span>
+              <span>{formatDate(meta.date, {dateStyle: 'long'})}</span>
             </div>
             <h2 className={styles.hero_title}>{meta.title}</h2>
             <Image

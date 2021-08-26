@@ -4,6 +4,7 @@ import Head from '@components/Head'
 import {Card} from '@components/Card'
 import {NavBar, Footer} from '@components/Layout'
 import {getAllPosts} from '@lib/mdx'
+import formatDate from '@lib/format-date'
 import useWindowSize from '@hooks/useWindowSize'
 
 import styles from './Index.module.scss'
@@ -84,7 +85,9 @@ export default function Home({posts}) {
                   title={posts?.projects[0].frontmatter.title}
                   description={posts?.projects[0].frontmatter.description}
                   tag={posts?.projects[0].frontmatter.tags[0]}
-                  date={posts?.projects[0].frontmatter.date}
+                  date={new Date(
+                    posts?.projects[0].frontmatter.date,
+                  ).getFullYear()}
                   image={posts?.projects[0].frontmatter.image}
                   imageAlt={posts?.projects[0].frontmatter.image_alt}
                   link={
@@ -104,7 +107,7 @@ export default function Home({posts}) {
                         title={meta.title}
                         description={meta.description}
                         tag={meta.tags[0]}
-                        date={meta.date}
+                        date={new Date(meta.date).getFullYear()}
                         link={
                           meta.link == null ? `/projects/${slug}` : meta.link
                         }
@@ -164,7 +167,7 @@ export default function Home({posts}) {
                     title={meta.title}
                     description={''}
                     tag={meta.tags[0]}
-                    date={meta.date}
+                    date={formatDate(meta.date)}
                     image={meta.image}
                     imageAlt={meta.image_alt}
                     link={meta.link == null ? `/blog/${slug}` : meta.link}

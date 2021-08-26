@@ -7,6 +7,7 @@ import {Share} from '@components/Button'
 import {NavBar, Footer} from '@components/Layout'
 import {Callout, Paragraph, Link} from '@components/MDX'
 import {getAllPosts, getSinglePost} from '@lib/mdx'
+import formatDate from '@lib/format-date'
 
 import styles from './[slug].module.scss'
 
@@ -38,7 +39,7 @@ export default function DetailProjects({code, frontmatter: meta, slug}) {
           <div className={styles.hero}>
             <div className={styles.hero_header}>
               <span>{category}</span>
-              <span>{meta.date}</span>
+              <span>{formatDate(meta.date, {dateStyle: 'long'})}</span>
             </div>
             <h2 className={styles.hero_title}>{meta.title}</h2>
             <Image

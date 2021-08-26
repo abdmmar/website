@@ -6,6 +6,7 @@ import {NavBar, Footer} from '@components/Layout'
 import {getAllPosts} from '@lib/mdx'
 
 import styles from './Blog.module.scss'
+import formatDate from '@lib/format-date'
 
 export default function Blog({posts}) {
   return (
@@ -34,7 +35,7 @@ export default function Blog({posts}) {
                     title={meta.title}
                     description={''}
                     tag={meta.tags[0]}
-                    date={meta.date}
+                    date={formatDate(meta.date)}
                     image={meta.image}
                     imageWidth="320px"
                     imageHeight="320px"
