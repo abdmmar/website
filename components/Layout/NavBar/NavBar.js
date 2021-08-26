@@ -138,7 +138,7 @@ export default function NavBar() {
                 viewBox="0 0 24 24"
                 focusable="false"
               >
-                <use href="#icon-sun" className="icon_default"></use>
+                <use href="#icon-theme" className="icon_default"></use>
               </svg>
             </MenuButton>
             <MenuPopover

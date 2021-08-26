@@ -40,6 +40,14 @@ function MyApp({Component, pageProps}) {
             d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
           ></path>
         </symbol>
+        <symbol id="icon-theme">
+          <g fill="none">
+            <path
+              d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10zm0-1.5v-17a8.5 8.5 0 0 1 0 17z"
+              fill="currentColor"
+            />
+          </g>
+        </symbol>
       </svg>
     </>
   )
