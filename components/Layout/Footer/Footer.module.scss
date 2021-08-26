@@ -76,7 +76,9 @@
   &::before {
     background: var(--border-color);
     height: calc(100% + 1px);
-    bottom: -1px;
+    bottom: 0px;
+    left: -1px;
+    right: -1px;
   }
 }
 
