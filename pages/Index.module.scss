@@ -206,8 +206,8 @@
 
 .blog_content {
   display: grid;
-  grid-template-columns: 150px 250px 1fr;
-  gap: var(--spacing-xxxl);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-xl);
   height: fit-content;
 
   & a {
@@ -259,5 +259,15 @@
   }
   .blog_content {
     grid-template-columns: 1fr;
+  }
+}
+
+[data-theme='dark'] {
+  .hero_cta_link {
+    color: var(--text-color-secondary);
+  }
+
+  .projects_header_link {
+    color: var(--text-color-primary);
   }
 }

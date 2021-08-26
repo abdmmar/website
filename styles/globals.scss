@@ -130,6 +130,10 @@ blockquote {
   img {
     filter: brightness(0.8) contrast(1.2);
   }
+
+  a {
+    color: var(--accent-color-3);
+  }
 }
 
 /* 

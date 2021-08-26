@@ -14,7 +14,7 @@ export default function Callout({children}) {
           <use href="#icon-info" className="icon" />
         </svg>
       </div>
-      {children}
+      <div>{children}</div>
     </div>
   )
 }

@@ -80,6 +80,10 @@
   }
 }
 
+[data-theme='dark'] .back_to_top {
+  color: var(--text-color-primary);
+}
+
 @media screen and (max-width: 470px) {
   .container {
     grid-auto-flow: row;

@@ -56,7 +56,7 @@ export default function Projects({posts}) {
                         <Card
                           key={posts[1].slug}
                           title={posts[1].frontmatter.title}
-                          description={posts[0].frontmatter.description}
+                          description={posts[1].frontmatter.description}
                           tag={posts[1].frontmatter.tags[0]}
                           date={posts[1].frontmatter.date}
                           image={posts[1].frontmatter.image}

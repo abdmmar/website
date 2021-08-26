@@ -14,10 +14,6 @@
 
 .main {
   width: 100%;
-
-  a {
-    color: var(--text-color-primary);
-  }
 }
 
 .hero_container {
@@ -60,6 +56,30 @@
   padding: var(--spacing-m) 0;
   margin: var(--spacing-l) 0;
   border-block: 2px solid var(--border-color);
+
+  & a {
+    color: var(--text-color-primary);
+
+    &::before {
+      content: ' ';
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: -3px;
+      left: 0;
+      background: var(--fill-color-accent);
+      height: 1.5px;
+      z-index: -1;
+      transform: scaleX(1);
+      transform-origin: bottom left;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover::before {
+      transform: scaleX(0);
+      transform-origin: bottom right;
+    }
+  }
 }
 
 .content_container {

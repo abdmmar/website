@@ -102,7 +102,7 @@ export default function Home({posts}) {
                       <Card
                         key={slug}
                         title={meta.title}
-                        description={''}
+                        description={meta.description}
                         tag={meta.tags[0]}
                         date={meta.date}
                         link={
