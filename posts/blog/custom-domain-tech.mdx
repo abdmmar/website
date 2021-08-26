@@ -1,0 +1,35 @@
+---
+title: 'Mengatur Custom Domain .tech di Github Pages'
+tags:
+  - Tutorial
+  - Custom Domain
+  - Github
+date: '2021-01-03'
+image: '/static/posts/blog/custom-domain-tech/custom-domain-tech.png'
+image_alt: 'Ilustrasi sederhana sebuah website menggunakan domain .tech'
+author: Abdullah Ammar
+---
+
+Sebelumnya pastikan kamu sudah mempunyai domain .tech, domain .tech sendiri
+bisa didapatkan gratis selama 1 tahun jika kamu sudah mendaftar Github Student
+Pack. Jika kamu sudah mendaftar Github Student Pack, langsung saja kunjungi
+[https://get.tech/github-student-developer-pack](https://get.tech/github-student-developer-pack)
+untuk mendapatkan domain yang kamu inginkan. Setelah mendapatkan domain yang
+kamu inginkan, selanjutnya langkah-langkah yang dilakukan yaitu:
+
+1. Login ke dalam Dashboard
+2. Jika sudah, pindah ke halaman List of Order dan pilih domain kamu
+3. Dibagian DNS Management, pilih Manage DNS
+4. Setelah halaman terbuka di jendela baru, klik tombol CNAME Record, dan
+   tambahkan CNAME Record dengan name = www dan value =
+   domaingithubkamu.github.io, kemudian Save
+5. Setelah itu tambahkan beberapa A Records:
+   - Host Name = @ dan Destination IP Address 185.199.108.153
+   - Host Name = @ dan Destination IP Address 185.199.109.153
+   - Host Name = @ dan Destination IP Address 185.199.110.153
+   - Host Name = @ dan Destination IP Address 185.199.111.153
+6. Jika sudah, buka repository github kamu dan buka halaman Setting, pergi ke
+   bagian Github Pages dan masukkan custom domain yang sudah kamu dapatkan
+   tadi dan beri tanda ceklis pada Enforce HTTPS, jika tanda ceklis belum
+   aktif, tunggu beberapa jam hingga muncul fitur ceklis tersebut.
+7. Selesai, selamat kamu sudah mempunyai domain kamu sendiri, yeay!
