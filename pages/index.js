@@ -176,7 +176,7 @@ export default function Home({posts}) {
               })}
             </div>
             {windowWidth <= 768 ? (
-              <Link href="/projects">
+              <Link href="/blog">
                 <a className={styles.projects_header_link}>
                   See all posts
                   <svg
