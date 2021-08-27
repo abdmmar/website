@@ -17,16 +17,18 @@
   align-items: center;
 }
 
-.logo {
+.logo_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   &::before {
     content: none;
   }
 }
 
-.square {
-  width: 25px;
-  height: 25px;
-  background-color: var(--accent-color-1);
+.logo {
+  fill: var(--text-color-primary);
 }
 
 .menu {
