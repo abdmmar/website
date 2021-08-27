@@ -5,7 +5,7 @@ import {getMDXComponent} from 'mdx-bundler/client'
 import Head from '@components/Head'
 import {Share} from '@components/Button'
 import {NavBar, Footer} from '@components/Layout'
-import {Callout, Paragraph, Link} from '@components/MDX'
+import {Callout, Link, Image as CustomImage} from '@components/MDX'
 import {getAllPosts, getSinglePost} from '@lib/mdx'
 
 import styles from './[slug].module.scss'
@@ -73,8 +73,7 @@ export default function DetailBlog({
               )}
               <Component
                 components={{
-                  img: Image,
-                  p: Paragraph,
+                  img: CustomImage,
                   a: Link,
                 }}
               />
