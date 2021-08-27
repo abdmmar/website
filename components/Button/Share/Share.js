@@ -31,7 +31,6 @@ export default function Share({
         return
       } catch (err) {
         console.error(err)
-        open()
       }
     } else {
       open()
