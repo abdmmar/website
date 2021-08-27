@@ -27,8 +27,8 @@ export default function Share({
           text: description,
           url: url,
         })
-        setCopied(true)
         console.log('Thanks for sharing!')
+        return
       } catch (err) {
         console.error(err)
         open()

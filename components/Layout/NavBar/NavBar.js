@@ -31,13 +31,13 @@ export default function NavBar() {
     if (process.browser) {
       const css = disableTransition()
 
-      if (theme === 'dark') {
-        enableTheme(theme)
+      if (theme === 'system') {
+        disableTheme()
         redraw(css)
         return
       }
 
-      disableTheme()
+      enableTheme(theme)
       redraw(css)
     }
   }, [theme])

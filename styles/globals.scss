@@ -98,8 +98,8 @@ blockquote {
 }
 
 [data-reach-dialog-content] {
-  margin: 0;
-  width: 100%;
+  margin: 0 !important;
+  width: 100% !important;
   max-width: 500px;
   background: var(--bg-color-primary) !important;
 }
@@ -162,6 +162,53 @@ blockquote {
 
   :root:not([data-theme]) img {
     filter: brightness(0.8) contrast(1.2);
+  }
+
+  a {
+    color: var(--accent-color-3);
+  }
+
+  [data-theme='light'] {
+    body {
+      --white: hsla(0, 0%, 100%, 1);
+      --color-gray-100: hsla(240, 9%, 98%, 1);
+      --color-gray-200: hsla(240, 9%, 88%, 1);
+      --color-gray-300: hsla(240, 9%, 78%, 1);
+      --color-gray-400: hsla(240, 9%, 68%, 1);
+      --color-gray-500: hsla(240, 9%, 58%, 1);
+      --color-gray-600: hsla(240, 9%, 48%, 1);
+      --color-gray-700: hsla(240, 9%, 38%, 1);
+      --color-gray-800: hsla(240, 9%, 28%, 1);
+      --color-gray-900: hsla(240, 9%, 18%, 1);
+      --black: hsla(240, 9%, 11%, 1);
+
+      --accent-color-1: hsla(225, 73%, 57%, 1);
+      --accent-color-2: hsla(225, 72%, 37%, 1);
+      --accent-color-3: hsla(52, 100%, 63%, 1);
+
+      --typefaces: 'IBM Plex Sans', 'Roboto', sans-serif;
+      --typefaces-mono: 'Fira Code', Consolas, Monaco, 'Andale Mono',
+        'Ubuntu Mono', monospace, serif;
+
+      --text-color-primary: hsla(225, 15%, 17%, 1);
+      --text-color-secondary: hsla(225, 15%, 47%, 1);
+      --text-color-ternary: rgb(218, 218, 218);
+
+      --font-size: 16px;
+      --line-height: calc(var(--font-size) * 1.6);
+
+      --bg-color-primary: hsla(0, 0%, 100%, 1);
+      --bg-color-secondary: hsla(240, 8%, 98%, 1);
+      --bg-color-hover: hsla(240, 8%, 95%, 1);
+
+      --border-color: hsla(240, 8%, 88%, 1);
+      --box-shadow: 0px 5px 10px 0px hsla(225, 15%, 17%, 0.1);
+      --outline-color: var(--accent-color-1);
+      --fill-color-accent: var(--accent-color-1);
+      --fill-color-default: hsla(225, 15%, 17%, 1);
+
+      --hero-text-accent: var(--accent-color-1);
+    }
   }
 }
 
