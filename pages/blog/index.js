@@ -3,10 +3,10 @@ import * as React from 'react'
 import Head from '@components/Head'
 import {Card} from '@components/Card'
 import {Layout} from '@components/Layout'
+import formatDate from '@lib/format-date'
 import {getAllPosts} from '@lib/mdx'
 
 import styles from './Blog.module.scss'
-import formatDate from '@lib/format-date'
 
 export default function Blog({posts}) {
   return (
