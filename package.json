@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "post-build": "node ./scripts/generate-rss.mjs",
+    "deploy": "yarn run build && yarn run post-build",
     "start": "next start",
     "lint": "next lint"
   },
