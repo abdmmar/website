@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import Head from '@components/Head'
 import {Card} from '@components/Card'
-import {NavBar, Footer} from '@components/Layout'
+import {Layout} from '@components/Layout'
 import {getAllPosts} from '@lib/mdx'
 
 import styles from './Blog.module.scss'
@@ -10,12 +10,8 @@ import formatDate from '@lib/format-date'
 
 export default function Blog({posts}) {
   return (
-    <div className={styles.container}>
+    <Layout>
       <Head title="Blog • Abdullah Ammar • Developer" path="/blog" />
-
-      <header className={styles.header}>
-        <NavBar />
-      </header>
 
       <main className={styles.main}>
         <div className={styles.blog_container}>
@@ -47,8 +43,7 @@ export default function Blog({posts}) {
           </div>
         </div>
       </main>
-      <Footer />
-    </div>
+    </Layout>
   )
 }
 

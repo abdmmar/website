@@ -4,7 +4,7 @@ import {getMDXComponent} from 'mdx-bundler/client'
 
 import Head from '@components/Head'
 import {Share} from '@components/Button'
-import {NavBar, Footer} from '@components/Layout'
+import {Layout} from '@components/Layout'
 import {Callout, Link, Image as CustomImage} from '@components/MDX'
 import {getAllPosts, getSinglePost} from '@lib/mdx'
 import formatDate from '@lib/format-date'
@@ -22,17 +22,14 @@ export default function DetailProjects({code, frontmatter: meta, slug}) {
   const [category, ...tags] = meta.tags
 
   return (
-    <div className={styles.container}>
+    <Layout>
       <Head
         title={`${meta.title} • Abdullah Ammar • Developer`}
         path={`/projects/${slug}`}
-        description={meta.description}
+        description={meta.description != null ? meta.description : meta.title}
         type="article"
+        image={meta.image}
       />
-
-      <header className={styles.header}>
-        <NavBar />
-      </header>
 
       <main className={styles.main}>
         <div className={styles.hero_container}>
@@ -96,9 +93,7 @@ export default function DetailProjects({code, frontmatter: meta, slug}) {
           </div>
         </div>
       </main>
-
-      <Footer />
-    </div>
+    </Layout>
   )
 }
 

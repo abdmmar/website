@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import Head from '@components/Head'
 import {Card} from '@components/Card'
-import {NavBar, Footer} from '@components/Layout'
+import {Layout} from '@components/Layout'
 import {getAllPosts} from '@lib/mdx'
 import formatDate from '@lib/format-date'
 import useWindowSize from '@hooks/useWindowSize'
@@ -13,12 +13,8 @@ export default function Home({posts}) {
   const {width: windowWidth} = useWindowSize()
 
   return (
-    <div className={styles.container} id="top">
+    <Layout>
       <Head />
-
-      <header className={styles.header}>
-        <NavBar />
-      </header>
 
       <main className={styles.main}>
         <div className={styles.hero_container}>
@@ -196,8 +192,7 @@ export default function Home({posts}) {
           </div>
         </div>
       </main>
-      <Footer />
-    </div>
+    </Layout>
   )
 }
 

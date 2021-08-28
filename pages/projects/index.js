@@ -3,19 +3,15 @@ import cn from 'classnames'
 
 import Head from '@components/Head'
 import {Card} from '@components/Card'
-import {NavBar, Footer} from '@components/Layout'
+import {Layout} from '@components/Layout'
 import {getAllPosts} from '@lib/mdx'
 
 import styles from './Projects.module.scss'
 
 export default function Projects({posts}) {
   return (
-    <div className={styles.container}>
+    <Layout>
       <Head title="Projects • Abdullah Ammar • Developer" path="/projects" />
-
-      <header className={styles.header}>
-        <NavBar />
-      </header>
 
       <main className={styles.main}>
         <div className={styles.projects_container}>
@@ -103,8 +99,7 @@ export default function Projects({posts}) {
           </div>
         </div>
       </main>
-      <Footer />
-    </div>
+    </Layout>
   )
 }
 
