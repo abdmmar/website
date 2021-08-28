@@ -53,7 +53,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <Link href="/rss">
+              <Link href="/rss/feed.xml">
                 <a>RSS</a>
               </Link>
             </li>
