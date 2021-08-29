@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Link from 'next/link'
 
-import {Image} from '@components/MDX'
+import {Image} from '@components/mdx'
 import isURL from '@lib/is-url'
 
 import styles from './Card.module.scss'

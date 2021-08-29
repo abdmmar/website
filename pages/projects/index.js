@@ -1,9 +1,9 @@
 import * as React from 'react'
 import cn from 'classnames'
 
-import Head from '@components/Head'
-import {Card} from '@components/Card'
-import {Layout} from '@components/Layout'
+import {Head} from '@components/pages'
+import {Card} from '@components/cards'
+import {Layout} from '@components/layouts'
 import {getAllPosts} from '@lib/mdx'
 
 import styles from './Projects.module.scss'

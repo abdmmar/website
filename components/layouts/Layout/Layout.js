@@ -1,4 +1,4 @@
-import {NavBar, Footer} from '@components/Layout'
+import {NavBar, Footer} from '@components/layouts'
 
 import styles from './Layout.module.scss'
 

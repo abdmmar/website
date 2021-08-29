@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-import Head from '@components/Head'
-import {Card} from '@components/Card'
-import {Layout} from '@components/Layout'
+import {Head} from '@components/pages'
+import {Card} from '@components/cards'
+import {Layout} from '@components/layouts'
 import {getAllPosts} from '@lib/mdx'
 import formatDate from '@lib/format-date'
 import useWindowSize from '@hooks/useWindowSize'

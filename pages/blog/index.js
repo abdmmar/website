@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-import Head from '@components/Head'
-import {Card} from '@components/Card'
-import {Layout} from '@components/Layout'
+import {Head} from '@components/pages'
+import {Card} from '@components/cards'
+import {Layout} from '@components/layouts'
 import formatDate from '@lib/format-date'
 import {getAllPosts} from '@lib/mdx'
 
