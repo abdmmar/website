@@ -27,21 +27,31 @@ export default function Home({posts}) {
             </div>
           </div>
           <div className={styles.hero_info}>
-            <div className={styles.hero_cta}>
-              <a href="#projects" className={styles.hero_cta_link}>
-                <p className={styles.hero_cta_link_text}>Learn more</p>
-                <span>
-                  <svg
-                    width="25"
-                    height="33"
-                    viewBox="0 0 30 33"
-                    fill="white"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <use href="#icon-arrow"></use>
-                  </svg>
-                </span>
-              </a>
+            <div className={styles.hero_social}>
+              <div className={styles.hero_social_link}>
+                <span>Email</span>
+                <a href="mailto: abd.ammar.mar@gmail.com">Say Hi!</a>
+              </div>
+              <div className={styles.hero_social_link}>
+                <span>Github</span>
+                <a
+                  href="https://www.github.com/abdmmar"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  abdmmar
+                </a>
+              </div>
+              <div className={styles.hero_social_link}>
+                <span>Twitter</span>
+                <a
+                  href="https://www.twitter.com/abdmmar"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  @abdmmar
+                </a>
+              </div>
             </div>
           </div>
         </div>
