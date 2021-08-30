@@ -51,14 +51,32 @@ export default function InteractiveTitle() {
       role="heading"
     >
       <span className={styles.title_name}>
-        <SplitText>Hi! I&apos;m Ammar,</SplitText>
+        <SplitText>Hi! I&apos;m </SplitText>
+        <span className={styles.me}>
+          <SplitText>Ammar,</SplitText>
+        </span>
       </span>
       <br className={styles.break} />
-      <SplitText>a student and developer</SplitText>
+      <SplitText>a</SplitText>
+      <SplitText>student</SplitText>
+      and{' '}
+      <span className={styles.mono}>
+        <SplitText>developer</SplitText>
+      </span>
       <br className={styles.break} />
-      <SplitText>who passionate to build</SplitText>
+      <SplitText>who</SplitText>{' '}
+      <span className={styles.passion}>
+        <SplitText>passionate to build</SplitText>
+      </span>
       <br className={styles.break} />
-      <SplitText>something fun and useful.</SplitText>
+      <SplitText>something</SplitText>{' '}
+      <span className={styles.serif}>
+        <SplitText>fun</SplitText>
+      </span>{' '}
+      and{' '}
+      <span className={styles.serif}>
+        <SplitText>useful.</SplitText>
+      </span>
     </h2>
   )
 }
