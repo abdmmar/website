@@ -1,3 +1,5 @@
+import SplitText from './SplitText/SplitText'
 import SelectTheme from './SelectTheme/SelectTheme'
+import InteractiveTitle from './InteractiveTitle/InteractiveTitle'
 
-export {SelectTheme}
+export {SplitText, SelectTheme, InteractiveTitle}
