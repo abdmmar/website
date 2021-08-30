@@ -6,6 +6,7 @@ import {Layout} from '@components/layouts'
 import {getAllPosts} from '@lib/mdx'
 import formatDate from '@lib/format-date'
 import useWindowSize from '@hooks/useWindowSize'
+import {InteractiveTitle} from '@components/features'
 
 import styles from './Index.module.scss'
 
@@ -21,15 +22,7 @@ export default function Home({posts}) {
           <div className={styles.hero}>
             <div className={styles.hero_content}>
               <div className={styles.hero_desc}>
-                <h2 className={styles.hero_desc_title}>
-                  <span className={styles.hero_desc_title_name}>
-                    Hi! I&apos;m Ammar,
-                  </span>
-                  <br />
-                  a student and developer
-                  <br /> who passionate to build <br />
-                  something fun and useful.
-                </h2>
+                <InteractiveTitle />
               </div>
             </div>
           </div>

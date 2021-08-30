@@ -1,0 +1,22 @@
+.title {
+  margin: 0;
+  margin-bottom: var(--spacing-ml);
+  font-weight: 400;
+  font-family: 'IBM Plex Sans', sans-serif;
+  line-height: calc(clamp(2.369rem, 2.3vw + 1.7rem, 3.157rem) * 1.2);
+  font-variant: common-ligatures diagonal-fractions;
+  letter-spacing: -0.05rem;
+  color: var(--text-color-secondary);
+
+  & .title_name {
+    color: var(--hero-text-accent);
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .title {
+    & .break {
+      display: none;
+    }
+  }
+}
