@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: self-start;
+  gap: var(--spacing-m);
+  padding: var(--spacing-s);
+  margin: var(--spacing-m) 0;
+  background-color: var(--bg-color-secondary);
+
+  & p {
+    margin: 0;
+  }
+}
+
+.icon {
+  padding: 3px;
+  display: flex;
+  align-items: center;
+}
+
+.icon_info {
+  min-width: 20px;
+}
