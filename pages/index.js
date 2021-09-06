@@ -166,7 +166,7 @@ export default function Home({posts}) {
                     title={meta.title}
                     description={''}
                     tag={meta.tags[0]}
-                    date={formatDate(meta.date)}
+                    date={formatDate(meta.published_date)}
                     image={meta.image}
                     imageAlt={meta.image_alt}
                     link={meta.link == null ? `/blog/${slug}` : meta.link}

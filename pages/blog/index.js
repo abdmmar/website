@@ -31,7 +31,7 @@ export default function Blog({posts}) {
                     title={meta.title}
                     description={''}
                     tag={meta.tags[0]}
-                    date={formatDate(meta.date)}
+                    date={formatDate(meta.published_date)}
                     image={meta.image}
                     imageWidth="320px"
                     imageHeight="320px"

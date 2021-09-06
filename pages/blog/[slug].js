@@ -25,15 +25,25 @@ export default function DetailBlog({
   )
 
   const [category, ...tags] = meta.tags
+  const last_modified =
+    meta.modified_date != null
+      ? ` • Last modified: ${formatDate(meta.modified_date, {
+          dateStyle: 'long',
+        })}`
+      : ''
 
   return (
     <Layout>
       <Head
         title={`${meta.title} • Abdullah Ammar • Developer`}
         path={`/blog/${slug}`}
-        description={meta.description != null ? meta.description : meta.null}
+        description={meta.description}
         type="article"
         image={meta.image}
+        image_alt={meta.image_alt}
+        keywords={meta.tags}
+        published_date={meta.published_date}
+        modified_date={meta.modified_date}
       />
 
       <main className={styles.main}>
@@ -41,7 +51,9 @@ export default function DetailBlog({
           <div className={styles.hero}>
             <div className={styles.hero_header}>
               <span>{category}</span>
-              <span>{formatDate(meta.date, {dateStyle: 'long'})}</span>
+              <span>
+                {formatDate(meta.published_date, {dateStyle: 'long'})}
+              </span>
             </div>
             <h2 className={styles.hero_title}>{meta.title}</h2>
             <Image
@@ -52,7 +64,9 @@ export default function DetailBlog({
               width="900px"
             />
             <div className={styles.hero_info}>
-              <span>{`${meta.author} • ${readTime.text}`}</span>
+              <span>
+                {`${meta.author} • ${readTime.text}${last_modified} • ${meta.status}`}
+              </span>
               <span>{tags.join(', ')}</span>
             </div>
           </div>
@@ -61,10 +75,8 @@ export default function DetailBlog({
         <div className={styles.content_container}>
           <div className={styles.content}>
             <article className={styles.content_article}>
-              {meta.description != null || meta.description != '' ? (
-                <p className={styles.content_article_deck}>
-                  {meta.description}
-                </p>
+              {meta.subtitle != null || meta.subtitle != '' ? (
+                <p className={styles.content_article_deck}>{meta.subtitle}</p>
               ) : (
                 ''
               )}
