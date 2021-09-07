@@ -20,7 +20,8 @@ const getAllPosts = (folder) => {
     })
     .sort(
       (a, b) =>
-        new Date(b.frontmatter.date).date - new Date(a.frontmatter.date).date,
+        new Date(b.frontmatter.published_date).date -
+        new Date(a.frontmatter.published_date).date,
     )
 
   return posts
@@ -71,7 +72,7 @@ async function generate() {
     addFeedItem({url, ...frontmatter})
   })
 
-  function addFeedItem({url, title, description, date}) {
+  function addFeedItem({url, title, description, published_date}) {
     feed.addItem({
       title: title,
       id: url,
@@ -81,7 +82,7 @@ async function generate() {
       content: description,
       author: [author],
       contributor: [author],
-      date: new Date(date),
+      date: new Date(published_date),
     })
   }
 
