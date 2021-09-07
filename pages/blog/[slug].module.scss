@@ -52,7 +52,6 @@
   row-gap: var(--spacing-m);
 
   & div {
-    min-width: 100px;
     & dt {
       color: var(--text-color-secondary);
     }
@@ -85,7 +84,7 @@
   overflow-x: auto;
 }
 
-.content_article_deck {
+.content_subtitle {
   font-size: clamp(1.333rem, 1.3vw + 1rem, 1.777rem);
   font-weight: 500;
   line-height: calc(clamp(1.333rem, 1.3vw + 1rem, 1.777rem) * 1.3);
@@ -124,6 +123,7 @@
     width: 100%;
 
     & div {
+      min-width: 100px;
       display: flex;
       justify-content: space-between;
 

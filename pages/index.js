@@ -83,9 +83,9 @@ export default function Home({posts}) {
                 <Card
                   title={posts?.projects[0].frontmatter.title}
                   description={posts?.projects[0].frontmatter.description}
-                  tag={posts?.projects[0].frontmatter.tags[0]}
+                  tag={posts?.projects[0].frontmatter.category}
                   date={new Date(
-                    posts?.projects[0].frontmatter.date,
+                    posts?.projects[0].frontmatter.published_date,
                   ).getFullYear()}
                   image={posts?.projects[0].frontmatter.image}
                   imageAlt={posts?.projects[0].frontmatter.image_alt}
@@ -105,8 +105,8 @@ export default function Home({posts}) {
                         key={slug}
                         title={meta.title}
                         description={meta.description}
-                        tag={meta.tags[0]}
-                        date={new Date(meta.date).getFullYear()}
+                        tag={meta.category}
+                        date={new Date(meta.published_date).getFullYear()}
                         link={
                           meta.link == null ? `/projects/${slug}` : meta.link
                         }
@@ -165,7 +165,7 @@ export default function Home({posts}) {
                     key={slug}
                     title={meta.title}
                     description={''}
-                    tag={meta.tags[0]}
+                    tag={meta.category}
                     date={formatDate(meta.published_date)}
                     image={meta.image}
                     imageAlt={meta.image_alt}

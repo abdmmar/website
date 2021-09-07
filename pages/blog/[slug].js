@@ -24,7 +24,6 @@ export default function DetailBlog({
     [code],
   )
 
-  const [category, ...tags] = meta.tags
   const last_modified =
     meta.modified_date != null
       ? formatDate(meta.modified_date, {
@@ -50,7 +49,7 @@ export default function DetailBlog({
         <div className={styles.hero_container}>
           <div className={styles.hero}>
             <div className={styles.hero_header}>
-              <span>{category}</span>
+              <span>{meta.category}</span>
               <span>
                 {formatDate(meta.published_date, {dateStyle: 'long'})}
               </span>
@@ -83,7 +82,7 @@ export default function DetailBlog({
                 </div>
                 <div>
                   <dt>Tags</dt>
-                  <dd>{tags.join(', ')}</dd>
+                  <dd>{meta.tags.join(', ')}</dd>
                 </div>
               </dl>
             </div>
@@ -94,7 +93,7 @@ export default function DetailBlog({
           <div className={styles.content}>
             <article className={styles.content_article}>
               {meta.subtitle != null || meta.subtitle != '' ? (
-                <p className={styles.content_article_deck}>{meta.subtitle}</p>
+                <p className={styles.content_subtitle}>{meta.subtitle}</p>
               ) : (
                 ''
               )}
