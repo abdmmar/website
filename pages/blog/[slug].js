@@ -27,10 +27,10 @@ export default function DetailBlog({
   const [category, ...tags] = meta.tags
   const last_modified =
     meta.modified_date != null
-      ? ` • Last modified: ${formatDate(meta.modified_date, {
+      ? formatDate(meta.modified_date, {
           dateStyle: 'long',
-        })}`
-      : ''
+        })
+      : meta.published_date
 
   return (
     <Layout>
@@ -63,11 +63,29 @@ export default function DetailBlog({
               height="450px"
               width="900px"
             />
-            <div className={styles.hero_info}>
-              <span>
-                {`${meta.author} • ${readTime.text}${last_modified} • ${meta.status}`}
-              </span>
-              <span>{tags.join(', ')}</span>
+            <div className={styles.hero_info_container}>
+              <dl className={styles.hero_info}>
+                <div className={styles.hero_info_desc}>
+                  <dt>Author</dt>
+                  <dd>{meta.author}</dd>
+                </div>
+                <div>
+                  <dt>Read time</dt>
+                  <dd>{readTime.text}</dd>
+                </div>
+                <div>
+                  <dt>Status</dt>
+                  <dd>{meta.status}</dd>
+                </div>
+                <div>
+                  <dt>Last Update</dt>
+                  <dd>{last_modified}</dd>
+                </div>
+                <div>
+                  <dt>Tags</dt>
+                  <dd>{tags.join(', ')}</dd>
+                </div>
+              </dl>
             </div>
           </div>
         </div>
