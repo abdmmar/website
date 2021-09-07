@@ -37,9 +37,9 @@ export default function Projects({posts}) {
                         key={posts[0].slug}
                         title={posts[0].frontmatter.title}
                         description={posts[0].frontmatter.description}
-                        tag={posts[0].frontmatter.tags[0]}
+                        tag={posts[0].frontmatter.category}
                         date={new Date(
-                          posts[0].frontmatter.date,
+                          posts[0].frontmatter.published_date,
                         ).getFullYear()}
                         image={posts[0].frontmatter.image}
                         link={
@@ -55,9 +55,9 @@ export default function Projects({posts}) {
                           key={posts[1].slug}
                           title={posts[1].frontmatter.title}
                           description={posts[1].frontmatter.description}
-                          tag={posts[1].frontmatter.tags[0]}
+                          tag={posts[1].frontmatter.category}
                           date={new Date(
-                            posts[1].frontmatter.date,
+                            posts[1].frontmatter.published_date,
                           ).getFullYear()}
                           image={posts[1].frontmatter.image}
                           link={
@@ -79,8 +79,8 @@ export default function Projects({posts}) {
                             key={slug}
                             title={meta.title}
                             description={meta.description}
-                            tag={meta.tags[0]}
-                            date={new Date(meta.date).getFullYear()}
+                            tag={meta.category}
+                            date={new Date(meta.published_date).getFullYear()}
                             link={
                               meta.link == null
                                 ? `/projects/${slug}`

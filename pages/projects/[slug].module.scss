@@ -24,7 +24,8 @@
   grid-auto-flow: column;
   align-items: center;
   justify-content: space-between;
-  font-size: 1.125rem;
+  font-size: 1rem;
+  font-weight: 500;
   padding: var(--spacing-m) 0;
   border-bottom: 2px solid var(--border-color);
 
@@ -34,36 +35,53 @@
   }
 }
 
-.hero_info {
+.hero_info_container {
   display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--spacing-m) 0;
+  place-items: center;
   margin: var(--spacing-l) 0;
   border-block: 2px solid var(--border-color);
+}
 
-  & a {
-    color: var(--text-color-primary);
+.hero_info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: var(--spacing-m) 0;
+  margin: 0;
+  gap: var(--spacing-xl);
+  row-gap: var(--spacing-m);
 
-    &::before {
-      content: ' ';
-      display: block;
-      position: absolute;
-      right: 0;
-      bottom: -3px;
-      left: 0;
-      background: var(--fill-color-accent);
-      height: 1.5px;
-      z-index: -1;
-      transform: scaleX(1);
-      transform-origin: bottom left;
-      transition: transform 0.3s ease;
+  & div {
+    & dt {
+      color: var(--text-color-secondary);
     }
 
-    &:hover::before {
-      transform: scaleX(0);
-      transform-origin: bottom right;
+    & dd {
+      margin: 0;
+
+      & a {
+        color: var(--text-color-primary);
+
+        &::before {
+          content: ' ';
+          display: block;
+          position: absolute;
+          right: 0;
+          bottom: -3px;
+          left: 0;
+          background: var(--fill-color-accent);
+          height: 1.5px;
+          z-index: -1;
+          transform: scaleX(1);
+          transform-origin: bottom left;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover::before {
+          transform: scaleX(0);
+          transform-origin: bottom right;
+        }
+      }
     }
   }
 }
@@ -96,7 +114,7 @@
   }
 }
 
-.content_article_deck {
+.content_subtitle {
   font-size: clamp(1.333rem, 1.3vw + 1rem, 1.777rem);
   font-weight: 500;
   line-height: calc(clamp(1.333rem, 1.3vw + 1rem, 1.777rem) * 1.3);
@@ -132,8 +150,17 @@
 
 @media screen and (max-width: 425px) {
   .hero_info {
-    grid-auto-flow: row;
-    gap: var(--spacing-xs);
+    width: 100%;
+
+    & div {
+      display: flex;
+      min-width: 100px;
+      justify-content: space-between;
+
+      & dt {
+        min-width: 100px;
+      }
+    }
   }
 
   .footer_sharing {
