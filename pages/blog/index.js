@@ -30,7 +30,7 @@ export default function Blog({posts}) {
                     key={slug}
                     title={meta.title}
                     description={''}
-                    tag={meta.tags[0]}
+                    tag={meta.category}
                     date={formatDate(meta.published_date)}
                     image={meta.image}
                     imageWidth="320px"
