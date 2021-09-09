@@ -5,7 +5,7 @@ import {getMDXComponent} from 'mdx-bundler/client'
 import {Head} from '@components/pages'
 import {Share} from '@components/buttons'
 import {Layout} from '@components/layouts'
-import {Callout, Link, Image as CustomImage} from '@components/mdx'
+import {Callout, Link, Paragraph} from '@components/mdx'
 import {getAllPosts, getSinglePost} from '@lib/mdx'
 import formatDate from '@lib/format-date'
 
@@ -99,8 +99,8 @@ export default function DetailProjects({code, frontmatter: meta, slug}) {
               )}
               <Component
                 components={{
-                  img: CustomImage,
                   a: Link,
+                  p: Paragraph,
                 }}
               />
             </article>
