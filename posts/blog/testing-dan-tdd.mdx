@@ -390,9 +390,9 @@ describe('Card', () => {
     expect(title).toBeInTheDocument()
     expect(description).toBeInTheDocument()
     expect(date).toBeInTheDocument()
-    expect(title).toEqual(data.title)
-    expect(description).toEqual(data.description)
-    expect(date).toEqual(data.date)
+    expect(title.textContent).toEqual(data.title)
+    expect(description.textContent).toEqual(data.description)
+    expect(date.textContent).toEqual(data.published_date)
   })
 })
 ```
