@@ -21,6 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 10px;
 
   &::before {
     content: none;
@@ -43,6 +44,7 @@
   list-style: none;
   font-weight: 500;
   font-size: 1.15rem;
+  margin: 0;
 
   & a {
     color: var(--text-color-secondary);
@@ -66,37 +68,5 @@
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@media screen and (max-width: 470px) {
-  .navbar {
-    padding: 1rem;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .navbar {
-    grid-auto-flow: row;
-    justify-content: initial;
-    gap: var(--spacing-s);
-  }
-
-  .navbar_menu {
-    width: 100%;
-    grid-template-columns: min-content min-content;
-    justify-content: space-between;
-
-    .menu {
-      display: none;
-    }
-  }
-
-  .navbar_theme {
-    place-items: initial;
-  }
-
-  .menu {
-    place-items: initial;
   }
 }
