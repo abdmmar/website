@@ -1,5 +1,6 @@
 .container {
   width: 100%;
+  margin-block: var(--spacing-l) 0;
 
   > div {
     position: unset !important;

@@ -54,11 +54,6 @@ function LinkList() {
           <a>Blog</a>
         </Link>
       </li>
-      <li className={styles.menu_item}>
-        <Link href="/resources">
-          <a>Resources</a>
-        </Link>
-      </li>
     </ul>
   )
 }

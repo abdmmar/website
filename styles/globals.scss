@@ -16,15 +16,14 @@
   --accent-color-3: hsla(52, 100%, 63%, 1);
 
   --typefaces: 'IBM Plex Sans', 'Roboto', sans-serif;
-  --typefaces-mono: 'Fira Code', Consolas, Monaco, 'Andale Mono',
-    'Ubuntu Mono', monospace, serif;
+  --typefaces-mono: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace, serif;
 
   --text-color-primary: hsla(225, 15%, 17%, 1);
   --text-color-secondary: hsla(225, 15%, 47%, 1);
   --text-color-ternary: rgb(218, 218, 218);
 
   --font-size: 16px;
-  --line-height: calc(var(--font-size) * 1.6);
+  --line-height: calc(var(--font-size) * 1.5);
 
   --bg-color-primary: hsla(0, 0%, 100%, 1);
   --bg-color-secondary: hsla(240, 8%, 98%, 1);
@@ -57,6 +56,16 @@
 a {
   color: var(--accent-color-1);
   text-decoration: none;
+}
+
+ul,
+ol {
+  padding-left: 18px;
+}
+
+li {
+  line-height: calc(1.125rem * 1.5);
+  margin-bottom: calc(1rem * 0.5);
 }
 
 code {
@@ -187,15 +196,15 @@ blockquote {
       --accent-color-3: hsla(52, 100%, 63%, 1);
 
       --typefaces: 'IBM Plex Sans', 'Roboto', sans-serif;
-      --typefaces-mono: 'Fira Code', Consolas, Monaco, 'Andale Mono',
-        'Ubuntu Mono', monospace, serif;
+      --typefaces-mono: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace,
+        serif;
 
       --text-color-primary: hsla(225, 15%, 17%, 1);
       --text-color-secondary: hsla(225, 15%, 47%, 1);
       --text-color-ternary: rgb(218, 218, 218);
 
       --font-size: 16px;
-      --line-height: calc(var(--font-size) * 1.6);
+      --line-height: calc(var(--font-size) * 1.5);
 
       --bg-color-primary: hsla(0, 0%, 100%, 1);
       --bg-color-secondary: hsla(240, 8%, 98%, 1);
@@ -254,7 +263,7 @@ body {
 
 p {
   margin-bottom: 1rem;
-  line-height: calc(1.125rem * 1.6);
+  line-height: calc(1.125rem * 1.5);
 }
 
 h1,
@@ -262,31 +271,32 @@ h2,
 h3,
 h4,
 h5 {
-  margin: 3rem 0 1.38rem;
   font-family: var(--typefaces);
   font-weight: 600;
-  line-height: 1.3;
+  margin: 0;
 }
 
 h1 {
-  margin-top: 0;
-  font-size: clamp(3.157rem, 3vw + 2.3rem, 4.209rem);
+  font-size: 2.488rem;
+  line-height: 1.3;
 }
 
 h2 {
-  font-size: clamp(2.369rem, 2.3vw + 1.7rem, 3.157rem);
+  font-size: 2.074rem;
+  line-height: 1.3;
 }
 
 h3 {
-  font-size: clamp(1.777rem, 1.7vw + 1.3rem, 2.369rem);
+  font-size: 1.728rem;
 }
 
 h4 {
-  font-size: clamp(1.333rem, 1.3vw + 1rem, 1.777rem);
+  font-size: 1.44rem;
 }
 
 h5 {
-  font-size: clamp(1.15rem, 0.5vw + 1rem, 1.333rem);
+  font-size: 1.2rem;
+  margin-top: 1rem;
 }
 
 small,

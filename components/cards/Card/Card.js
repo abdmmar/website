@@ -6,35 +6,26 @@ import isURL from '@lib/is-url'
 
 import styles from './Card.module.scss'
 
-const Card = ({
-  title,
-  description = null,
-  tag,
-  date,
-  image = null,
-  imageAlt = title,
-  link,
-}) => {
+const Card = ({title, description = null, tag, date, image = null, imageAlt = title, link}) => {
   return (
     <div className={styles.card}>
-      {image != null ? (
-        <Image src={image} alt={imageAlt} objectFit="cover" />
-      ) : (
-        ''
-      )}
+      {image != null ? <Image src={image} alt={imageAlt} objectFit="cover" /> : ''}
       <div className={styles.info}>
         <span className={styles.tag}>{tag}</span>
         <span className={styles.date}>{date}</span>
       </div>
       {isURL(link) ? (
         <a href={href} target="_blank" rel="noreferrer">
-          {children}
+          <h3>{children}</h3>
         </a>
       ) : (
         <Link href={link}>
-          <a className={styles.title}>
-            <span>{title}</span>
-          </a>
+          <h3>
+            <a className={styles.title}>
+              {/* <span>{title}</span> */}
+              {title}
+            </a>
+          </h3>
         </Link>
       )}
 

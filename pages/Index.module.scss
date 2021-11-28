@@ -4,7 +4,6 @@
 
 .hero_container {
   height: 100%;
-  min-height: calc(100vh - 100px);
   display: grid;
   grid-template-rows: 1fr min-content;
   place-items: center;
@@ -20,7 +19,6 @@
 .hero_content {
   height: 100%;
   display: flex;
-  align-items: flex-end;
   padding: var(--spacing-m);
 
   & p:last-child {
@@ -69,7 +67,6 @@
 .projects_container {
   display: grid;
   justify-content: center;
-  min-height: 100vh;
 }
 
 .projects {
@@ -154,7 +151,7 @@
 .blog_container {
   display: grid;
   justify-content: center;
-  min-height: 100vh;
+  margin-bottom: var(--spacing-xxxl);
 }
 
 .blog {
