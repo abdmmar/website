@@ -11,8 +11,8 @@ const Card = ({title, description = null, tag, date, image = null, imageAlt = ti
     <div className={styles.card}>
       {image != null ? <Image src={image} alt={imageAlt} objectFit="cover" /> : ''}
       <div className={styles.info}>
-        <span className={styles.tag}>{tag}</span>
-        <span className={styles.date}>{date}</span>
+        <small className={styles.tag}>{tag}</small>
+        <small className={styles.date}>{date}</small>
       </div>
       {isURL(link) ? (
         <a href={href} target="_blank" rel="noreferrer">
@@ -21,10 +21,7 @@ const Card = ({title, description = null, tag, date, image = null, imageAlt = ti
       ) : (
         <Link href={link}>
           <h3>
-            <a className={styles.title}>
-              {/* <span>{title}</span> */}
-              {title}
-            </a>
+            <a className={styles.title}>{title}</a>
           </h3>
         </Link>
       )}

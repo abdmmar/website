@@ -33,7 +33,7 @@
   --box-shadow: 0px 5px 10px 0px hsla(225, 15%, 17%, 0.1);
   --outline-color: var(--accent-color-1);
   --fill-color-accent: var(--accent-color-1);
-  --fill-color-default: hsla(225, 15%, 17%, 1);
+  --fill-color-default: hsla(225, 15%, 47%, 1);
 
   --hero-text-accent: var(--accent-color-1);
 
@@ -96,9 +96,7 @@ blockquote {
 
 .icon_default {
   min-width: 20px;
-  fill: var(--fill-color-default);
   color: var(--fill-color-default);
-  stroke: var(--fill-color-default);
 }
 
 [data-reach-dialog-overlay] {
@@ -272,7 +270,7 @@ h3,
 h4,
 h5 {
   font-family: var(--typefaces);
-  font-weight: 600;
+  font-weight: 400;
   margin: 0;
 }
 

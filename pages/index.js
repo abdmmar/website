@@ -34,21 +34,13 @@ export default function Home({posts}) {
               </div>
               <div className={styles.hero_social_link}>
                 <span>Github</span>
-                <a
-                  href="https://www.github.com/abdmmar"
-                  rel="noreferrer"
-                  target="_blank"
-                >
+                <a href="https://www.github.com/abdmmar" rel="noreferrer" target="_blank">
                   abdmmar
                 </a>
               </div>
               <div className={styles.hero_social_link}>
                 <span>Twitter</span>
-                <a
-                  href="https://www.twitter.com/abdmmar"
-                  rel="noreferrer"
-                  target="_blank"
-                >
+                <a href="https://www.twitter.com/abdmmar" rel="noreferrer" target="_blank">
                   @abdmmar
                 </a>
               </div>
@@ -60,8 +52,7 @@ export default function Home({posts}) {
             <div className={styles.projects_header}>
               <h3 className={styles.projects_header_title}>Projects</h3>
               <p className={styles.projects_header_desc}>
-                Here are some of my work for assignments, organizations,
-                events, and initiative.
+                Here are some of my work for assignments, organizations, events, and initiative.
               </p>
               <Link href="/projects">
                 <a className={styles.projects_header_link}>
@@ -73,7 +64,7 @@ export default function Home({posts}) {
                     fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <use href="#icon-arrow"></use>
+                    <use href="#icon-arrow" className="icon_default"></use>
                   </svg>
                 </a>
               </Link>
@@ -84,9 +75,7 @@ export default function Home({posts}) {
                   title={posts?.projects[0].frontmatter.title}
                   description={posts?.projects[0].frontmatter.description}
                   tag={posts?.projects[0].frontmatter.category}
-                  date={new Date(
-                    posts?.projects[0].frontmatter.published_date,
-                  ).getFullYear()}
+                  date={new Date(posts?.projects[0].frontmatter.published_date).getFullYear()}
                   image={posts?.projects[0].frontmatter.image}
                   imageAlt={posts?.projects[0].frontmatter.image_alt}
                   link={
@@ -97,22 +86,18 @@ export default function Home({posts}) {
                 />
               </div>
               <div className={styles.projects_aside_content}>
-                {posts?.projects
-                  ?.slice(1, 3)
-                  .map(({slug, frontmatter: meta}) => {
-                    return (
-                      <Card
-                        key={slug}
-                        title={meta.title}
-                        description={meta.description}
-                        tag={meta.category}
-                        date={new Date(meta.published_date).getFullYear()}
-                        link={
-                          meta.link == null ? `/projects/${slug}` : meta.link
-                        }
-                      />
-                    )
-                  })}
+                {posts?.projects?.slice(1, 3).map(({slug, frontmatter: meta}) => {
+                  return (
+                    <Card
+                      key={slug}
+                      title={meta.title}
+                      description={meta.description}
+                      tag={meta.category}
+                      date={new Date(meta.published_date).getFullYear()}
+                      link={meta.link == null ? `/projects/${slug}` : meta.link}
+                    />
+                  )
+                })}
               </div>
             </div>
             {windowWidth <= 768 ? (
@@ -126,7 +111,7 @@ export default function Home({posts}) {
                     fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <use href="#icon-arrow"></use>
+                    <use href="#icon-arrow" className="icon_default"></use>
                   </svg>
                 </a>
               </Link>
@@ -140,8 +125,7 @@ export default function Home({posts}) {
             <div className={styles.projects_header}>
               <h3 className={styles.projects_header_title}>Blog</h3>
               <p className={styles.projects_header_desc}>
-                My thought about web development, technology, life, and
-                everything in between.
+                My thought about web development, technology, life, and everything in between.
               </p>
               <Link href="/blog">
                 <a className={styles.projects_header_link}>
@@ -153,7 +137,7 @@ export default function Home({posts}) {
                     fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <use href="#icon-arrow"></use>
+                    <use href="#icon-arrow" className="icon_default"></use>
                   </svg>
                 </a>
               </Link>
@@ -185,7 +169,7 @@ export default function Home({posts}) {
                     fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <use href="#icon-arrow"></use>
+                    <use href="#icon-arrow" className="icon_default"></use>
                   </svg>
                 </a>
               </Link>

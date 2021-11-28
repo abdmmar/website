@@ -8,9 +8,6 @@ export default function NavBar() {
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbar_menu}>
-        <Link href="/">
-          <a className={styles.logo_container}>/~\</a>
-        </Link>
         <LinkList />
       </div>
       <div className={styles.navbar_theme}>
@@ -23,6 +20,11 @@ export default function NavBar() {
 function LinkList() {
   return (
     <ul className={styles.menu}>
+      <li className={styles.menu_item}>
+        <Link href="/">
+          <a>Home</a>
+        </Link>
+      </li>
       <li className={styles.menu_item}>
         <Link href="/projects">
           <a>Projects</a>
