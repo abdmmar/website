@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import {Head} from '@components/pages'
+import {Head} from '@components/seo'
 import {Card} from '@components/cards'
 import {Layout} from '@components/layouts'
 import {getAllPosts} from '@lib/mdx'
@@ -12,6 +12,8 @@ import styles from './Index.module.scss'
 
 export default function Home({posts}) {
   const {width: windowWidth} = useWindowSize()
+
+  const project = posts?.projects[0].frontmatter
 
   return (
     <Layout>
@@ -54,34 +56,19 @@ export default function Home({posts}) {
               <p className={styles.projects_header_desc}>
                 Here are some of my work for assignments, organizations, events, and initiative.
               </p>
-              <Link href="/projects">
-                <a className={styles.projects_header_link}>
-                  See all projects
-                  <svg
-                    width="24"
-                    height="30"
-                    viewBox="0 0 30 33"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <use href="#icon-arrow" className="icon_default"></use>
-                  </svg>
-                </a>
-              </Link>
+              <HeaderLink href="/projects" text="See all projects" />
             </div>
             <div className={styles.projects_content}>
               <div className={styles.projects_main_content}>
                 <Card
-                  title={posts?.projects[0].frontmatter.title}
-                  description={posts?.projects[0].frontmatter.description}
-                  tag={posts?.projects[0].frontmatter.category}
-                  date={new Date(posts?.projects[0].frontmatter.published_date).getFullYear()}
-                  image={posts?.projects[0].frontmatter.image}
-                  imageAlt={posts?.projects[0].frontmatter.image_alt}
+                  title={project.title}
+                  description={project.description}
+                  tag={project.category}
+                  date={new Date(project.published_date).getFullYear()}
+                  image={project.image}
+                  imageAlt={project.image_alt}
                   link={
-                    posts?.projects[0].frontmatter.link == null
-                      ? `/projects/${posts?.projects[0].slug}`
-                      : posts?.projects[0].frontmatter.link
+                    project.link == null ? `/projects/${posts?.projects[0].slug}` : project.link
                   }
                 />
               </div>
@@ -100,24 +87,7 @@ export default function Home({posts}) {
                 })}
               </div>
             </div>
-            {windowWidth <= 768 ? (
-              <Link href="/projects">
-                <a className={styles.projects_header_link}>
-                  See all projects
-                  <svg
-                    width="24"
-                    height="30"
-                    viewBox="0 0 30 33"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <use href="#icon-arrow" className="icon_default"></use>
-                  </svg>
-                </a>
-              </Link>
-            ) : (
-              ''
-            )}
+            {windowWidth <= 768 && <HeaderLink href="/projects" text="See all projects" />}
           </div>
         </div>
         <div className={styles.blog_container} id="blog">
@@ -127,20 +97,7 @@ export default function Home({posts}) {
               <p className={styles.projects_header_desc}>
                 My thought about web development, technology, life, and everything in between.
               </p>
-              <Link href="/blog">
-                <a className={styles.projects_header_link}>
-                  See all posts
-                  <svg
-                    width="24"
-                    height="30"
-                    viewBox="0 0 30 33"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <use href="#icon-arrow" className="icon_default"></use>
-                  </svg>
-                </a>
-              </Link>
+              <HeaderLink href="/blog" text="See all posts" />
             </div>
             <div className={styles.blog_content}>
               {posts?.blog?.slice(0, 3)?.map(({slug, frontmatter: meta}) => {
@@ -158,28 +115,30 @@ export default function Home({posts}) {
                 )
               })}
             </div>
-            {windowWidth <= 768 ? (
-              <Link href="/blog">
-                <a className={styles.projects_header_link}>
-                  See all posts
-                  <svg
-                    width="24"
-                    height="30"
-                    viewBox="0 0 30 33"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <use href="#icon-arrow" className="icon_default"></use>
-                  </svg>
-                </a>
-              </Link>
-            ) : (
-              ''
-            )}
+            {windowWidth <= 768 && <HeaderLink href="/blog" text="See all posts" />}
           </div>
         </div>
       </main>
     </Layout>
+  )
+}
+
+const HeaderLink = ({href, text}) => {
+  return (
+    <Link href={href}>
+      <a className={styles.projects_header_link}>
+        {text}
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 30 33"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use href="#icon-arrow" className="icon_default"></use>
+        </svg>
+      </a>
+    </Link>
   )
 }
 

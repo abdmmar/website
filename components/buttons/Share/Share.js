@@ -6,7 +6,7 @@ import '@reach/dialog/styles.css'
 import styles from './Share.module.scss'
 
 export default function Share({
-  title = 'Abdullah Ammar • Developer',
+  title = 'Abdullah Ammar',
   description = 'A student and developer',
   text = 'Share this article',
   url = 'https://abdmmar.tech',
@@ -69,11 +69,7 @@ export default function Share({
           <use href="#icon-arrow" className="icon_default"></use>
         </svg>
       </button>
-      <Dialog
-        isOpen={showDialog}
-        onDismiss={close}
-        aria-label="Share this article"
-      >
+      <Dialog isOpen={showDialog} onDismiss={close} aria-label="Share this article">
         <div className={styles.dialog}>
           <div className={styles.dialog_header}>
             <h4 className={styles.dialog_title}>Share this posts</h4>
@@ -85,9 +81,7 @@ export default function Share({
             <li>
               <button
                 onClick={() =>
-                  handleLink(
-                    `https://twitter.com/intent/tweet?url=${url}&text=${description}`,
-                  )
+                  handleLink(`https://twitter.com/intent/tweet?url=${url}&text=${description}`)
                 }
               >
                 Twitter
@@ -96,20 +90,14 @@ export default function Share({
             <li>
               <button
                 onClick={() =>
-                  handleLink(
-                    `https://www.linkedin.com/shareArticle?mini=true&url=${url}`,
-                  )
+                  handleLink(`https://www.linkedin.com/shareArticle?mini=true&url=${url}`)
                 }
               >
                 LinkedIn
               </button>
             </li>
             <li>
-              <button
-                onClick={() =>
-                  handleLink(`https://www.facebook.com/sharer.php?u=${url}`)
-                }
-              >
+              <button onClick={() => handleLink(`https://www.facebook.com/sharer.php?u=${url}`)}>
                 Facebook
               </button>
             </li>
@@ -119,9 +107,7 @@ export default function Share({
               </button>
             </li>
           </ul>
-          <p className={styles.dialog_message}>
-            {isCopied ? 'Thanks for sharing!' : ''}
-          </p>
+          <p className={styles.dialog_message}>{isCopied ? 'Thanks for sharing!' : ''}</p>
         </div>
       </Dialog>
     </>

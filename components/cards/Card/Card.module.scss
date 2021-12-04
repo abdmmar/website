@@ -4,6 +4,10 @@
   gap: var(--spacing-s);
 }
 
+.card div:first-child {
+  margin-block: 0;
+}
+
 .info {
   display: flex;
   flex-direction: row;

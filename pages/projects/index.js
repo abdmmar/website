@@ -1,7 +1,7 @@
 import * as React from 'react'
 import cn from 'classnames'
 
-import {Head} from '@components/pages'
+import {Head} from '@components/seo'
 import {Card} from '@components/cards'
 import {Layout} from '@components/layouts'
 import {getAllPosts} from '@lib/mdx'
@@ -11,7 +11,7 @@ import styles from './Projects.module.scss'
 export default function Projects({posts}) {
   return (
     <Layout>
-      <Head title="Projects • Abdullah Ammar • Developer" path="/projects" />
+      <Head title="Projects • Abdullah Ammar" path="/projects" />
 
       <main className={styles.main}>
         <div className={styles.projects_container}>
@@ -19,8 +19,7 @@ export default function Projects({posts}) {
             <div className={styles.projects_header}>
               <h2 className={styles.projects_header_title}>Projects</h2>
               <p className={styles.projects_header_desc}>
-                Here are some of my work for assignments, organizations,
-                events, and initiative.
+                Here are some of my work for assignments, organizations, events, and initiative.
               </p>
             </div>
             <div
@@ -38,9 +37,7 @@ export default function Projects({posts}) {
                         title={posts[0].frontmatter.title}
                         description={posts[0].frontmatter.description}
                         tag={posts[0].frontmatter.category}
-                        date={new Date(
-                          posts[0].frontmatter.published_date,
-                        ).getFullYear()}
+                        date={new Date(posts[0].frontmatter.published_date).getFullYear()}
                         image={posts[0].frontmatter.image}
                         link={
                           posts[0].frontmatter.link == null
@@ -56,9 +53,7 @@ export default function Projects({posts}) {
                           title={posts[1].frontmatter.title}
                           description={posts[1].frontmatter.description}
                           tag={posts[1].frontmatter.category}
-                          date={new Date(
-                            posts[1].frontmatter.published_date,
-                          ).getFullYear()}
+                          date={new Date(posts[1].frontmatter.published_date).getFullYear()}
                           image={posts[1].frontmatter.image}
                           link={
                             posts[1].frontmatter.link == null
@@ -81,11 +76,7 @@ export default function Projects({posts}) {
                             description={meta.description}
                             tag={meta.category}
                             date={new Date(meta.published_date).getFullYear()}
-                            link={
-                              meta.link == null
-                                ? `/projects/${slug}`
-                                : meta.link
-                            }
+                            link={meta.link == null ? `/projects/${slug}` : meta.link}
                           />
                         )
                       }

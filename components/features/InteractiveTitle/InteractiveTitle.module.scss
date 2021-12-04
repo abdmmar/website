@@ -1,37 +1,17 @@
 .title {
+  width: 65%;
+  line-height: 1.3;
   margin: 0;
   margin-bottom: var(--spacing-ml);
   font-weight: 400;
   font-family: 'IBM Plex Sans', sans-serif;
   font-variant: common-ligatures diagonal-fractions;
-  letter-spacing: -0.05rem;
+  letter-spacing: -0.025rem;
   color: var(--text-color-secondary);
 
   & .title_name {
     color: var(--hero-text-accent);
   }
-}
-
-.me {
-  font-family: 'IBM Plex Serif', serif;
-  font-style: oblique;
-  font-weight: 400;
-}
-
-.mono {
-  font-family: 'IBM Plex Mono', monospace;
-  letter-spacing: -0.15rem;
-}
-
-.serif {
-  font-family: 'IBM Plex Serif', serif;
-  font-style: oblique;
-}
-
-.passion {
-  font-family: 'IBM Plex Sans Condensed', sans-serif;
-  font-style: oblique;
-  font-weight: 400;
 }
 
 @media screen and (max-width: 470px) {
@@ -52,4 +32,10 @@
   .title {
     color: var(--text-color-primary);
   }
+}
+
+.me {
+  font-family: 'IBM Plex Serif', serif;
+  font-style: oblique;
+  font-weight: 400;
 }

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import {Head} from '@components/pages'
+import {Head} from '@components/seo'
 import {Card} from '@components/cards'
 import {Layout} from '@components/layouts'
 import formatDate from '@lib/format-date'
@@ -11,7 +11,7 @@ import styles from './Blog.module.scss'
 export default function Blog({posts}) {
   return (
     <Layout>
-      <Head title="Blog • Abdullah Ammar • Developer" path="/blog" />
+      <Head title="Blog • Abdullah Ammar" path="/blog" />
 
       <main className={styles.main}>
         <div className={styles.blog_container}>
@@ -19,8 +19,7 @@ export default function Blog({posts}) {
             <div className={styles.blog_header}>
               <h2 className={styles.blog_header_title}>Blog</h2>
               <p className={styles.blog_header_desc}>
-                My thought about web development, technology, life, and
-                everything in between.
+                My thought about web development, technology, life, and everything in between.
               </p>
             </div>
             <div className={styles.blog_posts}>

@@ -2,7 +2,7 @@ import * as React from 'react'
 import Image from 'next/image'
 import {getMDXComponent} from 'mdx-bundler/client'
 
-import {Head} from '@components/pages'
+import {Head} from '@components/seo'
 import {Share} from '@components/buttons'
 import {Layout} from '@components/layouts'
 import {Callout, Link, Paragraph} from '@components/mdx'
@@ -13,16 +13,8 @@ import formatDate from '@lib/format-date'
 
 const FOLDER = 'blog'
 
-export default function DetailBlog({
-  code,
-  frontmatter: meta,
-  readTime,
-  slug,
-}) {
-  const Component = React.useMemo(
-    () => getMDXComponent(code, {Callout}),
-    [code],
-  )
+export default function DetailBlog({code, frontmatter: meta, readTime, slug}) {
+  const Component = React.useMemo(() => getMDXComponent(code, {Callout}), [code])
 
   const last_modified =
     meta.modified_date != null
@@ -34,7 +26,7 @@ export default function DetailBlog({
   return (
     <Layout>
       <Head
-        title={`${meta.title} • Abdullah Ammar • Developer`}
+        title={`${meta.title} • Abdullah Ammar`}
         path={`/blog/${slug}`}
         description={meta.description}
         type="article"
@@ -50,9 +42,7 @@ export default function DetailBlog({
           <div className={styles.hero}>
             <div className={styles.hero_header}>
               <span>{meta.category}</span>
-              <span>
-                {formatDate(meta.published_date, {dateStyle: 'long'})}
-              </span>
+              <span>{formatDate(meta.published_date, {dateStyle: 'long'})}</span>
             </div>
             <h2 className={styles.hero_title}>{meta.title}</h2>
             <Image
@@ -114,11 +104,7 @@ export default function DetailBlog({
             <Share
               title={meta.title}
               description={meta.description}
-              url={
-                process.browser
-                  ? document.location.href
-                  : 'https://abdmmar.tech/blog/' + slug
-              }
+              url={process.browser ? document.location.href : 'https://abdmmar.tech/blog/' + slug}
             />
           </div>
         </div>

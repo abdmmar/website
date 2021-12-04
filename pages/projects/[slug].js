@@ -2,7 +2,7 @@ import * as React from 'react'
 import Image from 'next/image'
 import {getMDXComponent} from 'mdx-bundler/client'
 
-import {Head} from '@components/pages'
+import {Head} from '@components/seo'
 import {Share} from '@components/buttons'
 import {Layout} from '@components/layouts'
 import {Callout, Link, Paragraph} from '@components/mdx'
@@ -14,15 +14,12 @@ import styles from './[slug].module.scss'
 const FOLDER = 'projects'
 
 export default function DetailProjects({code, frontmatter: meta, slug}) {
-  const Component = React.useMemo(
-    () => getMDXComponent(code, {Callout}),
-    [code],
-  )
+  const Component = React.useMemo(() => getMDXComponent(code, {Callout}), [code])
 
   return (
     <Layout>
       <Head
-        title={`${meta.title} • Abdullah Ammar • Developer`}
+        title={`${meta.title} • Abdullah Ammar`}
         path={`/projects/${slug}`}
         description={meta.description}
         type="article"
@@ -38,9 +35,7 @@ export default function DetailProjects({code, frontmatter: meta, slug}) {
           <div className={styles.hero}>
             <div className={styles.hero_header}>
               <span>{meta.category}</span>
-              <span>
-                {formatDate(meta.published_date, {dateStyle: 'long'})}
-              </span>
+              <span>{formatDate(meta.published_date, {dateStyle: 'long'})}</span>
             </div>
             <h2 className={styles.hero_title}>{meta.title}</h2>
             <Image
@@ -55,11 +50,7 @@ export default function DetailProjects({code, frontmatter: meta, slug}) {
                 <div>
                   <dt>Repository</dt>
                   <dd>
-                    <a
-                      href={meta.repository}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
+                    <a href={meta.repository} target="_blank" rel="noreferrer">
                       Github
                     </a>
                   </dd>
@@ -115,9 +106,7 @@ export default function DetailProjects({code, frontmatter: meta, slug}) {
               title={process.browser ? document.title : meta.title}
               description={meta.description}
               url={
-                process.browser
-                  ? document.location.href
-                  : 'https://abdmmar.tech/projects/' + slug
+                process.browser ? document.location.href : 'https://abdmmar.tech/projects/' + slug
               }
             />
           </div>

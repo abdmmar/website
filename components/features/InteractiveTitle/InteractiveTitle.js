@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import {SplitText} from '@components/features'
+import {SplitText} from './SplitText'
 import {getRandomNumber} from '@lib/number'
 import {isLowercase, getRandomChar} from '@lib/string'
 import {
@@ -17,6 +17,16 @@ import {
 import styles from './InteractiveTitle.module.scss'
 
 export default function InteractiveTitle() {
+  return (
+    <h4 className={styles.title}>
+      Hi, I&apos;m <span className={styles.me}>Ammar</span>, <br />a student who likes to build
+      things about the web and graphic design. Interested in user interface, accesibility, and web
+      performance. Currently learning crafting interpreter and trying to contribute to open source
+    </h4>
+  )
+}
+
+const SplitWord = () => {
   React.useEffect(() => {
     if (process.browser) {
       const chars = document.querySelectorAll('.char')
@@ -33,23 +43,16 @@ export default function InteractiveTitle() {
           c.textContent = getRandomChar(eList, c.textContent)
           c.textContent = getRandomChar(oList, c.textContent)
 
-          c.style.fontWeight =
-            fontWeightList[getRandomNumber(fontWeightList.length)]
-          c.style.fontFamily =
-            fontFamilyList[getRandomNumber(fontFamilyList.length)]
-          c.style.fontStyle =
-            fontStyleList[getRandomNumber(fontStyleList.length)]
+          c.style.fontWeight = fontWeightList[getRandomNumber(fontWeightList.length)]
+          c.style.fontFamily = fontFamilyList[getRandomNumber(fontFamilyList.length)]
+          c.style.fontStyle = fontStyleList[getRandomNumber(fontStyleList.length)]
         })
       }
     }
   }, [])
 
   return (
-    <h2
-      className={styles.title}
-      aria-label="Hi! I'm Ammar, a student and developer who passionate to build something fun and useful."
-      role="heading"
-    >
+    <>
       <span className={styles.title_name}>
         <SplitText>Hi! I&apos;m </SplitText>
         <span className={styles.me}>
@@ -77,6 +80,6 @@ export default function InteractiveTitle() {
       <span className={styles.serif}>
         <SplitText>useful.</SplitText>
       </span>
-    </h2>
+    </>
   )
 }

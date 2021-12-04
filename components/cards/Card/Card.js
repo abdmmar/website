@@ -9,7 +9,7 @@ import styles from './Card.module.scss'
 const Card = ({title, description = null, tag, date, image = null, imageAlt = title, link}) => {
   return (
     <div className={styles.card}>
-      {image != null ? <Image src={image} alt={imageAlt} objectFit="cover" /> : ''}
+      {image != null && <Image src={image} alt={imageAlt} objectFit="cover" />}
       <div className={styles.info}>
         <small className={styles.tag}>{tag}</small>
         <small className={styles.date}>{date}</small>
@@ -19,7 +19,7 @@ const Card = ({title, description = null, tag, date, image = null, imageAlt = ti
           <h3>{children}</h3>
         </a>
       ) : (
-        <Link href={link}>
+        <Link href={link} passHref>
           <h3>
             <a className={styles.title}>{title}</a>
           </h3>
