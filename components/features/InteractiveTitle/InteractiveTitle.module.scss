@@ -16,6 +16,8 @@
 
 @media screen and (max-width: 470px) {
   .title {
+    width: 100%;
+
     & .break {
       display: none;
     }
