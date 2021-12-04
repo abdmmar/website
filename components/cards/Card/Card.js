@@ -19,11 +19,11 @@ const Card = ({title, description = null, tag, date, image = null, imageAlt = ti
           <h3>{children}</h3>
         </a>
       ) : (
-        <Link href={link} passHref>
-          <h3>
+        <h3>
+          <Link href={link} passHref>
             <a className={styles.title}>{title}</a>
-          </h3>
-        </Link>
+          </Link>
+        </h3>
       )}
 
       {description != null && description.length !== 0 ? (
