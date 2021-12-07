@@ -9,6 +9,7 @@ export default function Footer() {
         <div className={styles.social}>
           <Link href="/">
             <a className={styles.logo_container}>
+              <p className="sr-only">Back to homepage</p>
               <svg
                 width="26"
                 height="23"
@@ -26,29 +27,17 @@ export default function Footer() {
           </Link>
           <ul className={styles.social_link}>
             <li>
-              <a
-                href="https://www.github.com/abdmmar"
-                rel="noreferrer"
-                target="_blank"
-              >
+              <a href="https://www.github.com/abdmmar" rel="noreferrer" target="_blank">
                 Github
               </a>
             </li>
             <li>
-              <a
-                href="https://www.figma.com/@abdmmar"
-                rel="noreferrer"
-                target="_blank"
-              >
+              <a href="https://www.figma.com/@abdmmar" rel="noreferrer" target="_blank">
                 Figma
               </a>
             </li>
             <li>
-              <a
-                href="https://www.twitter.com/abdmmar"
-                rel="noreferrer"
-                target="_blank"
-              >
+              <a href="https://www.twitter.com/abdmmar" rel="noreferrer" target="_blank">
                 Twitter
               </a>
             </li>
