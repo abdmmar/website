@@ -14,24 +14,21 @@ const getAllPosts = (folder) => {
       const {data} = matter(source)
 
       return {
-        frontmatter: data,
+        ...data,
         slug: slug,
       }
     })
-    .sort(
-      (a, b) =>
-        new Date(b.frontmatter.published_date).date -
-        new Date(a.frontmatter.published_date).date,
-    )
+    .sort((a, b) => new Date(b.published_date).getTime() - new Date(a.published_date).getTime())
 
   return posts
 }
 
 async function generate() {
   const date = new Date()
-  const projectList = getAllPosts('projects')
   const blogList = getAllPosts('blog')
   const siteURL = 'https://www.abdmmar.tech'
+
+  console.log(blogList)
 
   const author = {
     name: 'Abdullah Ammar',
@@ -58,18 +55,11 @@ async function generate() {
     author,
   })
 
-  projectList.forEach((project) => {
-    const {frontmatter, slug} = project
-    const url = `${siteURL}/projects/${slug}`
-
-    addFeedItem({url, ...frontmatter})
-  })
-
   blogList.forEach((blog) => {
-    const {frontmatter, slug} = blog
+    const {slug, ...meta} = blog
     const url = `${siteURL}/blog/${slug}`
 
-    addFeedItem({url, ...frontmatter})
+    addFeedItem({url, ...meta})
   })
 
   function addFeedItem({url, title, description, published_date}) {
@@ -77,8 +67,7 @@ async function generate() {
       title: title,
       id: url,
       link: url,
-      description:
-        description != null || description != '' ? description : title,
+      description: description || title,
       content: description,
       author: [author],
       contributor: [author],
