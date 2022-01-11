@@ -59,8 +59,8 @@ export default function Home({posts}) {
             <div className={styles.projects_content}>
               <div className={styles.projects_main_content}>
                 <Card
-                  {...posts?.projects?.at(0)}
-                  date={new Date(posts?.projects?.at(0).published_date).getFullYear()}
+                  {...posts?.projects[0]}
+                  date={new Date(posts?.projects[0].published_date).getFullYear()}
                 />
               </div>
               <div className={styles.projects_aside_content}>
