@@ -11,7 +11,7 @@ import styles from './Blog.module.scss'
 export default function Blog({posts}) {
   return (
     <Layout>
-      <Head title="Blog • Abdullah Ammar" path="/blog" />
+      <Head title="Abdullah Ammar • Blog" path="/blog" />
 
       <main className={styles.main}>
         <div className={styles.blog_container}>
@@ -23,18 +23,18 @@ export default function Blog({posts}) {
               </p>
             </div>
             <div className={styles.blog_posts}>
-              {posts.map(({slug, frontmatter: meta}) => {
+              {posts.map((post) => {
                 return (
                   <Card
-                    key={slug}
-                    title={meta.title}
+                    key={post.slug}
+                    title={post.title}
                     description={''}
-                    tag={meta.category}
-                    date={formatDate(meta.published_date)}
-                    image={meta.image}
+                    category={post.category}
+                    date={formatDate(post.published_date)}
+                    image={post.image}
                     imageWidth="320px"
                     imageHeight="320px"
-                    link={meta.link == null ? `/blog/${slug}` : meta.link}
+                    link={post.link == null ? `/blog/${post.slug}` : post.link}
                   />
                 )
               })}

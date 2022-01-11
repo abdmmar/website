@@ -1,13 +1,9 @@
 ---
 title: 'Membangun Kebun Digital'
-subtitle:
-  'Membangun sebuah tempat untuk belajar dan menumbuhkan ide-ide baru di ruang
-  publik'
-description:
-  'Membangun sebuah tempat untuk belajar dan menumbuhkan ide-ide baru di ruang
-  publik'
+subtitle: 'Membangun sebuah tempat untuk belajar dan menumbuhkan ide-ide baru di ruang publik'
+description: 'Membangun sebuah tempat untuk belajar dan menumbuhkan ide-ide baru di ruang publik'
 category: 'Digital Garden'
-tags:
+keywords:
   - Blogging
   - Writing
   - Thinking
@@ -22,69 +18,60 @@ author: Abdullah Ammar
 
 import Callout from '@components/mdx/Callout'
 
-Sudah beberapa kali saya mengembangkan website portofolio saya sendiri dengan
-tujuan untuk menunjukkan hasil implementasi hal-hal yang sedang ataupun sudah
-saya pelajari dari bangku perkuliahan ataupun _course_ yang saya ambil.
-Website ini juga sudah beberapa kali saya rombak, mulai dari menggunakan HTML
-dan CSS, kemudian PHP (mata kuliah pemrograman web), sampai saya ubah lagi
-menggunakan HTML, CSS, dan JavaScript dengan Web Componentnya.
+Sudah beberapa kali saya mengembangkan website portofolio saya sendiri dengan tujuan untuk
+menunjukkan hasil implementasi hal-hal yang sedang ataupun sudah saya pelajari dari bangku
+perkuliahan ataupun _course_ yang saya ambil. Website ini juga sudah beberapa kali saya rombak,
+mulai dari menggunakan HTML dan CSS, kemudian PHP (mata kuliah pemrograman web), sampai saya ubah
+lagi menggunakan HTML, CSS, dan JavaScript dengan Web Componentnya.
 
-Tujuan pengembangan website saya yang baru ini sebenarnya sama, dengan
-beberapa tujuan tambahan, salah satunya adalah agar saya bebas berbagi dan
-beropini tentang hal-hal yang saya buat dan pelajari saat ini, terutama
-tentang teknologi. Beberapa hal yang menjadi pertimbangan saya ketika
+Tujuan pengembangan website saya yang baru ini sebenarnya sama, dengan beberapa tujuan tambahan,
+salah satunya adalah agar saya bebas berbagi dan beropini tentang hal-hal yang saya buat dan
+pelajari saat ini, terutama tentang teknologi. Beberapa hal yang menjadi pertimbangan saya ketika
 mengembangkan website ini, yaitu:
 
 1. _Performance_ - Lighthouse score ≥ 90
-2. _Accessible_ - Sebuah website memang sudah seharusnya mudah digunakan oleh
-   semua orang
-3. _Maintainable_ - Kode yang ada sebisa mungkin dibuat sesederhana mungkin
-   sehingga mudah ditambahkan, sunting, dan hapus.
+2. _Accessible_ - Sebuah website memang sudah seharusnya mudah digunakan oleh semua orang
+3. _Maintainable_ - Kode yang ada sebisa mungkin dibuat sesederhana mungkin sehingga mudah
+   ditambahkan, sunting, dan hapus.
 
 ## Proses
 
-Dari ketiga hal diatas, saya menentukan beberapa teknologi yang akhirnya saya
-pakai untuk mengembangkan website ini.
+Dari ketiga hal diatas, saya menentukan beberapa teknologi yang akhirnya saya pakai untuk
+mengembangkan website ini.
 
 1. _Performance_
 
-   Hal yang pertama saya pikirkan adalah _perfomance_, tujuannya tentu saja
-   agar pengunjung tidak perlu nunggu lama hanya untuk membuka website ini.
-   Pilihan saya jatuh sama Next.js, selain karena saya sudah berniat
-   menggunakan Next.js karena _learning curve_ yang cukup landai (dokumentasi
-   dan tutorialnya mantap) dan kemudahan buat make MDX sebagai _content
-   management system_-nya, Next.js juga punya fitur-fitur bawaan yang
-   mendukung optimisasi seperti Automatic Image Optimization dan Font
-   Optimization
+   Hal yang pertama saya pikirkan adalah _perfomance_, tujuannya tentu saja agar pengunjung tidak
+   perlu nunggu lama hanya untuk membuka website ini. Pilihan saya jatuh sama Next.js, selain karena
+   saya sudah berniat menggunakan Next.js karena _learning curve_ yang cukup landai (dokumentasi dan
+   tutorialnya mantap) dan kemudahan buat make MDX sebagai _content management system_-nya, Next.js
+   juga punya fitur-fitur bawaan yang mendukung optimisasi seperti Automatic Image Optimization dan
+   Font Optimization
 
 2. _Accessible_
 
-   Dari komponen yang ada, beberapa komponen saya memilih untuk pakai Reach UI
-   karena jika saya membuatnya sendiri, belum tentu saya bisa memastikan
-   komponen tersebut memiliki aksesibilitas yang baik, contohnya komponen
-   Modal dan Menu, selain itu karena setiap komponen yang ada di Reach UI udah
-   diuji menggunakan berbagai macam peramban beserta _screen reader_-nya
-   seperti Safari dengan VoiceOver, Firefox dengan NVDA, dan Edge dengan JAWS.
+   Dari komponen yang ada, beberapa komponen saya memilih untuk pakai Reach UI karena jika saya
+   membuatnya sendiri, belum tentu saya bisa memastikan komponen tersebut memiliki aksesibilitas
+   yang baik, contohnya komponen Modal dan Menu, selain itu karena setiap komponen yang ada di Reach
+   UI udah diuji menggunakan berbagai macam peramban beserta _screen reader_-nya seperti Safari
+   dengan VoiceOver, Firefox dengan NVDA, dan Edge dengan JAWS.
 
 3. _Maintainable_
 
-   Jujur sampai saat ini saya masih belum tau untuk membangun sebuah struktur
-   folder dan mengatur aplikasi skala produksi yang _scalable_ dan
-   _maintanable_, yang menjadi patokan saya saat ini untuk membangun struktur
-   folder adalah artikel yang ditulis oleh Tania Rascia yaitu
+   Jujur sampai saat ini saya masih belum tau untuk membangun sebuah struktur folder dan mengatur
+   aplikasi skala produksi yang _scalable_ dan _maintanable_, yang menjadi patokan saya saat ini
+   untuk membangun struktur folder adalah artikel yang ditulis oleh Tania Rascia yaitu
    [React Architecture: How to Structure and Organize a React Application](https://www.taniarascia.com/react-architecture-directory-structure/).
-   Untuk mengatur kodenya saya dibantu oleh ESLint bawaan Next.js sebagai
-   _static code analysis_ dengan sedikit _rules_ tambahan dan Prettier sebagai
-   _code formatter._
+   Untuk mengatur kodenya saya dibantu oleh ESLint bawaan Next.js sebagai _static code analysis_
+   dengan sedikit _rules_ tambahan dan Prettier sebagai _code formatter._
 
 ### Antarmuka Pengguna
 
 #### Rancangan
 
-Berbekal sedikit pengalaman saya yang sering kali ditunjuk sebagai seorang
-"desainer grafis" dalam sebuah organisasi dan sedikit pengalaman sebagai
-_layouter_ di majalah sekolah dan majalah dinding dulu (haha), saya mencoba
-merancang beberapa halaman website ini menggunakan Figma. Berikut beberapa
+Berbekal sedikit pengalaman saya yang sering kali ditunjuk sebagai seorang "desainer grafis" dalam
+sebuah organisasi dan sedikit pengalaman sebagai _layouter_ di majalah sekolah dan majalah dinding
+dulu (haha), saya mencoba merancang beberapa halaman website ini menggunakan Figma. Berikut beberapa
 hasil rancangan tersebut:
 
 ##### Halaman Home dengan tema _light_
@@ -101,35 +88,32 @@ hasil rancangan tersebut:
 
 #### Implementasi
 
-Karena berbagai alasan, ada beberapa perubahan yang saya lakukan ketika
-mengimplementasikan rancangan tampilan antarmuka pengguna ini, contohnya
-seperti pada halaman _home_ yang saya buat menjadi lebih sederhana karena saya
-kesulitan untuk memilih dan mengkombinasikan warna, namun karena terlalu
-sederhana dan terkesan membosankan saya mencoba menambahkan fitur interaktif
-yang terinspirasi dari [taliacotton.com](https://taliacotton.com/) agar tidak
-terlalu membosankan
+Karena berbagai alasan, ada beberapa perubahan yang saya lakukan ketika mengimplementasikan
+rancangan tampilan antarmuka pengguna ini, contohnya seperti pada halaman _home_ yang saya buat
+menjadi lebih sederhana karena saya kesulitan untuk memilih dan mengkombinasikan warna, namun karena
+terlalu sederhana dan terkesan membosankan saya mencoba menambahkan fitur interaktif yang
+terinspirasi dari [taliacotton.com](https://taliacotton.com/) agar tidak terlalu membosankan
 
 ![Hover Interactive](/static/posts/blog/membangun-kebun-digital/hover.gif)
 
 <Callout>
-  Kunjungi <a href="https://ksana.in/hover">ksana.in/hover</a> atau{' '}
-  <a href="/">halaman home</a> untuk mencobanya.
+  Kunjungi <a href="https://ksana.in/hover">ksana.in/hover</a> atau <a href="/">halaman home</a>{' '}
+  untuk mencobanya.
 </Callout>
 
 ### Konten
 
-Karena tujuan saya mengembangkan website ini adalah berbagi, maka konten yang
-ada adalah tentang berbagi apa yang menjadi passion saya saat ini dan berbagi
-ke komunitas tentang apa yang sedang saya alami, pelajari, dan kerjakan,
-walaupun saya sadar bahwa apa yang saya kerjakan mungkin tidak terlalu berguna
-untuk orang lain setidaknya website ini, buat saya, bisa jadi wadah arsip
-untuk proses yang telah saya lalui dan sedikit hasil yang pernah saya dapat.
+Karena tujuan saya mengembangkan website ini adalah berbagi, maka konten yang ada adalah tentang
+berbagi apa yang menjadi passion saya saat ini dan berbagi ke komunitas tentang apa yang sedang saya
+alami, pelajari, dan kerjakan, walaupun saya sadar bahwa apa yang saya kerjakan mungkin tidak
+terlalu berguna untuk orang lain setidaknya website ini, buat saya, bisa jadi wadah arsip untuk
+proses yang telah saya lalui dan sedikit hasil yang pernah saya dapat.
 
 ## Tech Stack
 
-Dalam mengembangkan website ini, saya memilih Next.js, SCSS Modules, MDX, dan
-Vercel sebagai kekuatan utama untuk mempersenjatai ~~buruh tani~~ website ini.
-Adapun teknologi tambahan yang saya pakai, yaitu:
+Dalam mengembangkan website ini, saya memilih Next.js, SCSS Modules, MDX, dan Vercel sebagai
+kekuatan utama untuk mempersenjatai ~~buruh tani~~ website ini. Adapun teknologi tambahan yang saya
+pakai, yaitu:
 
 ### Web Technologies
 
@@ -159,35 +143,32 @@ Adapun teknologi tambahan yang saya pakai, yaitu:
 
 ## Bantuan
 
-Beberapa artikel/issues/code snippet/website yang sangat membantu saya dalam
-mengembangkan website ini:
+Beberapa artikel/issues/code snippet/website yang sangat membantu saya dalam mengembangkan website
+ini:
 
 ### Markdown
 
-1. [MDX Bundler with Next.JS](https://www.arcath.net/2021/03/mdx-bundler) by
-   Adam Laycock
-2. [MDX in Next.js using mdx-bundler](https://dipeshwagle.com/blog/use-mdx-bundler-next-js)
-   by Dipesh Wagle
+1. [MDX Bundler with Next.JS](https://www.arcath.net/2021/03/mdx-bundler) by Adam Laycock
+2. [MDX in Next.js using mdx-bundler](https://dipeshwagle.com/blog/use-mdx-bundler-next-js) by
+   Dipesh Wagle
 
 ### Dark Mode
 
-1. [Dark Mode on the Web](https://fatihkalifa.com/dark-mode-web) by Fatih
-   Kalifa
+1. [Dark Mode on the Web](https://fatihkalifa.com/dark-mode-web) by Fatih Kalifa
 2. [A Complete Guide to Dark Mode on the Web](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/)
    by Adhuham
 3. [Emulate dark or light schemes in the rendered page](https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/accessibility/preferred-color-scheme-simulation)
-4. [Disable theme transitions on theme toggle](https://paco.sh/blog/disable-theme-transitions)
-   by Paco Coursey
+4. [Disable theme transitions on theme toggle](https://paco.sh/blog/disable-theme-transitions) by
+   Paco Coursey
 
 ### Syntax Highlighting
 
-1. [Code blocks, but better](https://ped.ro/blog/code-blocks-but-better) by
-   Pedro Duarte
+1. [Code blocks, but better](https://ped.ro/blog/code-blocks-but-better) by Pedro Duarte
 
 ### Web Share
 
-1. [How to Use the Web Share API](https://css-tricks.com/how-to-use-the-web-share-api/)
-   by Ayooluwa Isaiah
+1. [How to Use the Web Share API](https://css-tricks.com/how-to-use-the-web-share-api/) by Ayooluwa
+   Isaiah
 2. [The Simplest (and Most Performant) Way to Offer Sharing Links for Social Media](https://css-tricks.com/simple-social-sharing-links/)
    by Adam Coti
 
@@ -212,10 +193,10 @@ mengembangkan website ini:
 1. [Webmention](https://indieweb.org/Webmention)
 2. [Into Webmentions With NextJS (or Not)](https://css-tricks.com/jumping-into-webmentions-with-nextjs-or-not/)
    by Atila Fassina
-3. [Using Webmentions in Eleventy](https://mxb.dev/blog/using-webmentions-on-static-sites/)
-   by Max Böck
-4. [A Short History of Bi-Directional Links](https://maggieappleton.com/bidirectionals)
-   by Maggie Appleton
+3. [Using Webmentions in Eleventy](https://mxb.dev/blog/using-webmentions-on-static-sites/) by Max
+   Böck
+4. [A Short History of Bi-Directional Links](https://maggieappleton.com/bidirectionals) by Maggie
+   Appleton
 
 ### Code Snippet
 
@@ -235,11 +216,10 @@ mengembangkan website ini:
    }
    ```
 
-2. [Mouse in-out transition](https://codepen.io/argyleink/pen/poEjvpd) by Adam
-   Argyle
+2. [Mouse in-out transition](https://codepen.io/argyleink/pen/poEjvpd) by Adam Argyle
 
-saya ucapkan terima kasih untuk semua _author_ yang sangat baik hati karena
-sudah mau berbagi ilmunya secara cuma-cuma :)
+saya ucapkan terima kasih untuk semua _author_ yang sangat baik hati karena sudah mau berbagi
+ilmunya secara cuma-cuma :)
 
 ## Inspirasi
 
@@ -267,8 +247,8 @@ Beberapa website yang menjadi inspirasi desain website ini:
 
 ## Hasil
 
-Dari beberapa proses yang udah saya jalani tadi, berikut hasil dari pengukuran
-performa website saya menggunakan Lighthouse:
+Dari beberapa proses yang udah saya jalani tadi, berikut hasil dari pengukuran performa website saya
+menggunakan Lighthouse:
 
 1. Desktop
 
@@ -282,16 +262,15 @@ performa website saya menggunakan Lighthouse:
 
    ![Pengaturan yang dijalankan untuk perangkat mobile ketika diukur menggunakan Lighthouse](/static/posts/blog/membangun-kebun-digital/lighthouse-mobile-settings.png)
 
-Seperti yang terlihat di atas, bahwa di sisi performa website saya saat ini,
-terutama pada perangkat _mobile_—yang saya duga karena banyaknya font yang
-digunakan dan fitur interaktif yang ada pada halaman home—, masih perlu adanya
-sebuah perbaikan, namun sejauh ini saya cukup puas dengan keseluruhan hasilnya
-:)
+Seperti yang terlihat di atas, bahwa di sisi performa website saya saat ini, terutama pada perangkat
+_mobile_—yang saya duga karena banyaknya font yang digunakan dan fitur interaktif yang ada pada
+halaman home—, masih perlu adanya sebuah perbaikan, namun sejauh ini saya cukup puas dengan
+keseluruhan hasilnya :)
 
 ## What's Next?
 
-Mencoba untuk mulai belajar menulis seputar software engineering dan
-teknologi, yang semoga saja bisa bermanfaat bagi diri sendiri dan orang lain.
+Mencoba untuk mulai belajar menulis seputar software engineering dan teknologi, yang semoga saja
+bisa bermanfaat bagi diri sendiri dan orang lain.
 
-Jika kalian punya pertanyaan seputar website ini, atau sekedar ngobrol, maupun
-berkolaborasi, bisa sapa saya di [Twitter](https://twitter.com/abdmmar)
+Jika kalian punya pertanyaan seputar website ini, atau sekedar ngobrol, maupun berkolaborasi, bisa
+sapa saya di [Twitter](https://twitter.com/abdmmar)

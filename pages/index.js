@@ -3,17 +3,15 @@ import Link from 'next/link'
 import {Head} from '@components/seo'
 import {Card} from '@components/cards'
 import {Layout} from '@components/layouts'
+import {InteractiveTitle} from '@components/features'
 import {getAllPosts} from '@lib/mdx'
 import formatDate from '@lib/format-date'
 import useWindowSize from '@hooks/useWindowSize'
-import {InteractiveTitle} from '@components/features'
 
 import styles from './Index.module.scss'
 
 export default function Home({posts}) {
   const {width: windowWidth} = useWindowSize()
-
-  const project = posts?.projects[0].frontmatter
 
   return (
     <Layout>
@@ -61,27 +59,18 @@ export default function Home({posts}) {
             <div className={styles.projects_content}>
               <div className={styles.projects_main_content}>
                 <Card
-                  title={project.title}
-                  description={project.description}
-                  tag={project.category}
-                  date={new Date(project.published_date).getFullYear()}
-                  image={project.image}
-                  imageAlt={project.image_alt}
-                  link={
-                    project.link == null ? `/projects/${posts?.projects[0].slug}` : project.link
-                  }
+                  {...posts?.projects[0]}
+                  date={new Date(posts?.projects[0].published_date).getFullYear()}
                 />
               </div>
               <div className={styles.projects_aside_content}>
-                {posts?.projects?.slice(1, 3).map(({slug, frontmatter: meta}) => {
+                {posts?.projects?.slice(1, 4).map((post) => {
                   return (
                     <Card
-                      key={slug}
-                      title={meta.title}
-                      description={meta.description}
-                      tag={meta.category}
-                      date={new Date(meta.published_date).getFullYear()}
-                      link={meta.link == null ? `/projects/${slug}` : meta.link}
+                      {...post}
+                      image=""
+                      key={post.slug}
+                      date={new Date(post.published_date).getFullYear()}
                     />
                   )
                 })}
@@ -100,17 +89,14 @@ export default function Home({posts}) {
               <HeaderLink href="/blog" text="See all posts" />
             </div>
             <div className={styles.blog_content}>
-              {posts?.blog?.slice(0, 3)?.map(({slug, frontmatter: meta}) => {
+              {posts?.blog?.slice(0, 3)?.map((post) => {
                 return (
                   <Card
-                    key={slug}
-                    title={meta.title}
-                    description={''}
-                    tag={meta.category}
-                    date={formatDate(meta.published_date)}
-                    image={meta.image}
-                    imageAlt={meta.image_alt}
-                    link={meta.link == null ? `/blog/${slug}` : meta.link}
+                    {...post}
+                    key={post.slug}
+                    description=""
+                    date={formatDate(post.published_date)}
+                    link={post.link || `/blog/${post.slug}`}
                   />
                 )
               })}
