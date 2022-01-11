@@ -13,7 +13,7 @@ import formatDate from '@lib/format-date'
 
 const FOLDER = 'blog'
 
-export default function DetailBlog({code, frontmatter: meta, readTime, slug}) {
+export default function DetailBlog({code, meta, readTime, slug}) {
   const Component = React.useMemo(() => getMDXComponent(code, {Callout}), [code])
 
   const last_modified =
@@ -26,13 +26,13 @@ export default function DetailBlog({code, frontmatter: meta, readTime, slug}) {
   return (
     <Layout>
       <Head
-        title={`${meta.title} • Abdullah Ammar`}
+        title={`Abdullah Ammar • ${meta.title}`}
         path={`/blog/${slug}`}
         description={meta.description}
         type="article"
         image={meta.image}
         image_alt={meta.image_alt}
-        keywords={meta.tags}
+        keywords={meta.keywords}
         published_date={meta.published_date}
         modified_date={meta.modified_date}
       />
@@ -72,7 +72,7 @@ export default function DetailBlog({code, frontmatter: meta, readTime, slug}) {
                 </div>
                 <div>
                   <dt>Tags</dt>
-                  <dd>{meta.tags.join(', ')}</dd>
+                  <dd>{meta.keywords.join(', ')}</dd>
                 </div>
               </dl>
             </div>

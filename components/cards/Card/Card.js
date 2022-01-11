@@ -6,18 +6,30 @@ import isURL from '@lib/is-url'
 
 import styles from './Card.module.scss'
 
-const Card = ({title, description = null, tag, date, image = null, imageAlt = title, link}) => {
+const Card = ({title, description, category, date, image, imageAlt, repository, link}) => {
   return (
     <div className={styles.card}>
-      {image != null && <Image src={image} alt={imageAlt} objectFit="cover" />}
+      {image && <Image src={image} alt={imageAlt || title} objectFit="cover" />}
       <div className={styles.info}>
-        <small className={styles.tag}>{tag}</small>
+        <small className={styles.tag}>
+          {category}
+          {repository && (
+            <>
+              {' • '}
+              <a className={styles.repository} href={repository} target="_blank" rel="noreferrer">
+                <small>repository</small>
+              </a>
+            </>
+          )}
+        </small>
         <small className={styles.date}>{date}</small>
       </div>
       {isURL(link) ? (
-        <a href={href} target="_blank" rel="noreferrer">
-          <h3>{children}</h3>
-        </a>
+        <h3>
+          <a className={styles.title} href={link} target="_blank" rel="noreferrer">
+            {title}
+          </a>
+        </h3>
       ) : (
         <h3>
           <Link href={link} passHref>
@@ -26,11 +38,7 @@ const Card = ({title, description = null, tag, date, image = null, imageAlt = ti
         </h3>
       )}
 
-      {description != null && description.length !== 0 ? (
-        <p className={styles.desc}>{description}</p>
-      ) : (
-        ''
-      )}
+      {description && <p className={styles.desc}>{description}</p>}
     </div>
   )
 }

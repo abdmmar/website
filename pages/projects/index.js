@@ -11,7 +11,7 @@ import styles from './Projects.module.scss'
 export default function Projects({posts}) {
   return (
     <Layout>
-      <Head title="Projects • Abdullah Ammar" path="/projects" />
+      <Head title="Abdullah Ammar • Projects" path="/projects" />
 
       <main className={styles.main}>
         <div className={styles.projects_container}>
@@ -33,52 +33,21 @@ export default function Projects({posts}) {
                   <div className={styles.projects_posts_main}>
                     <div className={styles.projects_posts_primary}>
                       <Card
-                        key={posts[0].slug}
-                        title={posts[0].frontmatter.title}
-                        description={posts[0].frontmatter.description}
-                        tag={posts[0].frontmatter.category}
-                        date={new Date(posts[0].frontmatter.published_date).getFullYear()}
-                        image={posts[0].frontmatter.image}
-                        link={
-                          posts[0].frontmatter.link == null
-                            ? `/projects/${posts[0].slug}`
-                            : posts[0].frontmatter.link
-                        }
+                        {...posts.at(0)}
+                        date={new Date(posts.at(0).published_date).getFullYear()}
                       />
                     </div>
                     <div className={styles.projects_posts_secondary}>
-                      {posts.length > 1 ? (
-                        <Card
-                          key={posts[1].slug}
-                          title={posts[1].frontmatter.title}
-                          description={posts[1].frontmatter.description}
-                          tag={posts[1].frontmatter.category}
-                          date={new Date(posts[1].frontmatter.published_date).getFullYear()}
-                          image={posts[1].frontmatter.image}
-                          link={
-                            posts[1].frontmatter.link == null
-                              ? `/projects/${posts[1].slug}`
-                              : posts[1].frontmatter.link
-                          }
-                        />
-                      ) : (
-                        ''
-                      )}
+                      <Card
+                        {...posts.at(1)}
+                        date={new Date(posts.at(1).published_date).getFullYear()}
+                      />
                     </div>
                   </div>
                   <div className={styles.projects_posts_list}>
-                    {posts.map(({slug, frontmatter: meta}, index) => {
+                    {posts.map((post, index) => {
                       if (index >= 2) {
-                        return (
-                          <Card
-                            key={slug}
-                            title={meta.title}
-                            description={meta.description}
-                            tag={meta.category}
-                            date={new Date(meta.published_date).getFullYear()}
-                            link={meta.link == null ? `/projects/${slug}` : meta.link}
-                          />
-                        )
+                        return <Card {...post} date={new Date(post.published_date).getFullYear()} />
                       }
                     })}
                   </div>
