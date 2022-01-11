@@ -33,14 +33,14 @@ export default function Projects({posts}) {
                   <div className={styles.projects_posts_main}>
                     <div className={styles.projects_posts_primary}>
                       <Card
-                        {...posts.at(0)}
-                        date={new Date(posts.at(0).published_date).getFullYear()}
+                        {...posts?.at(0)}
+                        date={new Date(posts?.at(0).published_date).getFullYear()}
                       />
                     </div>
                     <div className={styles.projects_posts_secondary}>
                       <Card
-                        {...posts.at(1)}
-                        date={new Date(posts.at(1).published_date).getFullYear()}
+                        {...posts?.at(1)}
+                        date={new Date(posts?.at(1).published_date).getFullYear()}
                       />
                     </div>
                   </div>
