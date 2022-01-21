@@ -8,33 +8,27 @@ export default function NavBar() {
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbar_menu}>
-        <LinkList />
+        <ul className={styles.menu}>
+          <li className={styles.menu_item}>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+          </li>
+          <li className={styles.menu_item}>
+            <Link href="/projects">
+              <a>Projects</a>
+            </Link>
+          </li>
+          <li className={styles.menu_item}>
+            <Link href="/blog">
+              <a>Blog</a>
+            </Link>
+          </li>
+        </ul>
       </div>
       <div className={styles.navbar_theme}>
         <SelectTheme />
       </div>
     </nav>
-  )
-}
-
-function LinkList() {
-  return (
-    <ul className={styles.menu}>
-      <li className={styles.menu_item}>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      <li className={styles.menu_item}>
-        <Link href="/projects">
-          <a>Projects</a>
-        </Link>
-      </li>
-      <li className={styles.menu_item}>
-        <Link href="/blog">
-          <a>Blog</a>
-        </Link>
-      </li>
-    </ul>
   )
 }
