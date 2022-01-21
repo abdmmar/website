@@ -6,7 +6,7 @@ import {Layout} from '@components/layouts'
 import formatDate from '@lib/format-date'
 import {getAllPosts} from '@lib/mdx'
 
-import styles from './Blog.module.scss'
+import styles from './index.module.scss'
 
 export default function Blog({posts}) {
   return (

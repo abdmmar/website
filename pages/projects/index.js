@@ -6,7 +6,7 @@ import {Card} from '@components/cards'
 import {Layout} from '@components/layouts'
 import {getAllPosts} from '@lib/mdx'
 
-import styles from './Projects.module.scss'
+import styles from './index.module.scss'
 
 export default function Projects({posts}) {
   return (
