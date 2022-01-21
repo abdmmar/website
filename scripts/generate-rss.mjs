@@ -26,9 +26,7 @@ const getAllPosts = (folder) => {
 async function generate() {
   const date = new Date()
   const blogList = getAllPosts('blog')
-  const siteURL = 'https://www.abdmmar.tech'
-
-  console.log(blogList)
+  const siteURL = 'https://www.abdmmar.com'
 
   const author = {
     name: 'Abdullah Ammar',
@@ -48,9 +46,7 @@ async function generate() {
     updated: date,
     generator: 'Feed for Node.js',
     feedLinks: {
-      rss2: `${siteURL}/rss/feed.xml`,
-      json: `${siteURL}/rss/feed.json`,
-      atom: `${siteURL}/rss/atom.xml`,
+      rss2: `${siteURL}/rss.xml`,
     },
     author,
   })
@@ -75,10 +71,7 @@ async function generate() {
     })
   }
 
-  fs.mkdirSync('./public/rss', {recursive: true})
-  fs.writeFileSync('./public/rss/feed.xml', feed.rss2())
-  fs.writeFileSync('./public/rss/atom.xml', feed.atom1())
-  fs.writeFileSync('./public/rss/feed.json', feed.json1())
+  fs.writeFileSync('./public/rss.xml', feed.rss2())
 }
 
 generate()
