@@ -1,6 +1,6 @@
 import NextHead from 'next/head'
 
-const DOMAIN = 'https://abdmmar.tech'
+const DOMAIN = 'https://abdmmar.com'
 
 export default function Head({
   path = '/',

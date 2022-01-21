@@ -9,7 +9,7 @@ export default function Share({
   title = 'Abdullah Ammar',
   description = 'A student and developer',
   text = 'Share this article',
-  url = 'https://abdmmar.tech',
+  url = 'https://abdmmar.com',
 }) {
   const [isCopied, setCopied] = React.useState(false)
   const [showDialog, setShowDialog] = React.useState(false)

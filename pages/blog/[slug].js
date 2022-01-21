@@ -104,7 +104,7 @@ export default function DetailBlog({code, meta, readTime, slug}) {
             <Share
               title={meta.title}
               description={meta.description}
-              url={process.browser ? document.location.href : 'https://abdmmar.tech/blog/' + slug}
+              url={process.browser ? document.location.href : 'https://abdmmar.com/blog/' + slug}
             />
           </div>
         </div>
