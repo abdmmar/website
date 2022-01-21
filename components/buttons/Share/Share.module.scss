@@ -15,6 +15,7 @@
 
   & svg {
     transform: rotate(225deg);
+    fill: var(--text-color-primary);
   }
 
   &:hover {
