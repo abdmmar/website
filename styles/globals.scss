@@ -241,6 +241,10 @@ blockquote {
     outline-color: var(--accent-color-1);
   }
 
+  :focus:not(:active) {
+    outline-offset: 3px;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -314,32 +318,39 @@ small,
 }
 
 /* 
-  Mouse in-out transition
-  See: https://codepen.io/argyleink/pen/poEjvpd
+  Mouse-Out
+  Justine Wong
+  See: https://codepen.io/Wongjn/pen/VwMBgZB
 */
-a {
-  position: relative;
+@media (prefers-reduced-motion: no-preference) {
+  a {
+    --bg-h: 2px;
+    --bg-color: linear-gradient(0deg, var(--accent-color-1), var(--accent-color-1)) no-repeat right
+      bottom / 0 var(--bg-h);
+    background: var(--bg-color);
+    transition: background-size 350ms;
+  }
+
+  a:where(:hover, :focus-visible) {
+    background-size: 100% var(--bg-h);
+    background-position-x: left;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    line-height: 1;
+  }
 }
 
-a::before {
-  transform: scaleX(0);
-  transform-origin: bottom right;
+[data-theme='dark'] a {
+  --bg-color: linear-gradient(0deg, var(--accent-color-3), var(--accent-color-3)) no-repeat right
+    bottom / 0 var(--bg-h);
 }
 
-a:hover::before {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-a::before {
-  content: ' ';
-  display: block;
-  position: absolute;
-  right: 0;
-  bottom: -3px;
-  left: 0;
-  background: var(--fill-color-accent);
-  height: 1.5px;
-  z-index: -1;
-  transition: transform 0.3s ease;
+@media (prefers-color-scheme: dark) {
+  a {
+    --bg-color: linear-gradient(0deg, var(--accent-color-3), var(--accent-color-3)) no-repeat right
+      bottom / 0 var(--bg-h);
+  }
 }

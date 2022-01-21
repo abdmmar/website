@@ -48,15 +48,6 @@
 
   & a {
     color: var(--text-color-secondary);
-    transition: color 100ms ease-out;
-  }
-
-  & a:hover {
-    color: var(--text-color-primary);
-  }
-
-  & a::before {
-    background: var(--text-color-primary);
   }
 }
 
