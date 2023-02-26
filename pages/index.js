@@ -9,6 +9,7 @@ import formatDate from '@lib/format-date'
 import useWindowSize from '@hooks/useWindowSize'
 
 import styles from './Index.module.scss'
+import classNames from 'classnames'
 
 export default function Home({posts}) {
   const {width: windowWidth} = useWindowSize()
@@ -19,32 +20,75 @@ export default function Home({posts}) {
 
       <main className={styles.main}>
         <div className={styles.hero_container}>
-          <div className={styles.hero}>
-            <div className={styles.hero_content}>
-              <div className={styles.hero_desc}>
-                <InteractiveTitle />
-              </div>
+          <div className={styles.hero_desc}>
+            <p className={styles.hero_desc__text}>
+              a software engineer from small town in Central Java, Indonesia. I likes to build and
+              experiment things around the ❉ web and ⚘ design. Currently learning <sup>(1)</sup>
+              creative coding, <sup>(2)</sup>crafting zine, <sup>(3)</sup>writing poetry, and{' '}
+              <sup>(4)</sup>trying photography.
+            </p>
+            <div className={styles.hero_desc__social}>
+              <a href="mailto: abd.ammar.mar@gmail.com">Email</a>
+              <span>/</span>
+              <a href="https://www.github.com/abdmmar" rel="noreferrer" target="_blank">
+                GitHub
+              </a>
+              <span>/</span>
+              <a href="https://www.twitter.com/abdmmar" rel="noreferrer" target="_blank">
+                Twitter
+              </a>
             </div>
           </div>
-          <div className={styles.hero_info}>
-            <div className={styles.hero_social}>
-              <div className={styles.hero_social_link}>
-                <span>Email</span>
-                <a href="mailto: abd.ammar.mar@gmail.com">Say Hi!</a>
-              </div>
-              <div className={styles.hero_social_link}>
-                <span>Github</span>
-                <a href="https://www.github.com/abdmmar" rel="noreferrer" target="_blank">
-                  abdmmar
-                </a>
-              </div>
-              <div className={styles.hero_social_link}>
-                <span>Twitter</span>
-                <a href="https://www.twitter.com/abdmmar" rel="noreferrer" target="_blank">
-                  @abdmmar
-                </a>
-              </div>
-            </div>
+          <div className={styles.hero_ascii}>
+            <pre className={classNames(styles.hero_ascii__item, styles.hero_ascii__coffee)}>
+              {`
+   (
+   ) )
+ _(((__
+|||   ||__
+|||~~~|| \\\\
+|||###|| ||
+|||###||_//
+\\======/`}
+            </pre>
+            <pre className={styles.hero_ascii__item}>
+              {`              
+       _________________
+      |  _____________  |_
+      | ||||||||||||||| |||
+      | ||||||||||||||| |||\\\\
+      | ||||> start|||| |||||||
+      | ||||||exit||||| |||===|
+      | ||||||||||||||| |||===|
+      | |=============| |||///
+      |_________________|||||
+        |______________||||=
+ _______(_____________))______
+|       (------)  ________()  |\\\\\\\\
+|                |[_____=_]|  ||||||
+|_______________ |_.-____=_|  ||||||
+ )||||||||||||||||_________|__|////
+`}
+            </pre>
+            <pre className={classNames(styles.hero_ascii__item, styles.hero_ascii__flower)}>
+              {`
+    _--_
+  _/    \\_
+ /_ /\\/\\ _\\
+ \\_ \\__/ _/
+   \\_  _/
+     --
+     ||
+  __ ||
+ /__\\|| __
+     ||/__\\
+     ||
+ ____||____
+|==========|
+||||#####|#|
+\\\\\\\\\\####/#/
+ \\\\\\\\\\####/`}
+            </pre>
           </div>
         </div>
         <div className={styles.projects_container} id="projects">

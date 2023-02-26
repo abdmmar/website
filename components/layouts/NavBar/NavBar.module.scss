@@ -1,6 +1,6 @@
 .navbar {
   width: 100%;
-  padding: var(--spacing-xl) var(--spacing-m);
+  padding-top: var(--spacing-xl);
   background-color: var(--bg-color-primary);
   position: sticky;
 }
@@ -11,7 +11,11 @@
   justify-content: space-between;
 }
 
-.navbar_menu {
+.navbar_title {
+  font-size: 1.25rem;
+}
+
+.navbar_menu__container {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -32,7 +36,7 @@
   fill: var(--text-color-primary);
 }
 
-.menu {
+.navbar_menu {
   padding: 0;
   margin: 0;
   display: flex;
@@ -40,14 +44,14 @@
   gap: var(--spacing-xl);
 }
 
-.menu_item {
+.navbar_menu__item {
   list-style: none;
   font-weight: 400;
-  font-size: 1.15rem;
   margin: 0;
+  font-size: 1.15rem;
 
   & a {
-    color: var(--text-color-secondary);
+    color: var(--text-color-primary);
   }
 }
 

@@ -8,24 +8,22 @@ export default function NavBar() {
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbar_container}>
-        <div>
-          ✤ Hi! I&apos;m <span>Ammar</span>
-        </div>
-        <div className={styles.navbar_menu}>
-          <ul className={styles.menu}>
-            <li className={styles.menu_item}>
-              <Link href="/">Home</Link>
+        <p className={styles.navbar_title}>
+          ✤ Hi! I&apos;m <em>Ammar</em>,
+        </p>
+        <div className={styles.navbar_menu__container}>
+          <ul className={styles.navbar_menu}>
+            <li className={styles.navbar_menu__item}>
+              <Link href="/">❉ Home</Link>
             </li>
-            <li className={styles.menu_item}>
-              <Link href="/projects">Projects</Link>
+            <li className={styles.navbar_menu__item}>
+              <Link href="/projects">✦ Projects</Link>
             </li>
-            <li className={styles.menu_item}>
-              <Link href="/blog">Blog</Link>
+            <li className={styles.navbar_menu__item}>
+              <Link href="/blog">✿ Blog</Link>
             </li>
           </ul>
-          <div className={styles.navbar_theme}>
-            <SelectTheme />
-          </div>
+          <SelectTheme />
         </div>
       </div>
     </nav>
