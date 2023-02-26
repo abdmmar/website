@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import {getMDXComponent} from 'mdx-bundler/client'
 
 import {Head} from '@components/seo'
