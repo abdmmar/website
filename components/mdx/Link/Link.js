@@ -17,8 +17,8 @@ export default function NextLink({href, children}) {
   }
 
   return (
-    <Link href={href}>
-      <a className={style.link}>{children}</a>
+    <Link href={href} className={style.link}>
+      {children}
     </Link>
   )
 }

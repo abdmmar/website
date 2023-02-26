@@ -14,19 +14,13 @@ export default function NavBar() {
         <div className={styles.navbar_menu}>
           <ul className={styles.menu}>
             <li className={styles.menu_item}>
-              <Link href="/">
-                <a>Home</a>
-              </Link>
+              <Link href="/">Home</Link>
             </li>
             <li className={styles.menu_item}>
-              <Link href="/projects">
-                <a>Projects</a>
-              </Link>
+              <Link href="/projects">Projects</Link>
             </li>
             <li className={styles.menu_item}>
-              <Link href="/blog">
-                <a>Blog</a>
-              </Link>
+              <Link href="/blog">Blog</Link>
             </li>
           </ul>
           <div className={styles.navbar_theme}>

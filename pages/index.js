@@ -111,19 +111,17 @@ export default function Home({posts}) {
 
 const HeaderLink = ({href, text}) => {
   return (
-    <Link href={href}>
-      <a className={styles.projects_header_link}>
-        {text}
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 30 33"
-          fill="currentColor"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <use href="#icon-arrow" className="icon_default"></use>
-        </svg>
-      </a>
+    <Link href={href} className={styles.projects_header_link}>
+      {text}
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 30 33"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use href="#icon-arrow" className="icon_default"></use>
+      </svg>
     </Link>
   )
 }

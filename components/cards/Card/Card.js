@@ -32,8 +32,8 @@ const Card = ({title, description, category, date, image, imageAlt, repository, 
         </h3>
       ) : (
         <h3>
-          <Link href={link} passHref>
-            <a className={styles.title}>{title}</a>
+          <Link href={link} passHref className={styles.title}>
+            {title}
           </Link>
         </h3>
       )}
