@@ -41,7 +41,13 @@ export default function Projects({posts}) {
                   <div className={styles.projects_posts_list}>
                     {posts.map((post, index) => {
                       if (index >= 2) {
-                        return <Card {...post} date={new Date(post.published_date).getFullYear()} />
+                        return (
+                          <Card
+                            key={index}
+                            {...post}
+                            date={new Date(post.published_date).getFullYear()}
+                          />
+                        )
                       }
                     })}
                   </div>

@@ -19,9 +19,9 @@ import styles from './InteractiveTitle.module.scss'
 export default function InteractiveTitle() {
   return (
     <h4 className={styles.title}>
-      Hi, I&apos;m <span className={styles.me}>Ammar</span>, <br />a student who likes to build
-      things about the web and graphic design. Interested in user interface, accesibility, and web
-      performance. Currently learning crafting interpreter and trying to contribute to open source
+      a software engineer from small town in Central Java, Indonesia. I likes to build and
+      experiment things around the ❉ web and ⚘ design. Currently learning (1)creative coding,
+      (2)crafting zine, (3)writing poetry, and (4)trying photography.
     </h4>
   )
 }

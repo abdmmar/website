@@ -12,7 +12,7 @@
 .hero {
   display: grid;
   width: 100%;
-  max-width: 900px;
+
   height: 100%;
 }
 
@@ -42,7 +42,7 @@
 .hero_info {
   display: grid;
   width: 100%;
-  max-width: 900px;
+
   min-height: 100px;
 }
 
@@ -63,14 +63,9 @@
   }
 }
 
-.projects_container {
-  display: grid;
-  justify-content: center;
-}
-
 .projects {
   width: 100%;
-  max-width: 900px;
+
   margin: var(--spacing-xxxl) 0;
   padding: 0 var(--spacing-m);
   display: grid;
@@ -155,7 +150,7 @@
 
 .blog {
   width: 100%;
-  max-width: 900px;
+
   margin: var(--spacing-xxxl) 0;
   padding: 0 var(--spacing-m);
   display: grid;

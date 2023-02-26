@@ -1,20 +1,20 @@
 .navbar {
-  display: grid;
-  align-items: center;
-  justify-content: space-between;
-  grid-auto-flow: column;
   width: 100%;
-  max-width: 900px;
   padding: var(--spacing-xl) var(--spacing-m);
   background-color: var(--bg-color-primary);
   position: sticky;
 }
 
-.navbar_menu {
-  display: grid;
-  grid-template-columns: min-content 1fr;
-  gap: var(--spacing-xl);
+.navbar_container {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.navbar_menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .logo_container {
